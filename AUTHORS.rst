@@ -1,7 +1,8 @@
 Authors
 -------
 
-* Eric (New contributor)
-* Anthony 
+* Lucas Molleman
+* Marcus Giamattei
+* Kyanoush Seyed Yahosseini
 
 
