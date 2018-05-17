@@ -1,5 +1,5 @@
 ============
-Installation
+How to get started with LIONESS Lab
 ============
 
 Install the package with pip::
