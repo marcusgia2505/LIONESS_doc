@@ -14,7 +14,14 @@ Contents:
    :maxdepth: 2
    :glob:
 
-   basic_usage.rst
+   basic_usage
+   basic_demo
+
+   details_developtest
+   details_ownserver
+
+   reference_elements
+   reference_javascript
 
 
 
