@@ -3,8 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Read the Docs Template's documentation!
+Welcome to the LIONESS Lab documentation!
 ==================================================
+
+Here comes text on what is lioness
 
 Contents:
 
@@ -12,14 +14,10 @@ Contents:
    :maxdepth: 2
    :glob:
 
-   *
+   basic_usage.rst
 
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+
 
