@@ -1,3 +1,5 @@
+.. _basic:
+
 =====
 Basic
 =====
@@ -5,18 +7,12 @@ Basic
 Get access to LIONESS Lab
 =========================
 
-`Register for a LIONESS Lab
-account <https://lioness-lab.org/get-login-credentials/>`__ to receive
-an email with your credentials. On the `login
-page <http://classex.uni-passau.de/classEx34/lioness.php>`__ you find
-your institution and your account.
+`Register for a LIONESS Lab account <https://lioness-lab.org/get-login-credentials/>`__ to receive an email with your credentials. On the `login page <http://classex.uni-passau.de/classEx34/lioness.php>`__ you find your institution and your account.
 
 .. image:: _static/Login_page.png
    :alt:  300px
 
-Once you have logged in, the landing page allows for basic actions such
-as creating new LIONESS experiments, edit your existing experiments or
-change your user settings.
+Once you have logged in, the landing page allows for basic actions such as creating new LIONESS experiments, edit your existing experiments or change your user settings.
 
 .. image:: _static/Picture1.png
    :alt:  600px
@@ -29,13 +25,7 @@ TBA
 Develop your first experiment
 =============================
 
-The steps below show you the basics of LIONESS Lab by taking you through the development a simple 3-player
-repeated `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__. Box 1 shows
-the general setup of this experiment. Following the steps below will
-make you familiar with using the basic features of LIONESS Lab. For your
-reference, a finished version of the experiment we will develop here can
-also be directly imported from the :ref:`repository` . Expected
-time to complete this tutorial: 30-40 minutes.
+The steps below show you the basics of LIONESS Lab by taking you through the development a simple 3-player repeated `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__. Box 1 shows the general setup of this experiment. Following the steps below will make you familiar with using the basic features of LIONESS Lab. For your reference, a finished version of the experiment we will develop here can also be directly imported from the :ref:`repository` . Expected time to complete this tutorial: 30-40 minutes.
 
 .. topic:: Box 1: Public goods game
 
@@ -59,13 +49,7 @@ Create a new experiment
 .. image:: _static/New_game.png
    :alt:  300px
 
-On the landing page, choose *New experiment* to define a LIONESS
-experiment starting from scratch. In the Experiment Settings, you can
-give the experiment a name, say *Public goods game*. For now, you can
-set the *availability* of your experiment to *private* but you can
-choose to share it with others by setting the availability to *public*
-later. For now we can ignore the fields on the right hand side. Click
-*Save* to start defining your screens.
+On the landing page, choose *New experiment* to define a LIONESS experiment starting from scratch. In the Experiment Settings, you can give the experiment a name, say *Public goods game*. For now, you can set the *availability* of your experiment to *private* but you can choose to share it with others by setting the availability to *public* later. For now we can ignore the fields on the right hand side. Click *Save* to start defining your screens.
 
 Define screens (stages)
 -----------------------
@@ -73,47 +57,18 @@ Define screens (stages)
 .. image:: _static/New_experiment.png
    :alt:  600px
 
-Below the name of your experiment you can now start defining your stages
-as they will be displayed to participants. Two stages are pre-loaded
-(see screenshot above). Make sure that you select the tab named *stage
-1*. The area under the tabs shows three sections, each with a blue
-background. First, in the broad horizontal bar you can specify basic
-settings of that stage, e.g. its name, the :ref:`stage` of the
-stage, and an optional :ref:`countdown_timer`. Second, in
-the left hand side section you can specify the :ref:`active_screen`. In active screens you
-can display information to participants and record their responses.
-Third, in the right hand side option you can specify the :ref:`waiting_screen` of that stage. In case
-participants need to wait for others before continuing, this will come
-in handy - we will get to that shortly.
+Below the name of your experiment you can now start defining your stages as they will be displayed to participants. Two stages are pre-loaded (see screenshot above). Make sure that you select the tab named *stage 1*. The area under the tabs shows three sections, each with a blue background. First, in the broad horizontal bar you can specify basic settings of that stage, e.g. its name, the :ref:`stage_type` of the stage, and an optional :ref:`stage_and_element__countdown_timer`. Second, in the left hand side section you can specify the :ref:`defining_your_screens__active_screen`. In active screens you can display information to participants and record their responses. Third, in the right hand side option you can specify the :ref:`defining_your_screens__waiting_screen` of that stage. In case participants need to wait for others before continuing, this will come in handy - we will get to that shortly.
 
-Screens consist of :ref:`elements`. These can be text boxes,
-input fields to record numerical responses, or pieces of
-:ref:`javascript` to interact with the server or to do
-calculations. You can add elements to your screen by clicking *add new
-element* and select the type of element you want to add. As you will
-have noticed, the first stage already includes three pre-loaded (empty)
-elements: a :ref:`javascript` field, a :ref:`text_box`, and a :ref:`button`.
+Screens consist of :ref:`elements`. These can be text boxes, input fields to record numerical responses, or pieces of :ref:`javascript` to interact with the server or to do calculations. You can add elements to your screen by clicking *add new element* and select the type of element you want to add. As you will have noticed, the first stage already includes three pre-loaded (empty) elements: a :ref:`javascript` field, a :ref:`elements__text_box`, and a :ref:`elements__button`.
 
 Stage 1: Instructions
 ~~~~~~~~~~~~~~~~~~~~~
 
-In this basic public goods game, we
-want the participants to read instructions first. Name this stage
-*instructions* in the broad horizontal blue bar. In the active screen
-you can add instruction text by double-clicking the :ref:`text_box` (second element). You can write instructions
-in the rich-text editor by yourself or but for now just copy in the
-template text from the Box 2.
+In this basic public goods game, we want the participants to read instructions first. Name this stage *instructions* in the broad horizontal blue bar. In the active screen you can add instruction text by double-clicking the :ref:`elements__text_box` (second element). You can write instructions in the rich-text editor by yourself or but for now just copy in the template text from the Box 2.
 
-Finalise your instructions stage by specifying the
-:ref:`button` at the bottom of the screen. Make sure that
-the next stage is Stage 2 and retain the default options for the button
-(so that participants can proceed if possible). Your changes to the
-experiment will be automatically saved upon every mouse click.
+Finalise your instructions stage by specifying the :ref:`elements__button` at the bottom of the screen. Make sure that the next stage is Stage 2 and retain the default options for the button (so that participants can proceed if possible). Your changes to the experiment will be automatically saved upon every mouse click.
 
-At any time during development of your game, you can view the
-experimental pages as the participants will see them. To do this, simply
-:ref:`compile_and_test` your experiment and start a
-*test player*.
+At any time during development of your game, you can view the experimental pages as the participants will see them. To do this, simply :ref:`compile_and_test` your experiment and start a *test player*.
 
 .. code-block:: html
       :caption: Box 2: Instructions for the public goods game
@@ -135,130 +90,48 @@ experimental pages as the participants will see them. To do this, simply
 Stage 2: Control questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the next stage, we will define a set of control questions to ensure
-that participants have understood the instructions. Click on the tab
-*Stage 2* and name this stage *Control questions*. In the broad
-horizontal bar, set the :ref:`stage_type` to *quiz*. In quiz
-stages, the experimental software automatically records the number of
-attempts by each participant to answer the control questions.
+In the next stage, we will define a set of control questions to ensure that participants have understood the instructions. Click on the tab *Stage 2* and name this stage *Control questions*. In the broad horizontal bar, set the :ref:`stage_type` to *quiz*. In quiz stages, the experimental software automatically records the number of attempts by each participant to answer the control questions.
 
 Announce the control questions in the pre-loaded text box. To add your
-first control question, click :ref:`adding_an_element` and choose :ref:`numeric_input` from the drop-down list. Small *paste*
-icons will appear between each of the elements in the screen. Click on
-the icon right under the text box to add the numeric input element. Once
-this element is added to the screen you can write the question in the
-*text* field of the element. In this case, write
-``Suppose that in a round, each group member (including yourself) contributes 10 points to the group project. How many points will each of you earn in that round?``.
+first control question, click :ref:`adding_an_element` and choose :ref:`numeric_input` from the drop-down list. Small *paste* icons will appear between each of the elements in the screen. Click on the icon right under the text box to add the numeric input element. Once this element is added to the screen you can write the question in the *text* field of the element. In this case, write ``Suppose that in a round, each group member (including yourself) contributes 10 points to the group project. How many points will each of you earn in that round?``.
 
-Add a variable name, say *control_question1*. Specify the range of
-numbers that participants may enter. In this case you can set the
-*minimum* to 0 and the *maximum* to 100. Set the *decimal place* to *0*
-such that the participants' screen will only accept integers as a
-response to this question. By clicking the *required** switch you can
-make sure that participants require to give a response to an element.
-Set the field *correct value* to 15.
+Add a variable name, say *control_question1*. Specify the range of numbers that participants may enter. In this case you can set the
+*minimum* to 0 and the *maximum* to 100. Set the *decimal place* to *0* such that the participants' screen will only accept integers as a response to this question. By clicking the *required** switch you can make sure that participants require to give a response to an element. Set the field *correct value* to 15.
 
 .. image:: _static/controlquestion.png
    :alt:  600px
 
-Finally, add a button to the screen by clicking *add new element* and
-select the *button*. Add it to the bottom of the screen by clicking the
-paste icon right below the *numeric input* field you just created. Keep
-the defaults for now.
+Finally, add a button to the screen by clicking *add new element* and select the *button*. Add it to the bottom of the screen by clicking the paste icon right below the *numeric input* field you just created. Keep the defaults for now.
 
 Stage 3: Lobby
 ~~~~~~~~~~~~~~
 
-The next stage will be a *lobby* in which participants wait to be
-grouped with others. In this case we will form a group as soon as three
-participants have completed the control questions and are ready to start
-the interaction phase of the experiment. Add a new stage to your
-experiment by clicking the *+* sign in the tab next to Stage 2 [add
-screenshot]. A new Stage tab will appear. In the horizontal blue bar,
-set its stage type to *lobby* and name the stage *Lobby*.
+The next stage will be a *lobby* in which participants wait to be grouped with others. In this case we will form a group as soon as three participants have completed the control questions and are ready to start the interaction phase of the experiment. Add a new stage to your experiment by clicking the *+* sign in the tab next to Stage 2 [add screenshot]. A new Stage tab will appear. In the horizontal blue bar, set its stage type to *lobby* and name the stage *Lobby*.
 
-Set the timer to 300 seconds and delete the *button* (we do not need a
-button in the lobby). When participants are still waiting to be matched
-with others after this time has passed, they will automatically get the
-choice to either return to the lobby and wait for two more minutes, or
-to proceed to another stage (defined in the *leave to* field, we will
-get to that later). In the active screen, the default text in the lobby
-reads "Wait for the other members of your group to complete the control
-questions." For now we do not need to define anything here. We do not
-need any buttons in this screen. The software will forward the
-participants as soon as a group has been formed.
+Set the timer to 300 seconds and delete the *button* (we do not need a button in the lobby). When participants are still waiting to be matched with others after this time has passed, they will automatically get the choice to either return to the lobby and wait for two more minutes, or to proceed to another stage (defined in the *leave to* field, we will get to that later). In the active screen, the default text in the lobby reads "Wait for the other members of your group to complete the control questions." For now we do not need to define anything here. We do not need any buttons in this screen. The software will forward the participants as soon as a group has been formed.
 
 Stage 4: Decision
 ~~~~~~~~~~~~~~~~~
 
-Once three participants are in the lobby, they will be matched and will
-be directed to the decision screen. In the Decision stage, participants
-will be asked to choose their contribution to the group project. First,
-add a new stage to your experiment with the *+* sign. In the new stage,
-set the name to *decision*. To indicate in which period participants
-currently are, we require the variables *period* and *numberPeriods*.
-These two are among the :ref:`standard_variables` that are automatically
-loaded in the JavaScript of each stage. In the text box you can display
-JavaScript variables by using dollar signs around their names. Here you
-can write: Round $period$ of $numberPeriods$.
+Once three participants are in the lobby, they will be matched and will be directed to the decision screen. In the Decision stage, participants will be asked to choose their contribution to the group project. First, add a new stage to your experiment with the *+* sign. In the new stage, set the name to *decision*. To indicate in which period participants currently are, we require the variables *period* and *numberPeriods*. These two are among the :ref:`standard_variables` that are automatically loaded in the JavaScript of each stage. In the text box you can display JavaScript variables by using dollar signs around their names. Here you can write: Round $period$ of $numberPeriods$.
 
-To add the field in which the participants can enter their
-contributions, click *add new element*, choose *numeric input* and paste
-this element below the text box you just defined. In the *text* field of
-this element, you can write: ``You received 10 points to start with. How many points (0-10) do you want to contribute to the group project?``. Set
-the variable name to *contribution*, set the minimum to 0, the maximum
-to 10 and the decimals to 0. Switch on the *required* option to ensure
-that all participants make a decision, which will be stored in the
-*decisions table* of this experiment's
-`database <Experiment_tables#decisions>`__. Finally, in the button at
-the bottom of the screen, specify *proceed* as *wait for others*. This
-will ensure that the participants will only be able to continue to the
-next stage when all group members are ready. Participants will wait for
-others in the *waiting screen* on the right hand side section. When
-nothing is defined in the waiting screen, a default waiting text will be
-shown. For now we can leave the waiting screen undefined.
+To add the field in which the participants can enter their contributions, click *add new element*, choose *numeric input* and paste this element below the text box you just defined. In the *text* field of this element, you can write:
+``You received 10 points to start with.``
+``How many points (0-10) do you want to contribute to the group project?``.
+Set the variable name to *contribution*, set the minimum to 0, the maximum to 10 and the decimals to 0. Switch on the *required* option to ensure that all participants make a decision, which will be stored in the *decisions table* of this experiment's :ref:`database <experiment_tables__decisions>`. Finally, in the button at the bottom of the screen, specify *proceed* as *wait for others*. This will ensure that the participants will only be able to continue to the next stage when all group members are ready. Participants will wait for others in the *waiting screen* on the right hand side section. When nothing is defined in the waiting screen, a default waiting text will be shown. For now we can leave the waiting screen undefined.
 
 Stage 5: Results
 ~~~~~~~~~~~~~~~~
 
-Once all participants in a group
-have made their decisions, they will be shown the outcome of that
-period. First, again, add a new stage to your experiment with the *+*
-sign. Name this new stage "results". To calculate the outcome of this
-period of the public goods game, we need to get the decisions of the
-others from the database. LIONESS Lab provides a set of :ref:`javascript_functions` to do this in a
-simple way. In the Javascript element, you can copy the code from Box 3.
+Once all participants in a group have made their decisions, they will be shown the outcome of that period. First, again, add a new stage to your experiment with the *+* sign. Name this new stage "results". To calculate the outcome of this period of the public goods game, we need to get the decisions of the others from the database. LIONESS Lab provides a set of :ref:`javascript_functions` to do this in a simple way. In the Javascript element, you can copy the code from Box 3.
 
-Note that JavaScript code will be executed in the browsers of the
-participants, so any JavaScript code should be written from the
-perspective of the participant.
+Note that JavaScript code will be executed in the browsers of the participants, so any JavaScript code should be written from the perspective of the participant.
 
-The key functions we use here are ``getInt()`` and ``getInts()``. In this case,
-``getInt('contribution')`` will return the value of *contribution*
-in the `decisions table <Experiment_tables#decisions>`__ from the
-current participant from the current period. Likewise, <font
-``getInts('contribution')`` will return
-an array with the contributions of all group members in the current
-period. With ``record()`` you can
-write a variable from Javascript to the database. In this case we will
-store for each round the total earnings of each player.
+The key functions we use here are ``getInt()`` and ``getInts()``. In this case, ``getInt('contribution')`` will return the value of *contribution* in the :ref:`database <experiment_tables__decisions>` from the current participant from the current period. Likewise, ``getInts('contribution')`` will return an array with the contributions of all group members in the current period. With ``record()`` you can write a variable from Javascript to the database. In this case we will store for each round the total earnings of each player.
 
-To display the calculated variables, again use the dollar signs around
-the variables names in the text box.
+To display the calculated variables, again use the dollar signs around the variables names in the text box.
 
-The Results stage is the second and last stage of a period. To define
-the correct *routing* of the participants through your experiment, you
-should specify which of the stages comprise a period which will be
-repeated. Technically, this means that the program will *loop* through
-these periods for a number of times. You can do this in the `parameters
-table <Parameters>`__. You can find this at the horizontal grey bar at
-the top of your screen. Here you can specify the basic parameters
-underlying your experiment. To specify the beginning and end of the
-periods in your experiment, set loopStart to *Decision* and loopEnd to
-*Results*. Now you are editing the parameters table, you can also set
-the number of periods (numberPeriods) to 5. By clicking the *Back*
-button at the top you return to the page in which you define your
-experiment. You are almost done specifying your experiment.
+The Results stage is the second and last stage of a period. To define the correct *routing* of the participants through your experiment, you should specify which of the stages comprise a period which will be repeated. Technically, this means that the program will *loop* through these periods for a number of times. You can do this in the :ref:`parameters table <parameters>`. You can find this at the horizontal grey bar at the top of your screen. Here you can specify the basic parameters underlying your experiment. To specify the beginning and end of the periods in your experiment, set loopStart to *Decision* and loopEnd to *Results*. Now you are editing the parameters table, you can also set the number of periods (numberPeriods) to 5. By clicking the *Back* button at the top you return to the page in which you define your experiment. You are almost done specifying your experiment.
 
 For now you can leave the *next stage* field of the button empty.
 
@@ -275,13 +148,15 @@ For now you can leave the *next stage* field of the button empty.
    keptForSelf = endowment - myContribution;
    allContributions = getInts('contribution');
    // apply public goods logic
-    sum = 0;
-    for (var i=0; i<allContributions.length; i++) sum += allContributions[i];
-    averageContribution = sum / currentGroupSize;
-    product = 1.5 * sum;
-    share = product / currentGroupSize;
-    earningsThisPeriod = keptForSelf + share;
-    record('payoff', earningsThisPeriod);
+   sum = 0;
+   for (var i=0; i<allContributions.length; i++){
+        sum += allContributions[i];
+   }
+   averageContribution = sum / currentGroupSize;
+   product = 1.5 * sum;
+   share = product / currentGroupSize;
+   earningsThisPeriod = keptForSelf + share;
+   record('payoff', earningsThisPeriod);
 
 .. code-block:: html
    :caption: Box 4: Results text
@@ -304,32 +179,16 @@ For now you can leave the *next stage* field of the button empty.
 Stage 6: Questionnaire
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Once the decision making part of the experiment is over, you might want
-to add a questionnaire stage. Add a new stage, again by clicking the *+*
-sign in the rightmost tab. Add a new :ref:`numeric_input` for the question ``What is your age?``. For these numeric inputs you need to define a range of allowed
-values. Then, add a :ref:`discrete_choice` for the question ``What is your gender?``. For the numeric element for the age you should now be able to
-define it. For the discrete choice, you can specify the question in the
-*text* field. At the bottom of this element you can define the text
-inside each of the choice options that the participants will choose
-from. In the *value* field of each choice option you have to specify the
-value as it will be recorded in the database (which, for this element
-type, stores the responses as numbers). Ensure that the
-:ref:`button` allows participants to proceed if possible.
+Once the decision making part of the experiment is over, you might want to add a questionnaire stage. Add a new stage, again by clicking the *+* sign in the rightmost tab. Add a new :ref:`numeric_input` for the question ``What is your age?``. For these numeric inputs you need to define a range of allowed values. Then, add a :ref:`discrete_choice` for the question ``What is your gender?``. For the numeric element for the age you should now be able to define it. For the discrete choice, you can specify the question in the *text* field. At the bottom of this element you can define the text inside each of the choice options that the participants will choose from. In the *value* field of each choice option you have to specify the value as it will be recorded in the database (which, for this element type, stores the responses as numbers). Ensure that the :ref:`elements__button` allows participants to proceed if possible.
 
-.. image:: _static/questionnaire.png
+.. image:: _static/Questionnaire.png
    :alt:  600px
 
 Stage 7: Final earnings
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-You have arrived at defining the
-final stage of the experiment. Add a new stage with the *+* sign. On
-this page you will sum the earnings of each participant and display it
-on their screen. To do this, we will sum the participant's earnings
-across all rounds. In the text box you can write the total earnings (in
-experimental points and real currency) to the participants' screen. Note
-the variable *exchangeRate*, which is defined in the
-`parameters <Parameters>`__.
+You have arrived at defining the final stage of the experiment. Add a new stage with the *+* sign. On this page you will sum the earnings of each participant and display it on their screen. To do this, we will sum the participant's earnings across all rounds. In the text box you can write the total earnings (in experimental points and real currency) to the participants' screen. Note the variable *exchangeRate*, which is defined in the
+:ref:`parameters <parameters>`.
 
 .. code-block:: javascript
       :caption: Box 5: JS code for calculating total earnings
@@ -353,25 +212,11 @@ the variable *exchangeRate*, which is defined in the
 Set parameters
 --------------
 
-Before we start testing, we need to set the parameters. You can do so by
-clicking *parameters* in the top horizontal menu. In the `parameter
-table <Parameters>`__ we will define where a period starts, and where it
-ends. In the *predefined parameters* tab you can set the parameters
-*loopStart* to *Decision* and *loopEnd* to *Results* by using the
-drop-down menus. This means that at the end of a period, and when a new
-period starts, groups will move from the Results stage to Decision
-stage. Once the period number reaches *numberPeriods*, participants will
-proceed to Questionnaire (the stage defined right after Results).
+Before we start testing, we need to set the parameters. You can do so by clicking *parameters* in the top horizontal menu. In the :ref:`parameter table <parameters>` we will define where a period starts, and where it ends. In the *predefined parameters* tab you can set the parameters *loopStart* to *Decision* and *loopEnd* to *Results* by using the drop-down menus. This means that at the end of a period, and when a new period starts, groups will move from the Results stage to Decision stage. Once the period number reaches *numberPeriods*, participants will proceed to Questionnaire (the stage defined right after Results).
 
 Compile and test
 ----------------
 
-Your experiment is now ready for testing. In the horizontal bar on the
-top of your screen, click *compile and test* and :ref:`compile_and_test`. LIONESS Lab will
-compile your experiment and will open the :ref:`control_panel` of your experiment in a new tab.
+Your experiment is now ready for testing. In the horizontal bar on the top of your screen, click *compile and test* and :ref:`compile_and_test`. LIONESS Lab will compile your experiment and will open the :ref:`control_panel` of your experiment in a new tab.
 
-In the control panel, you can start testing your experiment by switching
-on the :ref:`test_mode` and start a `:ref:`test_player`. A new tab will open with the experimental
-pages you defined. If needed, you can start a second test player (e.g.
-to play in a group after being matched in the
-:ref:`lobby`).
+In the control panel, you can start testing your experiment by switching on the :ref:`control_panel__test_mode` and start a :ref:`test player <control_panel__test_mode>`. A new tab will open with the experimental pages you defined. If needed, you can start a second test player (e.g. to play in a group after being matched in the :ref:`lobby`).
