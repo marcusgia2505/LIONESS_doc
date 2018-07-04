@@ -72,14 +72,14 @@ With the 'Game (in)active' button, you can block new participants from entering.
 Test mode
 ^^^^^^^^^
 
-When developing your experiment, it is often useful to test you experiment by playing as a participant and inspecting the screens. The test mode will allow you to enter multiple times (i.e. control multiple *participants*) from the same browser. Once click this button, two more buttons will appear that will allow you to start your experiment as a test player or start a ['bot' \| automatic bot], which will make automated decisions. The bot is useful for experiments in groups (so you have to control only one test player while the other decisions are generated automatically), or for long experiments (in case you want to check whether all data is correctly recorded in the database).
+When developing your experiment, it is often useful to test you experiment by playing as a participant and inspecting the screens. The test mode will allow you to enter multiple times (i.e. control multiple *participants*) from the same browser. Once click this button, two more buttons will appear that will allow you to start your experiment as a test player or start a :ref:`bot <bots>` , which will make automated decisions. The bot is useful for experiments in groups (so you have to control only one test player while the other decisions are generated automatically), or for long experiments (in case you want to check whether all data is correctly recorded in the database).
 
 .. _control_panel__terminate_player:
 
 Terminate player
 ~~~~~~~~~~~~~~~~
 
-You can manually remove a participant from a session by entering their value of 'playerNr' in the field next to 'Terminate player'. This will take that participant to a screen indicating that they can no longer proceed. The software will treat this participant as a 'dropout', that is, the group will proceed according to the :ref:`dropout handling <parameters__dropouthandling>` settings. Note that terminating a participant is a 'last resort' measure.
+You can manually remove a participant from a session by entering their value of *playerNr* in the field next to *Terminate player*. This will take that participant to a screen indicating that they can no longer proceed. The software will treat this participant as a *dropout*, that is, the group will proceed according to the :ref:`dropout handling <parameters__dropouthandling>` settings. Note that terminating a participant is a *last resort* measure.
 
 Export database
 ~~~~~~~~~~~~~~~
@@ -108,18 +108,22 @@ Monitor
 
 The bottom section allows you to monitor of a session and track the participants' progress. You can browse the :ref:`tables <experiment_tables>`  underlying the experiment by clicking on the different tabs.
 
-During a session, basic information about the entered participants will appear in the 'core' table. By clicking the 'display options' button, you can choose which variables in this table you want to track. Clicking the buttons with the variable names will make them visible in the page section below. This section will be updated every second. Among the most useful variables are: playerNr, groupNr, period and onPage. The 'onPage' variable tracks which page a participant is currently watching. These pages are marked with stars (indicating :ref:`defining_your_screens__active_screen`) or dashes (indicating :ref:`defining_your_screens__waiting_screen`).
+During a session, basic information about the entered participants will appear in the *core* table. By clicking the *display options* button, you can choose which variables in this table you want to track. Clicking the buttons with the variable names will make them visible in the page section below. This section will be updated every second. Among the most useful variables are: playerNr, groupNr, period and onPage. The *onPage* variable tracks which page a participant is currently watching. These pages are marked with stars (indicating :ref:`defining_your_screens__active_screen`) or dashes (indicating :ref:`defining_your_screens__waiting_screen`).
 
 .. image:: _static/Control_panel_3.png
    :alt:  800px
 
-In the example above, there are 5 participants in the experiment. Participants 1-4 have just passed the lobby and have been grouped together - the value of groupNr is *1* for each of these participants. They are currently in period 1, on the page *Decision*. Participant 5 is currently on a page called 'Instructions' (which in this case comes before the lobby).
+In the example above, there are 5 participants in the experiment. Participants 1-4 have just passed the lobby and have been grouped together - the value of groupNr is *1* for each of these participants. They are currently in period 1, on the page *Decision*. Participant 5 is currently on a page called *Instructions* (which in this case comes before the lobby).
 
 Download data and payment files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+TBA
+
 IP-based location map
 ~~~~~~~~~~~~~~~~~~~~~~
+
+TBA
 
 .. _experiment_tables:
 
@@ -177,12 +181,12 @@ Countdown timer
 ~~~~~~~~~~~~~~~
 In interactive tasks, it is often useful to set timers on decisions to keep up the pace of the experiment. Countdown timers prompt participants to give responses within a set time, and reduces the waiting time for their group mates, which in turn reduces inattention and dropouts.
 
-.. image:: _static/timeoutpic.png
+.. image:: _static/Timeoutpic.png
    :alt:  500px
 
-To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the 'standard' timeout page. This page will show the participants the :ref:`message <parameters__message5>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
+To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the *standard* timeout page. This page will show the participants the :ref:`message <parameters__message5>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
 
-Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable 'TimeOut'. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
+Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable *TimeOut*. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
 
 .. code-block:: javascript
 

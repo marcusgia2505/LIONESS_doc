@@ -56,12 +56,12 @@ The Button element mainly functions as a trigger to move on to the next desired 
 Button label
 ************
 
-You can define the name of the button which will appear to the participant, in this case ‘continue.’
+You can define the name of the button which will appear to the participant, in this case *continue.*
 
 Proceed
 *******
 
-In the ‘proceed’ element, you can define whether pressing the button automatically leads to the next desired page or wait until all other participants press the button so that all participants can continue simultaneously. For the former case you can select ‘if possible,’ and for the latter case you can select ‘Wait for others.’
+In the *proceed* element, you can define whether pressing the button automatically leads to the next desired page or wait until all other participants press the button so that all participants can continue simultaneously. For the former case you can select *if possible,* and for the latter case you can select *Wait for others.*
 
 Appears after
 *************
@@ -126,7 +126,7 @@ This content will show the following screen to participants.
    :alt: example_numericInput.png
 
 
-In this element, you can collect participant’s responses in numbers.
+In this element, you can collect participant's responses in numbers.
 
 .. image:: _static/Numeric.png
    :alt: numeric.png
@@ -140,7 +140,7 @@ You can set the question to which the participants will be answering.
 Variable name
 *************
 
-You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant’s answers in Javascript or for analysis.
+You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant's answers in Javascript or for analysis.
 
 Minimum
 *******
@@ -158,7 +158,7 @@ Decimal place
 Correct value
 *************
 
-Optionally, you can set a correct value for the participants’ answer. If the participant’s response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
+Optionally, you can set a correct value for the participants' answer. If the participant's response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
 
 Required
 ********
@@ -189,13 +189,13 @@ Adding a radio line element prompts you to define the following:
 Text above
 **********
 
-Define the question to which the participants will answer. It will be located where ‘radioline’ is in the example.
+Define the question to which the participants will answer. It will be located where *radioline* is in the example.
 
 
 Variable name
 *************
 
-You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant’s answers in Javascript or for analysis.
+You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant's answers in Javascript or for analysis.
 
 
 Minimum
@@ -229,13 +229,13 @@ If you activate this element, then the participants will be able to proceed only
 Correct value
 *************
 
-Optionally, you can set a correct value for the participants’ answer. If the participant’s response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
+Optionally, you can set a correct value for the participants* answer. If the participant's response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
 
 Slider
 ~~~~~~
 
 .. image:: _static/Slider_example.png
-   :alt: slider_example.png
+   :alt: Slider_example.png
 
 
 This is an example of how a slider element looks like to the participants.
@@ -243,13 +243,13 @@ This is an example of how a slider element looks like to the participants.
 In this element, you can make a slider on which participants can indicate their discrete numerical answer by sliding the button onto a certain location in the slider. It is basically same as radio line.
 
 .. image:: _static/Slider.png
-   :alt: slider.png
+   :alt: Slider.png
 
 
 Variable name
 *************
 
-You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant’s answers in Javascript or for analysis.
+You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant's answers in Javascript or for analysis.
 
 
 Minimum
@@ -289,7 +289,7 @@ You can assign a name for the highest value on the slider. For example, if you w
 Correct value
 *************
 
-Optionally, you can set a correct value for the participants’ answer. If the participant’s response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
+Optionally, you can set a correct value for the participants' answer. If the participant's response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
 
 .. _discrete_choice:
 
@@ -335,7 +335,7 @@ Display the input field next to the text.
 Order of options
 ****************
 
-There are two ways of presenting options – one is ‘as stated’ and one is ‘random.’ In the former case, the order of options will appear exactly how the experimenter arranged the order, and for the latter the order of options will be random for each subject.
+There are two ways of presenting options – one is *as stated* and one is *random.* In the former case, the order of options will appear exactly how the experimenter arranged the order, and for the latter the order of options will be random for each subject.
 
 Display of options
 ******************
@@ -346,7 +346,7 @@ There are three ways to display options – vertical boxes, horizontal boxes, an
 Correct value
 *************
 
-Optionally, you can set a correct value for the participants’ answer. If the participant’s response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
+Optionally, you can set a correct value for the participants' answer. If the participant's response does not match this value, a warning sign will appear and participants will not be able to proceed to the next stage.
 
 
 Default
@@ -387,7 +387,7 @@ This is an example of a text input element shown in the actual experiment.
 Variable name
 *************
 
-You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant’s answers in Javascript or for analysis.
+You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant's answers in Javascript or for analysis.
 
 Minimum characters
 ******************
@@ -414,13 +414,13 @@ Back button
 ~~~~~~~~~~~
 
 .. image:: _static/Backbutton.png
-   :alt: backbutton.png
+   :alt: Backbutton.png
 
 
 Button label
 ************
 
-You can define the name of the button which will appear to the participant, in this case ‘back.’
+You can define the name of the button which will appear to the participant, in this case *back*.
 
 Back to
 *******

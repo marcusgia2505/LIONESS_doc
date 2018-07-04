@@ -7,7 +7,7 @@ Detailed instructions
 Develop
 =========================
 
-There are two basic ways to develop your LIONESS experiment. You can either start from scratch, or :ref:`build on an existing experiment <build_on_an_existing_experiment>`  The :ref:`repository`  a range of different LIONESS experiments for you to use and adjust to accommodate your requirements.
+There are two basic ways to develop your LIONESS experiment. You can either start from scratch, or :ref:`build on an existing experiment <build_on_an_existing_experiment>`. The :ref:`repository` a range of different LIONESS experiments for you to use and adjust to accommodate your requirements.
 
 Develop your LIONESS experiment from scratch
 ---------------------------------------------
@@ -122,7 +122,7 @@ For linking participants' earnings to their IDs in crowdsourcing platforms (wher
 
    randomID = getInt('session', 'playerNr='+playerNr, 'randomid');
 
-Subsequently, you can display this ID to the participant screen in the usual way by :ref:`using the dollar signs <javascript__access_the_variables>`. You can prompt the participants to fill out this code on the crowdsourcing website to ref:`arrange their payment <run__arrange_your_payments>`.
+Subsequently, you can display this ID to the participant screen in the usual way by :ref:`using the dollar signs <javascript__access_the_variables>`. You can prompt the participants to fill out this code on the crowdsourcing website to :ref:`arrange their payment <run__arrange_your_payments>`.
 
 Setting parameters
 ------------------
@@ -154,7 +154,7 @@ In case you want to make any changes to your screens, you can go back to LIONESS
 Test mode
 ~~~~~~~~~~~~~~~~
 
-.. image:: _static/start_testing.png
+.. image:: _static/Start_testing.png
    :alt:  400px
 
 
@@ -164,6 +164,8 @@ Testplayers
 ~~~~~~~~~~~~~~~~
 
 When you click *Start testplayer*, a new tab opens in your browser, which takes you to the first stage of your experiment. You can see the screens that a participant in your experiment would see. Multiple testplayers are supported.
+
+.. _bots:
 
 Bots
 ~~~~
@@ -400,7 +402,7 @@ Adjust your credentials
 
 In the LIONESS experiment you downloaded from LIONESS Lab, located the file *credentials.php*. In this file you have to set the username and password of your server. You also have to specify the name of the database you intend to use for your experiment (see below).
 
-.. image:: _static/credentials.png
+.. image:: _static/Credentials.png
    :alt:  200px
 
 
@@ -510,6 +512,7 @@ The MTurk HIT will include a link to the LIONESS experiment. You can
 have the participants complete the experiment in a new window, in which
 you disable the navigation bar. You can add this piece of code to the
 link:
+
 .. code-block:: javascript
 
    function width() { return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || 0; } function height() { return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0; }
@@ -545,7 +548,7 @@ We will use Bitnami to set up a pay-as-you-go server that you can take offline a
 
 Share with others
 =========================
-LIONESS Lab encourages its users to share their experiments once they are ready. Experiments are shared through the :ref:`repository`. By sharing your experiments, you will contribute to the number of experimental designs that are available for others to build on.
+LIONESS Lab encourages its users to share their experiments once they are ready. Experiments are shared through the :ref:`repository`. By sharing your experiments, you will contribute to the number of experimental designs that are available for others to build on.
 
 Sharing your experiments is important for a number of reasons. A large set of usable and customisable designs facilitates the easy development of experiments, and helps avoiding that experimenters are re-inventing the wheel by programming from scratch their own solutions to common issues. Moreover it promotes reproducibility of experimental methods and results.
 
@@ -574,7 +577,7 @@ You can search for experiments by using the field on the top right.
 
 In case you with to view an experiment, you can simply import it to your account by clicking on the *+* sign. The system will take you right to your own account, and the newly imported experiment will be ready for viewing. Note that you cannot make any changes until you have made a copy of the imported experiment in your own account.
 
-.. image:: _static/import_experiment.png
+.. image:: _static/Import_experiment.png
    :alt:  600px
 
 

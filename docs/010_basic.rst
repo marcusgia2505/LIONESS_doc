@@ -92,13 +92,11 @@ Stage 2: Control questions
 
 In the next stage, we will define a set of control questions to ensure that participants have understood the instructions. Click on the tab *Stage 2* and name this stage *Control questions*. In the broad horizontal bar, set the :ref:`stage_type` to *quiz*. In quiz stages, the experimental software automatically records the number of attempts by each participant to answer the control questions.
 
-Announce the control questions in the pre-loaded text box. To add your
-first control question, click :ref:`adding_an_element` and choose :ref:`numeric_input` from the drop-down list. Small *paste* icons will appear between each of the elements in the screen. Click on the icon right under the text box to add the numeric input element. Once this element is added to the screen you can write the question in the *text* field of the element. In this case, write ``Suppose that in a round, each group member (including yourself) contributes 10 points to the group project. How many points will each of you earn in that round?``.
+Announce the control questions in the pre-loaded text box. To add your first control question, click :ref:`adding_an_element` and choose :ref:`numeric_input` from the drop-down list. Small *paste* icons will appear between each of the elements in the screen. Click on the icon right under the text box to add the numeric input element. Once this element is added to the screen you can write the question in the *text* field of the element. In this case, write *Suppose that in a round, each group member (including yourself) contributes 10 points to the group project. How many points will each of you earn in that round?*.
 
-Add a variable name, say *control_question1*. Specify the range of numbers that participants may enter. In this case you can set the
-*minimum* to 0 and the *maximum* to 100. Set the *decimal place* to *0* such that the participants' screen will only accept integers as a response to this question. By clicking the *required** switch you can make sure that participants require to give a response to an element. Set the field *correct value* to 15.
+Add a variable name, say *control_question1*. Specify the range of numbers that participants may enter. In this case you can set the *minimum* to 0 and the *maximum* to 100. Set the *decimal place* to *0* such that the participants' screen will only accept integers as a response to this question. By clicking the *required* switch you can make sure that participants require to give a response to an element. Set the field *correct value* to 15.
 
-.. image:: _static/controlquestion.png
+.. image:: _static/Controlquestion.png
    :alt:  600px
 
 Finally, add a button to the screen by clicking *add new element* and select the *button*. Add it to the bottom of the screen by clicking the paste icon right below the *numeric input* field you just created. Keep the defaults for now.
@@ -108,22 +106,19 @@ Stage 3: Lobby
 
 The next stage will be a *lobby* in which participants wait to be grouped with others. In this case we will form a group as soon as three participants have completed the control questions and are ready to start the interaction phase of the experiment. Add a new stage to your experiment by clicking the *+* sign in the tab next to Stage 2 [add screenshot]. A new Stage tab will appear. In the horizontal blue bar, set its stage type to *lobby* and name the stage *Lobby*.
 
-Set the timer to 300 seconds and delete the *button* (we do not need a button in the lobby). When participants are still waiting to be matched with others after this time has passed, they will automatically get the choice to either return to the lobby and wait for two more minutes, or to proceed to another stage (defined in the *leave to* field, we will get to that later). In the active screen, the default text in the lobby reads "Wait for the other members of your group to complete the control questions." For now we do not need to define anything here. We do not need any buttons in this screen. The software will forward the participants as soon as a group has been formed.
+Set the timer to 300 seconds and delete the *button* (we do not need a button in the lobby). When participants are still waiting to be matched with others after this time has passed, they will automatically get the choice to either return to the lobby and wait for two more minutes, or to proceed to another stage (defined in the *leave to* field, we will get to that later). In the active screen, the default text in the lobby reads *Wait for the other members of your group to complete the control questions.* For now we do not need to define anything here. We do not need any buttons in this screen. The software will forward the participants as soon as a group has been formed.
 
 Stage 4: Decision
 ~~~~~~~~~~~~~~~~~
 
 Once three participants are in the lobby, they will be matched and will be directed to the decision screen. In the Decision stage, participants will be asked to choose their contribution to the group project. First, add a new stage to your experiment with the *+* sign. In the new stage, set the name to *decision*. To indicate in which period participants currently are, we require the variables *period* and *numberPeriods*. These two are among the :ref:`standard_variables` that are automatically loaded in the JavaScript of each stage. In the text box you can display JavaScript variables by using dollar signs around their names. Here you can write: Round $period$ of $numberPeriods$.
 
-To add the field in which the participants can enter their contributions, click *add new element*, choose *numeric input* and paste this element below the text box you just defined. In the *text* field of this element, you can write:
-``You received 10 points to start with.``
-``How many points (0-10) do you want to contribute to the group project?``.
-Set the variable name to *contribution*, set the minimum to 0, the maximum to 10 and the decimals to 0. Switch on the *required* option to ensure that all participants make a decision, which will be stored in the *decisions table* of this experiment's :ref:`database <experiment_tables__decisions>`. Finally, in the button at the bottom of the screen, specify *proceed* as *wait for others*. This will ensure that the participants will only be able to continue to the next stage when all group members are ready. Participants will wait for others in the *waiting screen* on the right hand side section. When nothing is defined in the waiting screen, a default waiting text will be shown. For now we can leave the waiting screen undefined.
+To add the field in which the participants can enter their contributions, click *add new element*, choose *numeric input* and paste this element below the text box you just defined. In the *text* field of this element, you can write: *You received 10 points to start with. How many points (0-10) do you want to contribute to the group project?*. Set the variable name to *contribution*, set the minimum to 0, the maximum to 10 and the decimals to 0. Switch on the *required* option to ensure that all participants make a decision, which will be stored in the *decisions table* of this experiment's :ref:`database <experiment_tables__decisions>`. Finally, in the button at the bottom of the screen, specify *proceed* as *wait for others*. This will ensure that the participants will only be able to continue to the next stage when all group members are ready. Participants will wait for others in the *waiting screen* on the right hand side section. When nothing is defined in the waiting screen, a default waiting text will be shown. For now we can leave the waiting screen undefined.
 
 Stage 5: Results
 ~~~~~~~~~~~~~~~~
 
-Once all participants in a group have made their decisions, they will be shown the outcome of that period. First, again, add a new stage to your experiment with the *+* sign. Name this new stage "results". To calculate the outcome of this period of the public goods game, we need to get the decisions of the others from the database. LIONESS Lab provides a set of :ref:`javascript_functions` to do this in a simple way. In the Javascript element, you can copy the code from Box 3.
+Once all participants in a group have made their decisions, they will be shown the outcome of that period. First, again, add a new stage to your experiment with the *+* sign. Name this new stage *results*. To calculate the outcome of this period of the public goods game, we need to get the decisions of the others from the database. LIONESS Lab provides a set of :ref:`javascript` to do this in a simple way. In the Javascript element, you can copy the code from Box 3.
 
 Note that JavaScript code will be executed in the browsers of the participants, so any JavaScript code should be written from the perspective of the participant.
 
@@ -135,7 +130,6 @@ The Results stage is the second and last stage of a period. To define the correc
 
 For now you can leave the *next stage* field of the button empty.
 
-</div>
 
 .. code-block:: javascript
    :caption: Box 3: JS code for public goods logic
