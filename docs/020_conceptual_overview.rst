@@ -7,10 +7,7 @@ Conceptual overview
 Architecture
 =============
 
-LIONESS experiments regulate the information flow between participants. Before a session, the experimenter uploads the LIONESS experiment to the
-server. In a typical online experiment participants log in to the server via a link posted on a crowd-sourcing website (e.g. `Amazon Mechanical
-Turk <http://www.mturk.com>`__). Participants interact through their web browsers and receive a code to collect their payment upon completion.
-Throughout the session, the :ref:`control panel <control_panel>` displays the participants' progress in the experiment.
+LIONESS experiments regulate the information flow between participants. Before a session, the experimenter uploads the LIONESS experiment to the server. In a typical online experiment participants log in to the server via a link posted on a crowd-sourcing website (e.g. `Amazon Mechanical Turk <http://www.mturk.com>`__). Participants interact through their web browsers and receive a code to collect their payment upon completion. Throughout the session, the :ref:`control panel <control_panel>` displays the participants' progress in the experiment.
 
 .. image:: _static/Technicalflow.png
    :alt:  600px
