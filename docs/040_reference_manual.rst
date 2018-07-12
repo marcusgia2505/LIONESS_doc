@@ -1,6 +1,121 @@
 =========================
 Reference manual
 =========================
+.. _javascript:
+
+
+JavaScript
+=========================
+
+LIONESS experiments use JavaScript to do calculations and to interact with the :ref:`database <experiment_tables>` `JavaScript <http://www.w3schools.com/js/default.asp>`__ (JS) is a widely used language for web programming. JS is executed in the browser of the participants (so, not on the server).
+
+JavaScript code can be added to any stage of your LIONESS experiment through a :ref:`JavaScript element <elements__javascript_program>`.
+
+.. _javascript__access_the_variables:
+
+Access JS variables
+------------------------------------
+
+Values of JS variables can be accessed in other elements (e.g. a text box) by adding dollar signs on both sides of the variable name (e.g. `$contribution$`).
+
+.. _standard_variables:
+
+Default variables
+------------------
+
+When a participant's page loads, all variables defined in the :ref:`parameters table <parameters>` are loaded. This is also true for the
+following default variables from the :ref:`core table <experiment_tables__core>`. This means that these variables are defined (i.e. have a value) in every screen and their values are accessible in JS.
+
+============== ================================
+Variable name   Details
+============== ================================
+playerNr        Number of the focal player within the session
+groupNr         Group number of the focal player
+subjectNr       Player number of the focal player within group
+period          Period number of the focal player within session
+tStart          System time in seconds upon page load
+============== ================================
+
+.. _javascript__interacting_with_the_database:
+
+Interacting with the database
+------------------------------------
+
+Variables specified in input elements' (numeric input, choice buttons, etc) will be automatically stored in the table *decisions*.
+
+JavaScript elements allow you to read from and write to the database, using the below functions. Note that each function has a *simple* and a *full* version. The simple versions always assume that the function pertains to the current player, the current group, and the current period. In the below examples, the simple and full versions are equivalent.
+
+
+Writing to the database
+-----------------------
+
+You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. Note that, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*.
+
+================  ==================================================== ===================================== ====================================
+Function          Arguments                                            Simple example                        Full example
+                   (italic = optional)                                 (no optional parameters)              (with optional parameters)
+----------------  ---------------------------------------------------- ------------------------------------- ------------------------------------
+setValue()        *table name, condition,* variable name               setValue('payoffThisPeriod');         setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod');
+record()          variable name, value                                 record('PGGshare', publicGoodShare);
+setBonus()        amount                                               setBonus(payoff);
+================  ==================================================== ===================================== ====================================
+
+ - The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'.
+ - The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
+
+** The value argument cannot contain any operators, such as the *+* or the *-* sign.**
+
+Reading from the database
+-------------------------
+================  ==================================================== ============ =============================== ====================================
+Function           Arguments                                           Return value Simple example                  Full example
+                   (italic = optional)                                              (no optional parameters)        (with optional parameters)
+----------------  ---------------------------------------------------- ------------ ------------------------------- ------------------------------------
+getValue()        *table name, condition,* variable name               One element  getValue('someVariable');       getValue('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
+getValues()       *table name, condition,* variable name               Array        getValues('someVariable');      getValues('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
+================  ==================================================== ============ =============================== ====================================
+
+There are special functions for retrieving the values from others in your group, in the current period.
+
+=================  ==================================================== ============ ===============================
+Function           Arguments                                            Return value  Simple example
+                   (italic = optional)                                                (no optional parameters)
+-----------------  ---------------------------------------------------- ------------ -------------------------------
+getValuesOthers()  variable name                                        Array        getValuesOthers('someText');
+=================  ==================================================== ============ ===============================
+
+The obsolete functions `getInt()` and `getFloat()` are replaced by `getValue()`. The new `getValue()` function automatically returns the right type of variable (text, integer or float). The functions `getInt()` and
+`getFloat()` are still supported in old experiments. The same is true for the variants of `getValue()`.
+
+.. _javascript__debugging_your_javascript_code:
+
+Debugging your JavaScript code
+------------------------------------
+
+Needless to say, it is critical for the functioning experiments that the program code works correctly. The JS editor in LIONESS Lab provides some support in detecting syntax errors, but not all bugs in your code will
+be automatically detected. These bugs will only surface when you test your experiment.
+
+The JavaScript code of LIONESS experiments is executed in the participants' browsers. In case variables are displayed as *NaN*, or not displayed at all, chances are that your JS code has not been executed
+correctly. One downside of JavaScript is that the code stops being evaluated after the evaluation process has run into a mistake.
+
+But, don't worry. Many browsers will have built-in solutions to track the error on the page. While testing your experiment as a *Test player*, you can activate these solutions to keep track of any JavaScript errors that might occur.
+
+In Chrome, you can start the Developer Tools, simply by pressing F12 on your keyboard. Your screen will be split, showing the original page, and its underlying code (which you generated with LIONESS Lab). On the top of this *code* section you find a number of tabs (Elements, Console, Sources, ...). The execution of JavaScript can be viewed in the Console tab. In the majority of cases, bugs are easily identified here. Common bugs are spelling mistakes in variables, or mistakes in calling functions.
+
+When you have spotted the mistake on a participant page, you can go back to LIONESS Lab and spot the mistake in the JS code in the corresponding screen. If you make a change, you can press *Compile and test* and then *recompile experiment (keep tables)* to immediately see whether your change has fixed the bug.
+
+In Firefox, a very similar tool is available, called `Firebug <https://addons.mozilla.org/en-US/firefox/addon/firebug/>`__. This is a plugin with a functionality very similar to Chrome's Developer Tools.
+
+Commenting your JavaScript code
+------------------------------------
+
+It is always a good idea to add comments to your code. It makes your code transparent to others and can also help you understanding it when you get back to it at a later time. Now, the usual way to add comments to JS code (e.g. for adding clarifications), is by using the double slash "//". Note that not all web servers will interpret this code the same way. This has to do with line breaks surrounding this code. To prevent your code from being corrupted, use "/\* ... \*/", where the any comments go on the placeholder dots.
+
+
+.. _javascript_code_snippets:
+
+TBA
+
 
 .. _elements:
 
@@ -51,7 +166,7 @@ Button
 .. image:: _static/Button.png
    :alt: button.png
 
-The Button element mainly functions as a trigger to move on to the next desired stage. There are six sub~elements in the Button element. They are like the following:
+The Button element mainly functions as a trigger to move on to the next desired stage. There are six sub elements in the Button element. They are like the following:
 
 Button label
 ************
@@ -85,9 +200,9 @@ If you want to execute JavaScript code when a participant clicks a button, you c
 
 .. code-block:: javascript
 
-   if (value1+value2!= 10) { 
-      showError('The total number should be 10!');
-      return false; 
+   if (value1+value2 != 10) {
+      showError('The total number should be 10!');
+      return false;
       }
 
 
@@ -335,12 +450,12 @@ Display the input field next to the text.
 Order of options
 ****************
 
-There are two ways of presenting options – one is *as stated* and one is *random.* In the former case, the order of options will appear exactly how the experimenter arranged the order, and for the latter the order of options will be random for each subject.
+There are two ways of presenting options - one is *as stated* and one is *random.* In the former case, the order of options will appear exactly how the experimenter arranged the order, and for the latter the order of options will be random for each subject.
 
 Display of options
 ******************
 
-There are three ways to display options – vertical boxes, horizontal boxes, and dropdown list.
+There are three ways to display options - vertical boxes, horizontal boxes, and dropdown list.
 
 
 Correct value
@@ -360,7 +475,7 @@ Here, you can define among how many discrete choices the participants can make t
 Options
 *******
 
-You can write the name of the options which will be appeared to the participants. Also, presenting images instead of text is possible by providing a link: <img src = “link of the image”>. Beware that the image should be uploaded on another open access website. The 'value' for each options will be recorded to the database, and can be used for later analysis or Javascript program.
+You can write the name of the options which will be appeared to the participants. Also, presenting images instead of text is possible by providing a link: <img src = ?link of the image?>. Beware that the image should be uploaded on another open access website. The 'value' for each options will be recorded to the database, and can be used for later analysis or Javascript program.
 
 Element reference
 ~~~~~~~~~~~~~~~~~
@@ -432,7 +547,7 @@ In this menu, you can define onto which stage the experiment will go back. The d
 Stage type
 =========================
 
-There are three different types of stages, the names of which are largely self-explanatory.
+There?are?three?different?types?of?stages,?the?names?of?which?are?largely?self-explanatory.
 
 Standard
 --------
@@ -472,119 +587,25 @@ Before the lobby, experimenters can assign different *roles* to players (using t
  - **Groups with unique roles**. As soon as at least 1 participant with each role 1...n is present (where n is the group size), a group will be formed.
  - **Group with the same role**. Groups are formed of participants with the *same* role. This is useful when you have different treatments in the same session, and participants from the same treatment need to be grouped together.
 
-.. _javascript:
+.. _stage_and_element__countdown_timer:
 
-JavaScript
-=========================
+Countdown timer
+~~~~~~~~~~~~~~~
+In interactive tasks, it is often useful to set timers on decisions to keep up the pace of the experiment. Countdown timers prompt participants to give responses within a set time, and reduces the waiting time for their group mates, which in turn reduces inattention and dropouts.
 
-LIONESS experiments use JavaScript to do calculations and to interact with the :ref:`database <experiment_tables>` `JavaScript <http://www.w3schools.com/js/default.asp>`__ (JS) is a widely used language for web programming. JS is executed in the browser of the participants (so, not on the server).
+.. image:: _static/Timeoutpic.png
+   :alt:  500px
 
-JavaScript code can be added to any stage of your LIONESS experiment through a :ref:`JavaScript element <elements__javascript_program>`.
+To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the *standard* timeout page. This page will show the participants the :ref:`message <parameters__message5>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
 
-.. _javascript__access_the_variables:
+Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable *TimeOut*. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
 
-Access JS variables
-------------------------------------
+.. code-block:: javascript
 
-Values of JS variables can be accessed in other elements (e.g. a text box) by adding dollar signs on both sides of the variable name (e.g. `$contribution$`).
+   if?(period?<?3){
+     TimeOut=120;
+	}
 
-.. _standard_variables:
-
-Default variables
-------------------
-
-When a participant's page loads, all variables defined in the :ref:`parameters table <parameters>` are loaded. This is also true for the
-following default variables from the :ref:`core table <experiment_tables__core>`. This means that these variables are defined (i.e. have a value) in every screen and their values are accessible in JS.
-
-============== ================================
-Variable name   Details
-============== ================================
-playerNr        Number of the focal player within the session
-groupNr         Group number of the focal player
-subjectNr       Player number of the focal player within group
-period          Period number of the focal player within session
-tStart          System time in seconds upon page load
-============== ================================
-
-.. _javascript__interacting_with_the_database:
-
-Interacting with the database
-------------------------------------
-
-Variables specified in input elements' (numeric input, choice buttons, etc) will be automatically stored in the table *decisions*.
-
-JavaScript elements allow you to read from and write to the database, using the below functions. Note that each function has a *simple* and a *full* version. The simple versions always assume that the function pertains to the current player, the current group, and the current period. In the below examples, the simple and full versions are equivalent.
-
-
-Writing to the database
------------------------
-
-You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. Note that, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*.
-
-================  ==================================================== ===================================== ====================================
-Function          Arguments                                            Simple example                        Full example
-                   (italic = optional)                                 (no optional parameters)              (with optional parameters)
-----------------  ---------------------------------------------------- ------------------------------------- ------------------------------------
-setValue()        *table name, condition,* variable name               setValue('payoffThisPeriod');         setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod');
-record()          variable name, value                                 record('PGGshare', publicGoodShare);
-setBonus()        amount                                               setBonus(payoff);
-================  ==================================================== ===================================== ====================================
-
- - The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'.
- - The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
-
-** The value argument cannot contain any operators, such as the *+* or the *-* sign.**
-
-Reading from the database
--------------------------
-================  ==================================================== ============ =============================== ====================================
-Function           Arguments                                           Return value Simple example                  Full example
-                   (italic = optional)                                              (no optional parameters)        (with optional parameters)
-----------------  ---------------------------------------------------- ------------ ------------------------------- ------------------------------------
-getValue()        *table name, condition,* variable name               One element  getValue('someVariable');       getValue('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
-getValues()       *table name, condition,* variable name               Array        getValues('someVariable');      getValues('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
-================  ==================================================== ============ =============================== ====================================
-
-There are special functions for retrieving the values from others in your group, in the current period.
-
-=================  ==================================================== ============ ===============================
-Function           Arguments                                            Return value  Simple example
-                   (italic = optional)                                                (no optional parameters)
------------------  ---------------------------------------------------- ------------ -------------------------------
-getValuesOthers()  variable name                                        Array        getValuesOthers('someText');
-=================  ==================================================== ============ ===============================
-
-The obsolete functions `getInt()` and `getFloat()` are replaced by `getValue()`. The new `getValue()` function automatically returns the right type of variable (text, integer or float). The functions `getInt()` and
-`getFloat()` are still supported in old experiments. The same is true for the variants of `getValue()`.
-
-.. _javascript__debugging_your_javascript_code:
-
-Debugging your JavaScript code
-------------------------------------
-
-Needless to say, it is critical for the functioning experiments that the program code works correctly. The JS editor in LIONESS Lab provides some support in detecting syntax errors, but not all bugs in your code will
-be automatically detected. These bugs will only surface when you test your experiment.
-
-The JavaScript code of LIONESS experiments is executed in the participants' browsers. In case variables are displayed as *NaN*, or not displayed at all, chances are that your JS code has not been executed
-correctly. One downside of JavaScript is that the code stops being evaluated after the evaluation process has run into a mistake.
-
-But, don't worry. Many browsers will have built-in solutions to track the error on the page. While testing your experiment as a *Test player*, you can activate these solutions to keep track of any JavaScript errors that might occur.
-
-In Chrome, you can start the Developer Tools, simply by pressing F12 on your keyboard. Your screen will be split, showing the original page, and its underlying code (which you generated with LIONESS Lab). On the top of this *code* section you find a number of tabs (Elements, Console, Sources, ...). The execution of JavaScript can be viewed in the Console tab. In the majority of cases, bugs are easily identified here. Common bugs are spelling mistakes in variables, or mistakes in calling functions.
-
-When you have spotted the mistake on a participant page, you can go back to LIONESS Lab and spot the mistake in the JS code in the corresponding screen. If you make a change, you can press *Compile and test* and then *recompile experiment (keep tables)* to immediately see whether your change has fixed the bug.
-
-In Firefox, a very similar tool is available, called `Firebug <https://addons.mozilla.org/en-US/firefox/addon/firebug/>`__. This is a plugin with a functionality very similar to Chrome's Developer Tools.
-
-Commenting your JavaScript code
-------------------------------------
-
-It is always a good idea to add comments to your code. It makes your code transparent to others and can also help you understanding it when you get back to it at a later time. Now, the usual way to add comments to JS code (e.g. for adding clarifications), is by using the double slash "//". Note that not all web servers will interpret this code the same way. This has to do with line breaks surrounding this code. To prevent your code from being corrupted, use "/\* ... \*/", where the any comments go on the placeholder dots.
-
-
-.. _javascript_code_snippets:
-
-TBA
 
 .. _main_menu:
 

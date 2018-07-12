@@ -3,6 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+==================================================
 Welcome to the LIONESS Lab documentation!
 ==================================================
 
@@ -12,12 +13,30 @@ With LIONESS Lab you can readily develop and test your LIONESS experiments onlin
 
 Once your LIONESS experiment is ready, you can download it and run it on your own server. Participants can then invited to online sessions, e.g. by using Amazon Mechanical Turk (MTurk). At the end of a session, you can download a spreadsheet with the data, as well as a file to automate bonus payments on MTurk. Using LIONESS Lab you can choose to share LIONESS experiments with your co-authors and other experimenters.
 
+.. _architecture:
+
+Architecture
+=============
+
+LIONESS experiments regulate the information flow between participants. Before a session, the experimenter uploads the LIONESS experiment to the server. In a typical online experiment participants log in to the server via a link posted on a crowd-sourcing website (e.g. `Amazon Mechanical Turk <http://www.mturk.com>`__). Participants interact through their web browsers and receive a code to collect their payment upon completion. Throughout the session, the :ref:`control panel <control_panel>` displays the participants' progress in the experiment.
+
+.. image:: _static/Technicalflow.png
+   :alt:  600px
+
+
+Standardized methods
+==========================
+
+LIONESS experiments provide a set of standarized methods for group formation, attrition and other challenges of interactive online experiments. This is extensively discussed in a `this <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__ paper by Arechar et al.
+
+Table of content
+==========================
+
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 10
    :glob:
 
    010_basic
-   020_conceptual_overview
    030_detailed_instructions
    040_reference_manual
    050_further_details

@@ -10,6 +10,11 @@ Look how easy it is to use:
     # Get your stuff done
     project.do_stuff()
 
+How to build
+=============
+C:\Python34\Scripts> sphinx-build.exe -anE -B html  C:\Users\yahosseini\workspace\code\lioness_doc\docs  C:\Users\yahosseini\workspace\code\lioness_doc\out
+
+
 Features
 --------
 
