@@ -16,7 +16,7 @@ Once your LIONESS experiment is ready, you can download it and run it on your ow
 .. _architecture:
 
 Architecture
-=============
+------------
 
 LIONESS experiments regulate the information flow between participants. Before a session, the experimenter uploads the LIONESS experiment to the server. In a typical online experiment participants log in to the server via a link posted on a crowd-sourcing website (e.g. `Amazon Mechanical Turk <http://www.mturk.com>`__). Participants interact through their web browsers and receive a code to collect their payment upon completion. Throughout the session, the :ref:`control panel <control_panel>` displays the participants' progress in the experiment.
 
@@ -25,7 +25,7 @@ LIONESS experiments regulate the information flow between participants. Before a
 
 
 Standardized methods
-==========================
+--------------------
 
 LIONESS experiments provide a set of standarized methods for group formation, attrition and other challenges of interactive online experiments. This is extensively discussed in a `this <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__ paper by Arechar et al.
 
