@@ -12,7 +12,7 @@ Look how easy it is to use:
 
 How to build
 =============
-C:\Python34\Scripts> sphinx-build.exe -anE -B html  C:\Users\yahosseini\workspace\code\lioness_doc\docs  C:\Users\yahosseini\workspace\code\lioness_doc\out
+C:\Python34\Scripts> sphinx-build.exe -anE -b html  C:\Users\yahosseini\workspace\code\lioness_doc\docs  C:\Users\yahosseini\workspace\code\lioness_doc\out
 
 
 Features
