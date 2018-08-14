@@ -1,295 +1,82 @@
 =========================
 Reference manual
 =========================
-.. _javascript:
 
 
-JavaScript
+.. _stage_type:
+
+Stage type
 =========================
 
-LIONESS experiments use JavaScript to do calculations and to interact with the :ref:`database <experiment_tables>` `JavaScript <http://www.w3schools.com/js/default.asp>`__ (JS) is a widely used language for web programming. JS is executed in the browser of the participants (so, not on the server).
+There are three different types of stages, the names of which are largely self-explanatory.
 
-JavaScript code can be added to any stage of your LIONESS experiment through a :ref:`JavaScript element <elements__javascript_program>`.
+.. _stage_type__standard:
 
-.. _javascript__access_the_variables:
+Standard
+--------
 
-Access JS variables
-------------------------------------
+Standard stages are the most commonly used types. In this stage types, all :ref:`elements` are available to use. This stage type is typically used for instructions, screens that require responses, and feedback screens.
 
-Values of JS variables can be accessed in other elements (e.g. a text box) by adding dollar signs on both sides of the variable name (e.g. `$contribution$`).
+.. _quiz:
 
-.. _standard_variables:
+Quiz
+----
 
-Default variables
-------------------
+Quiz stages have the same functionality available as Standard stages, but there is one feature on top of that. For Quiz stages, LIONESS documents the number of attempts a participant needs to proceed. Typically, input :ref:`elements` in quiz stages will have the field *correct value* defined. The variable *quizFail* in the :ref:`session table <experiment_tables__session>` tracks the total number of attempts a participant has made.  For each player, it both stores the total and by-item number of mistakes.
 
-When a participant's page loads, all variables defined in the :ref:`parameters table <parameters>` are loaded. This is also true for the
-following default variables from the :ref:`core table <experiment_tables__core>`. This means that these variables are defined (i.e. have a value) in every screen and their values are accessible in JS.
+.. _lobby:
 
-================= ================================
-Variable name     Details
-================= ================================
-playerNr          Number of the focal player within the session
-groupNr           Group number of the focal player
-subjectNr         Player number of the focal player within group
-period            Period number of the focal player within session
-tStart            System time in seconds upon page load
-currentGroupSize
-role
-bot
-randomid
-================= ================================
+Lobby
+-----
 
+In lobby stages, participants are matched in groups. The matching procedure is defined *globally* in the :ref:`parameter table <parameters>`. In case no elements are defined in a lobby stage, a default text will be shown, along with an auto-updated message indicating how many other participants are currently needed to form a group. This message gives the participants an idea how long they will have to wait before their interactive task starts (see example below).
 
+.. image:: _static/Lobby.png
+   :alt:  500px
 
 
-.. _javascript__interacting_with_the_database:
+**Important**: for the time being, matching procedures in the lobby depend on global parameters, **LIONESS experiments currently only
+support one lobby**.
 
-Interacting with the database
-------------------------------------
+.. _matching_procedures:
 
-Variables specified in input elements' (numeric input, choice buttons, etc) will be automatically stored in the table *decisions*.
+Matching procedures
+-------------------
 
-JavaScript elements allow you to read from and write to the database, using the below functions. Note that each function has a *simple* and a *full* version. The simple versions always assume that the function pertains to the current player, the current group, and the current period. In the below examples, the simple and full versions are equivalent.
+Once sufficiently many participants are in the lobby a group can be formed. Experimenters can choose 3 types of matching:
 
+:First come, first serve: As soon as sufficiently many participants are in the lobby, a group will be formed.
 
-Writing to the database
------------------------
+Before the lobby, experimenters can assign different *roles* to players (using the variable *role* in the :ref:`core table <experiment_tables__core>`). The other two available types of matching make use of this variable 'role' to form groups.
 
-You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. Note that, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. Italic function parameters are optional.
+:Groups with unique roles: As soon as at least 1 participant with each role 1...n is present (where n is the group size), a group will be formed.
 
-:Function: setValue()
+:Group with the same role: Groups are formed of participants with the *same* role. This is useful when you have different treatments in the same session, and participants from the same treatment need to be grouped together.
 
-   :Arguments: *table name, condition,* variable name
+.. _stage_and_element__countdown_timer:
 
-   :Simple example: setValue('payoffThisPeriod');
+Countdown timer
+~~~~~~~~~~~~~~~
+In interactive tasks, it is often useful to set timers on decisions to keep up the pace of the experiment. Countdown timers prompt participants to give responses within a set time, and reduces the waiting time for their group mates, which in turn reduces inattention and dropouts.
 
-   :Full example: setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod');
+.. image:: _static/Timeoutpic.png
+   :alt:  500px
 
+To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the *standard* timeout page. This page will show the participants the :ref:`message <parameters__messages>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
 
-:Function: record()
+Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable *TimeOut*. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
 
-   :Arguments: variable name, value
+.. code-block:: javascript
 
-   :Simple example: record('PGGshare', publicGoodShare);
+   if (period < 3){
+     TimeOut=120;
+	}
 
 
-:Function: setBonus()
+.. _main_menu:
 
-   :Arguments: amount
+TBA
 
-   :Simple example: setBonus(payoff);
-
-
-The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'.
-
-The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
-
-** The value argument cannot contain any operators, such as the + or the - sign.**
-
-Reading from the database
--------------------------
-Italic function parameters are optional.
-
-:Function: getValue()
-
-   :Arguments: *table name, condition,* variable name
-
-   :Return value: one element
-
-   :Simple example: getValue('someVariable');
-
-   :Full example: getValue('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
-
-
-:Function: getValues()
-
-   :Arguments: *table name, condition,* variable name
-
-   :Return value: array
-
-   :Simple example: getValues('someVariable');
-
-   :Full example: getValues('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
-
-
-There are special functions for retrieving the values from others in your group, in the current period.
-
-:Function: getValuesOthers()
-
-   :Arguments: *table name, condition,* variable name
-
-   :Return value: array
-
-   :Simple example: getValuesOthers('someVariable');
-
-
-.. _javascript__debugging_your_javascript_code:
-
-Debugging your JavaScript code
-------------------------------------
-
-Needless to say, it is critical for the functioning experiments that the program code works correctly. The JS editor in LIONESS Lab provides some support in detecting syntax errors, but not all bugs in your code will
-be automatically detected. These bugs will only surface when you test your experiment.
-
-The JavaScript code of LIONESS experiments is executed in the participants' browsers. In case variables are displayed as *NaN*, or not displayed at all, chances are that your JS code has not been executed
-correctly. One downside of JavaScript is that the code stops being evaluated after the evaluation process has run into a mistake.
-
-But, don't worry. Many browsers will have built-in solutions to track the error on the page. While testing your experiment as a *Test player*, you can activate these solutions to keep track of any JavaScript errors that might occur.
-
-In Chrome, you can start the Developer Tools, simply by pressing F12 on your keyboard. Your screen will be split, showing the original page, and its underlying code (which you generated with LIONESS Lab). On the top of this *code* section you find a number of tabs (Elements, Console, Sources, ...). The execution of JavaScript can be viewed in the Console tab. In the majority of cases, bugs are easily identified here. Common bugs are spelling mistakes in variables, or mistakes in calling functions.
-
-When you have spotted the mistake on a participant page, you can go back to LIONESS Lab and spot the mistake in the JS code in the corresponding screen. If you make a change, you can press *Compile and test* and then *recompile experiment (keep tables)* to immediately see whether your change has fixed the bug.
-
-In Firefox, a very similar tool is available, called `Firebug <https://addons.mozilla.org/en-US/firefox/addon/firebug/>`__. This is a plugin with a functionality very similar to Chrome's Developer Tools.
-
-Commenting your JavaScript code
-------------------------------------
-
-It is always a good idea to add comments to your code. It makes your code transparent to others and can also help you understanding it when you get back to it at a later time. Now, the usual way to add comments to JS code (e.g. for adding clarifications), is by using the double slash "//". Note that not all web servers will interpret this code the same way. This has to do with line breaks surrounding this code. To prevent your code from being corrupted, use "/\* ... \*/", where the any comments go on the placeholder dots.
-
-
-.. _javascript_code_snippets:
-
-JavaScript code snippets
--------------------------
-
-
-.. _parameters:
-
-Parameters
-==========
-The parameters of your LIONESS experiment are set in this menu. Your settings are stored in the globals table. In each participant screen, the parameters defined here are available through JavaScript. The variable names are exactly as described here.
-
-The menu contains three tabs: :ref:`predefined parameters<parameters__predefined_parameters>`, :ref:`messages<parameters__messages>` and :ref:`custom parameters<parameters__own_parameters>`.
-
-
-.. _parameters__predefined_parameters:
-
-Predefined parameters
----------------------
-
-.. image:: _static/Parameter_table.png
-   :alt:  300px
-
-active
-~~~~~~
-
-This parameter regulates whether the experiment is active, and is set in the :ref:`Control panel <control_panel>`. When the experiment is *active*, the value of this parameter is 1, otherwise it is 0. Participants can only enter active experiments.
-
-testMode
-~~~~~~~~~~~~~~
-
-This parameter regulates the :ref:`control_panel__test_mode`, and is set in the :ref:`Control panel <control_panel>`. In the test mode, multiple participants can be operated from the same browser, using different tabs. This is useful when developing your LIONESS experiment.
-
-totalPlayers
-~~~~~~~~~~~~~~
-
-This parameter sets a *cap* on the total number of participants allowed to enter an experimental setting. In test mode the cap is removed. When a participant tries to enter a session after this number has been reached, they will be redirected to a screen displaying a :ref:`message1 <parameters__messages>` indicating that the current session is full.
-
-.. _parameters__groupSize:
-
-groupSize
-~~~~~~~~~~~~~~
-
-This parameter defines the size of the groups. Once the number of participants waiting in the lobby equals this number, the :ref:`controller algorithm <control_panel__controller_algorithm>` will match them into a group and pushes them to the next stage. Typically, this next stage will be thefirst stage of a period (see :ref:`loopStart <parameters__loopstart>`).
-
-.. _parameters__numberperiods:
-
-numberPeriods
-~~~~~~~~~~~~~~
-
-This parameter defines the total number of periods in the experiment. Periods start with the stage defined in :ref:`loopStart <parameters__loopstart>` and end with :ref:`loopEnd <parameters__loopend>`).
-
-.. _parameters__loopstart:
-
-loopStart
-~~~~~~~~~~~~~~
-
-The parameter defines which stage is the first stage of a period. When a group reaches the stage define in :ref:`loopEnd <parameters__loopend>`, all participants in that group will be directed here, if the period number has not reached the value set in :ref:`numberPeriods <parameters__numberPeriods>`.
-
-
-.. _parameters__loopend:
-
-loopEnd
-~~~~~~~~~~~~~~
-
-This parameter defines which stage is the last stage of a period. When a group reaches this stage, the period number of this group will be increased with 1, and all members will be redirected to the stage defined in :ref:`loopStart <parameters__loopstart>`. When the period number has reached :ref:`numberPeriods <parameters__numberPeriods>`, the group will proceed to the stage defined right next to this stage. Note that in the last stage of a period, participants will typically have to wait for all of their group mates to finish the period, that is, they have to *wait for all* before they can proceed.
-
-.. _parameters__participationfee:
-
-participationFee
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This parameter sets the guaranteed participation fee, which participants will receive independently of their performance in the experiment.
-
-exchangeRate
-~~~~~~~~~~~~~~
-
-The exchange rate can be used to convert experimental points into real money.
-
-.. _parameters__dropouthandling:
-
-dropoutHandling
-~~~~~~~~~~~~~~~~
-
-This parameter defines how dropouts should be handled. Participants who dropped out (e.g. by failing to respond within the set time) will be directed to a screen displaying a :ref:`message <parameters__messages>` indicating that their session is over. From the menu, you can choose from three options defining how to deal with the other group members.
-
-:terminate group: If one participant drops out, the other participants in their group will be led to a screen displaying a :ref:`message <parameters__messages>` indicating that one of the group mates has dropped out and that the session is over. When you choose this option, consider taking measures to compensate these group mates as they might expect to earn some more in the periods they will not be able to complete due to this dropout.
-
-
-:proceed with reduced group: This is the default setting. Once a participant drops out, the other group members continue with a group reduced in size. The variable *currentGroupSize* in the :ref:`core table <experiment_tables__core>` will be reduced with 1. When you choose this option, consider adding a warning message (using JavaScript) to the other participants. Also, keep in mind that in many cases, the data generated by groups reduced in size requires special treatment in analyses.
-
-
-:disable exclusion: This option is best used for individual (non-interactive) tasks, or when you deploy LIONESS in the laboratory (that is, not with participants recruited online), where dropouts are atypical. When a participant loses connection to the server (e.g. due to network problems), you can try to solve this without the participant dropping out. The other members of the group typically wait and continue once the problem is solved.
-
-sortableMatching
-~~~~~~~~~~~~~~~~~~
-
-This defines how the participants in the lobby are matched in groups. There are two options to choose from.
-
-:first come, first serve: This is the default option. As soon as the number of participants in the lobby equals :ref:`groupSize <parameters__groupsize>` they are matched and can start interacting. This setting aims to minimize waiting time.
-
-:match groups with unique roles: In some cases you might want to allocate roles before you assign participants to groups. Before participants enter the lobby, they can be assigned a role (by setting their variable *role* in the :ref:`core table <experiment_tables__core>`. Roles need to start with 1, and run up to value value of the groupSize. For example, if you have groups of 3, a group will be formed as soon as a set of players with roles 1, 2 and 3 can be formed.
-
-.. _parameters__messages:
-
-Messages
----------
-
-Each experiment contains a page with messages tell participants that their session has terminated prematurely. These messages are necessary for clear communication with participants upon dropouts, and to provide information as to why they cannot proceed with the session. Each of the messages has a default text, which can be edited in the messages tab. Messages are displayed conditional upon the event that triggered the termination (see below).
-
-.. image:: _static/Parameter_table_messages.png
-   :alt:  300px
-
-:message0: The experiment is currently not active (see :ref:`active <control_panel__active_inactive>`).
-
-:message1: A participant tries to connect to the server while they are already connected.
-
-:message2: The maximum number of participants for this session has already been reached.
-
-:message3: The participant is not connected to the server.
-
-:message4: The participant has been :ref:`manually removed <control_panel__terminate_player>` from the session.
-
-:message5: The participant did not make a decision within the set time. They are removed from the session.
-
-:message6: The participant's group has been terminated due to a dropout of a fellow group mate. This is only used when the :ref:`dropout handling <parameters__dropouthandling>` has been set to *terminate group*.
-
-:message7: The participant tries to enter a session using Internet Explorer. This browser is not supported.
-
-:message8: The participant has not successfully completed the control questions after the set number of attempts. They cannot continue.
-
-.. _parameters__own_parameters:
-
-Custom parameters
-------------------
-
-.. image:: _static/Parameter_table_addOwn.png
-   :alt:  300px
-
-
-You can add your own parameters by clicking the *+* sign. In the left hand side field you can give the variable a name, and in the right hand side field you can set its value. Only numerical values are supported. The parameter will be available for JavaScript in all the participant stages. You can delete your parameters by clicking the bin icon.
 
 .. _elements:
 
@@ -618,76 +405,268 @@ Back button
 :Back to:
    In this menu, you can define onto which stage the experiment will go back. The default setting is it will go back to the stage right before so you can just leave it as it is if this is the case. You can also define it to jump to another page.
 
-.. _stage_type:
 
-Stage type
+.. _javascript:
+
+
+JavaScript
 =========================
 
-There are three different types of stages, the names of which are largely self-explanatory.
+LIONESS experiments use JavaScript to do calculations and to interact with the :ref:`database <experiment_tables>` `JavaScript <http://www.w3schools.com/js/default.asp>`__ (JS) is a widely used language for web programming. JS is executed in the browser of the participants (so, not on the server).
 
-.. _stage_type__standard:
+JavaScript code can be added to any stage of your LIONESS experiment through a :ref:`JavaScript element <elements__javascript_program>`.
 
-Standard
---------
+.. _javascript__access_the_variables:
 
-Standard stages are the most commonly used types. In this stage types, all :ref:`elements` are available to use. This stage type is typically used for instructions, screens that require responses, and feedback screens.
+Access JS variables
+------------------------------------
 
-.. _quiz:
+Values of JS variables can be accessed in other elements (e.g. a text box) by adding dollar signs on both sides of the variable name (e.g. `$contribution$`).
 
-Quiz
-----
+.. _standard_variables:
 
-Quiz stages have the same functionality available as Standard stages, but there is one feature on top of that. For Quiz stages, LIONESS documents the number of attempts a participant needs to proceed. Typically, input :ref:`elements` in quiz stages will have the field *correct value* defined. The variable *quizFail* in the :ref:`session table <experiment_tables__session>` tracks the total number of attempts a participant has made.
+Default variables
+------------------
 
-.. _lobby:
+When a participant's page loads, all variables defined in the :ref:`parameters table <parameters>` are loaded. This is also true for the
+following default variables from the :ref:`core table <experiment_tables__core>`. This means that these variables are defined (i.e. have a value) in every screen and their values are accessible in JS.
 
-Lobby
------
-
-In lobby stages, participants are matched in groups. The matching procedure is defined *globally* in the :ref:`parameter table <parameters>`. In case no elements are defined in a lobby stage, a default text will be shown, along with an auto-updated message indicating how many other participants are currently needed to form a group. This message gives the participants an idea how long they will have to wait before their interactive task starts (see example below). <br>
-
-.. image:: _static/Lobby.png
-   :alt:  500px
-
-
-**Important**: for the time being, matching procedures in the lobby depend on global parameters, **LIONESS experiments currently only
-support one lobby**.
-
-.. _matching_procedures:
-
-Matching procedures
--------------------
-
-Once sufficiently many participants are in the lobby a group can be formed. Experimenters can choose 3 types of matching:
-
-:First come, first serve: As soon as sufficiently many participants are in the lobby, a group will be formed.
-
-Before the lobby, experimenters can assign different *roles* to players (using the variable *role* in the :ref:`core table <experiment_tables__core>`). The other two available types of matching make use of this variable 'role' to form groups.
-
-:Groups with unique roles: As soon as at least 1 participant with each role 1...n is present (where n is the group size), a group will be formed.
-
-:Group with the same role: Groups are formed of participants with the *same* role. This is useful when you have different treatments in the same session, and participants from the same treatment need to be grouped together.
-
-.. _stage_and_element__countdown_timer:
-
-Countdown timer
-~~~~~~~~~~~~~~~
-In interactive tasks, it is often useful to set timers on decisions to keep up the pace of the experiment. Countdown timers prompt participants to give responses within a set time, and reduces the waiting time for their group mates, which in turn reduces inattention and dropouts.
-
-.. image:: _static/Timeoutpic.png
-   :alt:  500px
-
-To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the *standard* timeout page. This page will show the participants the :ref:`message <parameters__messages>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
-
-Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable *TimeOut*. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
-
-.. code-block:: javascript
-
-   if (period < 3){
-     TimeOut=120;
-	}
+================= ================================
+Variable name     Details
+================= ================================
+playerNr          Number of the focal player within the session
+groupNr           Group number of the focal player
+subjectNr         Player number of the focal player within group
+period            Period number of the focal player within session
+tStart            System time in seconds upon page load
+currentGroupSize
+role
+bot
+randomid
+================= ================================
 
 
-.. _main_menu:
 
-TBA
+
+.. _javascript__interacting_with_the_database:
+
+Interacting with the database
+------------------------------------
+
+Variables specified in input elements' (numeric input, choice buttons, etc) will be automatically stored in the table *decisions*.
+
+JavaScript elements allow you to read from and write to the database, using the below functions. Note that each function has a *simple* and a *full* version. The simple versions always assume that the function pertains to the current player, the current group, and the current period. In the below examples, the simple and full versions are equivalent.
+
+
+Writing to the database
+-----------------------
+
+You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. Note that, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. Italic function parameters are optional.
+
+:Function: setValue()
+
+   :Arguments: *table name, condition,* variable name
+
+   :Simple example: setValue('payoffThisPeriod');
+
+   :Full example: setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod');
+
+
+:Function: record()
+
+   :Arguments: variable name, value
+
+   :Simple example: record('PGGshare', publicGoodShare);
+
+
+:Function: setBonus()
+
+   :Arguments: amount
+
+   :Simple example: setBonus(payoff);
+
+
+The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'.
+
+The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
+
+**The value argument cannot contain any operators, such as the + or the - sign.**
+
+Reading from the database
+-------------------------
+Italic function parameters are optional.
+
+:Function: getValue()
+
+   :Arguments: *table name, condition,* variable name
+
+   :Return value: one element
+
+   :Simple example: getValue('someVariable');
+
+   :Full example: getValue('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
+
+
+:Function: getValues()
+
+   :Arguments: *table name, condition,* variable name
+
+   :Return value: array
+
+   :Simple example: getValues('someVariable');
+
+   :Full example: getValues('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
+
+
+There are special functions for retrieving the values from others in your group, in the current period.
+
+:Function: getValuesOthers()
+
+   :Arguments: *table name, condition,* variable name
+
+   :Return value: array
+
+   :Simple example: getValuesOthers('someVariable');
+
+.. _javascript_code_snippets:
+
+JavaScript code snippets
+-------------------------
+
+
+.. _parameters:
+
+Parameters
+==========
+The parameters of your LIONESS experiment are set in this menu. Your settings are stored in the globals table. In each participant screen, the parameters defined here are available through JavaScript. The variable names are exactly as described here.
+
+The menu contains three tabs: :ref:`predefined parameters<parameters__predefined_parameters>`, :ref:`messages<parameters__messages>` and :ref:`custom parameters<parameters__own_parameters>`.
+
+
+.. _parameters__predefined_parameters:
+
+Predefined parameters
+---------------------
+
+.. image:: _static/Parameter_table.png
+   :alt:  300px
+
+active
+~~~~~~
+
+This parameter regulates whether the experiment is active, and is set in the :ref:`control panel <control_panel>`. When the experiment is *active*, the value of this parameter is 1, otherwise it is 0. Participants can only enter active experiments.
+
+testMode
+~~~~~~~~~~~~~~
+
+This parameter regulates the :ref:`test mode <control_panel__test_mode>`, and is set in the :ref:`control panel <control_panel>`. In the test mode, multiple participants can be operated from the same browser, using different tabs. This is useful when developing your LIONESS experiment. TestMode can be set in the :ref:`Control panel <control_panel>` and should not been changed here.
+
+totalPlayers
+~~~~~~~~~~~~~~
+
+This parameter sets a *cap* on the total number of participants allowed to enter an experimental setting. In test mode the cap is removed. When a participant tries to enter a session after this number has been reached, they will be redirected to a screen displaying a :ref:`message1 <parameters__messages>` indicating that the current session is full.
+
+.. _parameters__groupSize:
+
+groupSize
+~~~~~~~~~~~~~~
+
+This parameter defines the size of the groups. Once the number of participants waiting in the lobby equals this number, the :ref:`controller algorithm <control_panel__controller_algorithm>` will match them into a group and pushes them to the next stage. Typically, this next stage will be thefirst stage of a period (see :ref:`loopStart <parameters__loopstart>`).
+
+.. _parameters__numberperiods:
+
+numberPeriods
+~~~~~~~~~~~~~~
+
+This parameter defines the total number of periods in the experiment. Periods start with the stage defined in :ref:`loopStart <parameters__loopstart>` and end with :ref:`loopEnd <parameters__loopend>`).
+
+.. _parameters__loopstart:
+
+loopStart
+~~~~~~~~~~~~~~
+
+The parameter defines which stage is the first stage of a period. When a group reaches the stage define in :ref:`loopEnd <parameters__loopend>`, all participants in that group will be directed here, if the period number has not reached the value set in :ref:`numberPeriods <parameters__numberPeriods>`.
+
+
+.. _parameters__loopend:
+
+loopEnd
+~~~~~~~~~~~~~~
+
+This parameter defines which stage is the last stage of a period. When a group reaches this stage, the period number of this group will be increased with 1, and all members will be redirected to the stage defined in :ref:`loopStart <parameters__loopstart>`. When the period number has reached :ref:`numberPeriods <parameters__numberPeriods>`, the group will proceed to the stage defined right next to this stage. Note that in the last stage of a period, participants will typically have to wait for all of their group mates to finish the period, that is, they have to *wait for all* before they can proceed.
+
+.. _parameters__participationfee:
+
+participationFee
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This parameter sets the guaranteed participation fee, which participants will receive independently of their performance in the experiment.
+
+exchangeRate
+~~~~~~~~~~~~~~
+
+The exchange rate can be used to convert experimental points into real money.
+
+.. _parameters__dropouthandling:
+
+dropoutHandling
+~~~~~~~~~~~~~~~~
+
+This parameter defines how dropouts should be handled. Participants who dropped out (e.g. by failing to respond within the set time) will be directed to a screen displaying a :ref:`message <parameters__messages>` indicating that their session is over. From the menu, you can choose from three options defining how to deal with the other group members.
+
+:terminate group: If one participant drops out, the other participants in their group will be led to a screen displaying a :ref:`message <parameters__messages>` indicating that one of the group mates has dropped out and that the session is over. When you choose this option, consider taking measures to compensate these group mates as they might expect to earn some more in the periods they will not be able to complete due to this dropout.
+
+
+:proceed with reduced group: This is the default setting. Once a participant drops out, the other group members continue with a group reduced in size. The variable *currentGroupSize* in the :ref:`core table <experiment_tables__core>` will be reduced with 1. When you choose this option, consider adding a warning message (using JavaScript) to the other participants. Also, keep in mind that in many cases, the data generated by groups reduced in size requires special treatment in analyses.
+
+
+:disable exclusion: This option is best used for individual (non-interactive) tasks, or when you deploy LIONESS in the laboratory (that is, not with participants recruited online), where dropouts are atypical. When a participant loses connection to the server (e.g. due to network problems), you can try to solve this without the participant dropping out. The other members of the group typically wait and continue once the problem is solved.
+
+sortableMatching
+~~~~~~~~~~~~~~~~~~
+
+This defines how the participants in the lobby are matched in groups. There are two options to choose from.
+
+:first come, first serve: This is the default option. As soon as the number of participants in the lobby equals :ref:`groupSize <parameters__groupsize>` they are matched and can start interacting. This setting aims to minimize waiting time.
+
+:match groups with unique roles: In some cases you might want to allocate roles before you assign participants to groups. Before participants enter the lobby, they can be assigned a role (by setting their variable *role* in the :ref:`core table <experiment_tables__core>`. Roles need to start with 1, and run up to value value of the groupSize. For example, if you have groups of 3, a group will be formed as soon as a set of players with roles 1, 2 and 3 can be formed.
+
+.. _parameters__messages:
+
+Messages
+---------
+
+Each experiment contains a page with messages tell participants that their session has terminated prematurely. These messages are necessary for clear communication with participants upon dropouts, and to provide information as to why they cannot proceed with the session. Each of the messages has a default text, which can be edited in the messages tab. Messages are displayed conditional upon the event that triggered the termination (see below).
+
+.. image:: _static/Parameter_table_messages.png
+   :alt:  300px
+
+:message0: The experiment is currently not active (see :ref:`active <control_panel__active_inactive>`).
+
+:message1: A participant tries to connect to the server while they are already connected.
+
+:message2: The maximum number of participants for this session has already been reached.
+
+:message3: The participant is not connected to the server.
+
+:message4: The participant has been :ref:`manually removed <control_panel__terminate_player>` from the session.
+
+:message5: The participant did not make a decision within the set time. They are removed from the session.
+
+:message6: The participant's group has been terminated due to a dropout of a fellow group mate. This is only used when the :ref:`dropout handling <parameters__dropouthandling>` has been set to *terminate group*.
+
+:message7: The participant tries to enter a session using Internet Explorer. This browser is not supported.
+
+:message8: The participant has not successfully completed the control questions after the set number of attempts. They cannot continue.
+
+.. _parameters__own_parameters:
+
+Custom parameters
+------------------
+
+.. image:: _static/Parameter_table_addOwn.png
+   :alt:  300px
+
+
+You can add your own parameters by clicking the *+* sign. In the left hand side field you can give the variable a name, and in the right hand side field you can set its value. Only numerical values are supported. The parameter will be available for JavaScript in all the participant stages. You can delete your parameters by clicking the bin icon.
+

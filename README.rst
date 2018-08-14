@@ -1,44 +1,20 @@
-Template
-========
+==========================
+LIONESS documentation
+==========================
 
-$project will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
+These are the source files for the documentation of LIONESS lab. You can find the compiled version at https://lioness-doc.readthedocs.io/en/latest/index.html
 
-Look how easy it is to use:
-
-    import project
-    # Get your stuff done
-    project.do_stuff()
-
-How to build
-=============
+=======================================
+How to build on local system
+=======================================
 C:\Python34\Scripts> sphinx-build.exe -anE -b html  C:\Users\yahosseini\workspace\code\lioness_doc\docs  C:\Users\yahosseini\workspace\code\lioness_doc\out
 
-
-Features
---------
-
-- Be awesome
-- Make things faster
-
-Installation
-------------
-
-Install $project by running:
-
-    install project
-
-Contribute
-----------
-
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
-
+=============
 Support
--------
+=============
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+We have a google group located at: https://groups.google.com/forum/#!forum/lioness-lab
 
 License
 -------

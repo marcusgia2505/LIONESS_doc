@@ -1,8 +1,3 @@
-.. Read the Docs Template documentation master file, created by
-   sphinx-quickstart on Tue Aug 26 14:19:49 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 ==================================================
 Welcome to the LIONESS Lab documentation!
 ==================================================
@@ -16,27 +11,27 @@ Once your LIONESS experiment is ready, you can download it and run it on your ow
 
 .. _architecture:
 
-Architecture
-=============
-
-With LIONESS Lab, you can develop interactive online experiments in a point-and-click fashion. LIONESS experiments regulate the information flow between participants. Before a session, the experimenter uploads the LIONESS experiment to the server. In a typical online experiment participants log in to the server via a link posted on a crowd-sourcing website (e.g. `Amazon Mechanical Turk <http://www.mturk.com>`__ or `Prolific <https://prolific.ac/>`__). Participants interact through their web browsers and receive a code to collect their payment upon completion. Throughout the session, the :ref:`control panel <control_panel>` displays the participants' progress in the experiment.
+LIONESS experiments regulate the information flow between participants. Before a session, the experimenter uploads the LIONESS experiment to the server. In a typical online experiment participants log in to the server via a link posted on a crowd-sourcing website (e.g. `Amazon Mechanical Turk <http://www.mturk.com>`__ or `Prolific <https://prolific.ac/>`__). Participants interact through their web browsers and receive a code to collect their payment upon completion. Throughout the session, the :ref:`control panel <control_panel>` displays the participants' progress in the experiment.
 
 .. image:: _static/Technicalflow.png
    :alt:  600px
 
 
-Standardized methods
-==========================
+LIONESS experiments provide a set of standarized methods for group formation, attrition and other challenges of interactive online experiments. This is extensively discussed in a `paper by Arechar et al. <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__
 
-LIONESS experiments provide a set of standarized methods for group formation, attrition and other challenges of interactive online experiments. This is extensively discussed in a `this <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__ paper by Arechar et al.
-
+.. _user-docs:
 
 .. toctree::
    :maxdepth: 10
-   :glob:
+   :caption: User Documentation
 
    010_basic
-   030_detailed_instructions
+   0301_develop
+   0302_compile_and_test
+   0303_set_up
+   0304_run
+   0305_notes
+   0306_share
    040_reference_manual
    050_further_details
 

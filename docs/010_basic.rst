@@ -208,9 +208,9 @@ Before we start testing, we need to set the parameters. You can do so by clickin
 Compile and test
 ----------------
 
-Your experiment is now ready for testing. In the horizontal bar on the top of your screen, click *compile and test* and :ref:`compile_and_test`. LIONESS Lab will compile your experiment and will open the :ref:`control_panel` of your experiment in a new tab.
+Your experiment is now ready for testing. In the horizontal bar on the top of your screen, click :ref:`compile and test <compile_and_test>`. LIONESS Lab will compile your experiment and will open the :ref:`control_panel` of your experiment in a new tab.
 
 Control panel
 --------------
 
-In the control panel, you can start testing your experiment by switching on the :ref:`control_panel__test_mode` and start a :ref:`test player <control_panel__test_mode>`. A new tab will open with the experimental pages you defined. If needed, you can start a second test player (e.g. to play in a group after being matched in the :ref:`lobby`).
+In the control panel, you can start testing your experiment by switching on the :ref:`test mode <control_panel__test_mode>` and start a :ref:`test player <control_panel__test_mode>`. A new tab will open with the experimental pages you defined. If needed, you can start a second test player (e.g. to play in a group after being matched in the :ref:`lobby <lobby>`).
