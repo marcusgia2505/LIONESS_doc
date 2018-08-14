@@ -18,6 +18,7 @@ Once your LIONESS experiment is ready, you can download it and run it on your ow
 
 Architecture
 =============
+
 With LIONESS Lab, you can develop interactive online experiments in a point-and-click fashion. LIONESS experiments regulate the information flow between participants. Before a session, the experimenter uploads the LIONESS experiment to the server. In a typical online experiment participants log in to the server via a link posted on a crowd-sourcing website (e.g. `Amazon Mechanical Turk <http://www.mturk.com>`__ or `Prolific <https://prolific.ac/>`__). Participants interact through their web browsers and receive a code to collect their payment upon completion. Throughout the session, the :ref:`control panel <control_panel>` displays the participants' progress in the experiment.
 
 .. image:: _static/Technicalflow.png
