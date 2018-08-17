@@ -20,7 +20,7 @@ Once you have logged in, the landing page allows for basic actions such as creat
 Run a demo experiment
 =====================
 
-To get a feel for LIONESS experiments, you can go to this `demo <https://www.lioness.uni-passau.de/demo/>`__. This will take you to the :ref:`control panel <control_panel>` of a 3-player public goods game experiment. The link will open in a new tab.
+To get a feel for LIONESS experiments, you can go to this `demo <https://lioness.uni-passau.de/bin/demo.php>`__. This will take you to the :ref:`control panel <control_panel>` of a 3-player public goods game experiment. The link will open in a new tab.
 With the Control Panel you can monitor the progress of an experimental session. On the top of your screen, you can start *test players* to stand in the shoes participants. As you operate these test players, you can track their progress at the bottom of the Control Panel.
 The :ref:`control panel <control_panel>` regulates the progress of participants through the experiments, so this screen **always needs to be open** as a session is running.
 
@@ -101,7 +101,12 @@ Finally, add a button to the screen by clicking *add new element* and select the
 Stage 3: lobby
 ~~~~~~~~~~~~~~
 
-The next stage will be a *lobby* in which participants wait to be grouped with others. In this case we will form a group as soon as three participants have completed the control questions and are ready to start the interaction phase of the experiment. Add a new stage to your experiment by clicking the *+* sign in the tab next to Stage 2 [add screenshot]. A new Stage tab will appear. In the horizontal blue bar, set its stage type to *lobby* and name the stage *Lobby*.
+The next stage will be a *lobby* in which participants wait to be grouped with others. In this case we will form a group as soon as three participants have completed the control questions and are ready to start the interaction phase of the experiment. Add a new stage to your experiment by clicking the *+* sign in the tab next to Stage 2 (see below). A new Stage tab will appear. In the horizontal blue bar, set its stage type to *lobby* and name the stage *Lobby*.
+
+.. image:: _static/Plus_Sign.png
+   :width: 218 px
+   :alt:  218 px
+
 
 Set the timer to 300 seconds and delete the *button* (we do not need a button in the lobby). When participants are still waiting to be matched with others after this time has passed, they will automatically get the choice to either return to the lobby and wait for two more minutes, or to proceed to another stage (defined in the *leave to* field, we will get to that later). In the active screen, the default text in the lobby reads *Wait for the other members of your group to complete the control questions.* For now we do not need to define anything here. We do not need any buttons in this screen. The software will forward the participants as soon as a group has been formed.
 

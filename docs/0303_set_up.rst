@@ -1,7 +1,7 @@
 
-========================
-Set up your experiment
-========================
+===================================
+Set up your own experimental server
+===================================
 
 While :ref:`testing <develop>` your experiment, the web pages were on the LIONESS Lab server. This server is for development purposes only. For conducting your online experiment, you need to put your LIONESS experiment on your own server.
 
@@ -10,6 +10,9 @@ Download your experiment
 ===========================
 
 The first step to copy your LIONESS experiment on your own server, is to download your experiment. In your LIONESS Lab page, click *compile and test* and select *download experiment*.
+
+.. image:: _static/Download_experiment.png
+   :alt:  800px
 
 The experimental pages will be downloaded as a .zip file. When you unzip this file, you will see a folder with mainly PHP files. These are the experimental pages (with names stage and wait followed by a number, as well as a number of helper files for e.g. regulating the experimental flow Two files in this folder are of particular importance: credentials.php and sqlCode.sql). These files are for adding the credentials of your own server and setting up the :ref:`tables <experiment_tables>` underlying your experiment. We will get to these two files below.
 

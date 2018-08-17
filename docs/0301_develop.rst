@@ -29,6 +29,8 @@ Defining your screens
 
 Your screens consist of three sections: *settings*, an *active screen* and a *waiting screen*.
 
+.. image:: _static/Three_sections.png
+   :alt:  1300 px
 
 Stage settings (top panel)
 --------------------------
