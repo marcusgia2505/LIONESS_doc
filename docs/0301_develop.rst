@@ -31,6 +31,7 @@ Your screens consist of three sections: *settings*, an *active screen* and a *wa
 
 .. image:: _static/Three_sections.png
    :alt:  1300 px
+   :align: center
 
 Stage settings (top panel)
 --------------------------

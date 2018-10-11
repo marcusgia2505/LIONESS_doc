@@ -18,7 +18,7 @@ Once you logged into your AMT account, click on the tab Create and then choose *
 
 Select *Create Project* and fill in the required details for the tab *Properties* as you like (title, description, reward per assignment, etc). Select Design Layout (shown below). In this page edit the content that you want your participants to see, usually the title and description you already used in the previous tab will be enough.
 
-Once you are done with the edition, press Source and search for the two instances where “http://www.linktomysurvey.com” appears. Replace these with the link to your LIONESS experiment. You can find the link in the control panel under *address for participants*. Press Source again, and finally click on Preview. If you are happy with the way your task looks, press Finish.
+Once you are done with the edition, press Source and search for the two instances where ``http://www.linktomysurvey.com`` appears. Replace these with the link to your LIONESS experiment. You can find the link in the :ref:`control panel <control_panel>` under *address for participants*. Press Source again, and finally click on *Preview*. If you are happy with the way your task looks, press *Finish*.
 
 General pointers for writing a HIT description and setting up a can be found in a `paper by Arechar et al. <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__.
 

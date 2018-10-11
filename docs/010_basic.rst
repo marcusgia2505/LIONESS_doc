@@ -106,6 +106,7 @@ The next stage will be a *lobby* in which participants wait to be grouped with o
 .. image:: _static/Plus_Sign.png
    :width: 218 px
    :alt:  218 px
+   :align: center
 
 
 Set the timer to 300 seconds and delete the *button* (we do not need a button in the lobby). When participants are still waiting to be matched with others after this time has passed, they will automatically get the choice to either return to the lobby and wait for two more minutes, or to proceed to another stage (defined in the *leave to* field, we will get to that later). In the active screen, the default text in the lobby reads *Wait for the other members of your group to complete the control questions.* For now we do not need to define anything here. We do not need any buttons in this screen. The software will forward the participants as soon as a group has been formed.
