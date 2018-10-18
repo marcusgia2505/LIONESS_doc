@@ -121,10 +121,14 @@ If participants try to re-enter after being kicked out, they are also informed t
 i) Too many quiz errors
 -------------------------
 
+In the quiz stage, the experimenter can specify a maximum number of quiz failures. It the participant fails more than that, he is excluded from the experiment and receives the following message:
+
 .. warning:: You did not answer the quiz correctly and were excluded from further participation.
 
 j) No group match
 ------------------
+
+In the lobby, participants wait until they are matched for a cetrain time span. If there is no other participant within this time span, the participant is directed to a page where he or she can choose to wait additional two minutes or to leave the experiment. In the latter case the participant should receive the showup-fee. The experimenter can set to which stage the participant is directed when he or she leaves.
 
 k) Group aborted
 ------------------
