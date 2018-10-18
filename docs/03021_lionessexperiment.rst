@@ -4,14 +4,15 @@ LIONESS experiment
 
 A standard LIONESS experiment can be created in LIONESS Lab and brings along a set of standard features to enable online interactive experiments. The build-in features are described here. They can be configured when developing an experiment. 
 
-.. note:: This section provides an overview over the general functioning of a LIONESS experiment. It does not discuss the details of how to implement these things. The details can be found in ....
+.. note:: This section provides an overview over the general functioning of a LIONESS experiment. It does not discuss the details of how to implement these things. The details can be found in `develop`_.
 
 Principles
 ===========
 
 For online experimentation (in contrast to normal lab experiments) some principles should be considered which are all implemented in LIONESS expeirments.
 
-1. The basic principle for all this is that participants should be kept active and waiting times should not be too long.
+1. Minimize dropouts if possible! 
+2. The basic principle for all this is that participants should be kept active and waiting times should not be too long.
 2. Dropout of participants are unavoidable. Measures should be in place to deal with this.
 3. Matching and assignment of roles and treatments can only be done on-the-fly and not predetermined as the total number of participants varies.
 4. Participants should be able to complete the experiment even if their couterparts dropped out in order to prevent negative feedback by participants which damage the experimenter's reputation.
@@ -31,7 +32,7 @@ The blue arrows show the normal flow of the experiment. The red arrows show poss
 
 When participants arrived from the external site, they are registered and get a player number. Then they go to the first stage of the experiment. After that a quiz may follow where, participants have to answer control questions in order to participate. The quiz is optional. After passing the quiz, participants wait in the lobby to be matched to a group. This is optional for single player games. Then participants make their decisions (maybe over several rounds) before they are informed about their payoff (end). From their they 
 
-LIONESS experiments direct participants their way through the experiment and provide several measures which have been evidenced as being useful for online experimentation. These  measures are discussed in detail below.
+On the way through the experiment, LIONESS experiment handle all kind of possible drop out issues.
 
 a) Internet Explorer
 ---------------------
