@@ -34,11 +34,14 @@ When participants arrive from the external site, they are registered and get a p
 
 On the way through the experiment, LIONESS experiment handle all kind of possible dropout issues, which are described in the following.
 
+.. note:: On dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <Reference manual>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
+
 a) Internet Explorer
 ---------------------
 
+LIONESS experiment (and many other modern web applications) do not support the Internet Explorer as it is outdated. Experimenters should inform their participants that they cannot participate if the use the Internet Explorer. If participants use the Internet Explorer, they are informed that they cannot participate in the experiment.
 
-
+.. attention:: As indicated in our HIT text on MTurk, our HIT does **not** support Microsoft Internet Explorer.                         Please return this HIT. We apologise for any inconvenience caused.
 
 b) Task not active
 -------------------
