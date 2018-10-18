@@ -34,7 +34,7 @@ When participants arrive from the external site, they are registered and get a p
 
 On the way through the experiment, LIONESS experiment handle all kind of possible dropout issues, which are described in the following.
 
-.. note:: On dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <Reference manual>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
+.. note:: On dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <040_reference_manual.html#parameters-messages>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
 
 a) Internet Explorer
 ---------------------
