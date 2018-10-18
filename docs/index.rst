@@ -28,6 +28,7 @@ LIONESS experiments provide a set of standarized methods for group formation, at
    010_basic
    0301_develop
    0302_compile_and_test
+   03021_lionessexperiment.rst
    0303_set_up
    0304_run
    0306_share
