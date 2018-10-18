@@ -13,9 +13,9 @@ For online experimentation (in contrast to normal lab experiments) some principl
 
 1. Minimize dropouts if possible! 
 2. The basic principle for all this is that participants should be kept active and waiting times should not be too long.
-2. Dropout of participants are unavoidable. Measures should be in place to deal with this.
-3. Matching and assignment of roles and treatments can only be done on-the-fly and not predetermined as the total number of participants varies.
-4. Participants should be able to complete the experiment even if their couterparts dropped out in order to prevent negative feedback by participants which damage the experimenter's reputation.
+3. Dropout of participants are unavoidable. Measures should be in place to deal with this.
+4. Matching and assignment of roles and treatments can only be done on-the-fly and not predetermined as the total number of participants varies.
+5. Participants should be able to complete the experiment even if their couterparts dropped out in order to prevent negative feedback by participants which damage the experimenter's reputation.
 
 Experimental Flow
 ==================
