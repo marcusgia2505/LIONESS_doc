@@ -4,7 +4,7 @@ LIONESS experiment
 
 A standard LIONESS experiment can be created in LIONESS Lab and brings along a set of standard features to enable online interactive experiments. The build-in features are described here. They can be configured when developing an experiment. 
 
-.. note:: This section provides an overview over the general functioning of a LIONESS experiment. It does not discuss the details of how to implement these things. The details can be found in `develop`_.
+.. note:: This section provides an overview over the general functioning of a LIONESS experiment. It does not discuss the details of how to implement these things. The details can be found in :ref:`Develop`_.
 
 Principles
 ===========
