@@ -7,7 +7,7 @@ A standard LIONESS experiment can be created in LIONESS Lab and brings along a s
 The following figure shows the standard flow of an online experiment and describes all the mechanisms along this flow. Participants log in via 
 
 
-.. image:: _static/control_flow.png
+.. image:: _static/control_flow2.png
 
 
 
