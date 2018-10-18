@@ -66,7 +66,7 @@ If a second participant tries to log in from the same IP address, he or she rece
 
 .. warning:: According to our records, your device has already been connected to the server during this session.                Participants are only allowed to enter a session once. Thank you for your understanding.
 
-The IP address is **deactivated** whent the test mode is on.
+The IP address check is **deactivated** whent the test mode is on.
 
 .. note:: If you think that your participants may use the same IP address you may switch to test mode. Otherwise they cannot enter. This may happen if e.g. all participants play in the same network.
 
@@ -92,6 +92,8 @@ Entrance to an experiment is only possible via the first stage where participant
 
 f) Time out
 -------------
+
+In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment.
 
 .. warning:: You did not make a decision before the time was up. <br><br> You have been removed from the HIT.                         You can close down this window.
 
