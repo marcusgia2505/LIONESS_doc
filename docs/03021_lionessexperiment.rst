@@ -133,5 +133,8 @@ In the lobby, participants wait until they are matched for a cetrain time span. 
 k) Group aborted
 ------------------
 
+In the parameter setting the experimenter can choose what happens if during the decision phase a participant drops out. If the experimeter opts for *terminate group*, all players of the group are kicked out of the experiment and receive the following message:
 
+.. warning:: Unfortunately, one of the players in your group dropped out of the HIT! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: **$randomid$** Once you have filled out this code, you can close this window. Thank you for your participation.
 
+The other option is to *proceed with reduced group*. Then no participant is kicked out. Or to *disable exclusion* then the group  
