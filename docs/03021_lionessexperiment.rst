@@ -49,30 +49,50 @@ b) Task not active
 -------------------
 
 
+.. warning:: This HIT is currently offline. You cannot participate at this time.
 
 
 c) Double login
 ----------------
 
+.. warning:: According to our records, your device has already been connected to the server during this session.                Participants are only allowed to enter a session once. Thank you for your understanding.
+
+
 d) Session full
 ----------------
+
+.. warning:: We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time.                Thank you for your understanding.
+
 
 e) Not registered
 -------------------
 
 
+.. warning:: You are currently not logged in. You cannot participate in the HIT.
+
 f) Time out
 -------------
+
+.. warning:: You did not make a decision before the time was up. <br><br> You have been removed from the HIT.                         You can close down this window.
 
 g) Kicked out by experimenter
 -------------------------------
 
+.. warning:: Unfortunately, this HIT was terminated for a technical reason! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: 
+                **$randomid$** Once you have filled out this code, you can close this window.
+                Thank you for your participation.
+
+
 h) No re-entering possible
 ---------------------------
+
+.. warning:: You are currently not logged in. You cannot participate in the HIT.
 
 
 i) Too many quiz errors
 -------------------------
+
+.. warning:: You did not answer the quiz correctly and were excluded from further participation.
 
 j) No group match
 ------------------
