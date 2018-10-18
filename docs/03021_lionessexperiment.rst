@@ -137,4 +137,4 @@ In the parameter setting the experimenter can choose what happens if during the 
 
 .. warning:: Unfortunately, one of the players in your group dropped out of the HIT! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: **$randomid$** Once you have filled out this code, you can close this window. Thank you for your participation.
 
-The other option is to *proceed with reduced group*. Then no participant is kicked out. Or to *disable exclusion* then the group  
+For the different options on drop outs in a group see Reference manual > Paramters > Predefined parameters > dropout handling.
