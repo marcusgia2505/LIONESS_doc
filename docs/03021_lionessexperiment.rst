@@ -25,6 +25,11 @@ The following figure shows the standard flow of an online experiment and describ
 
 .. image:: _static/control_flow2.png
 
+The blue arrows show the normal flow of the experiment. The red arrows show possible dropouts. The euro symbol shows if a showup fee is paid on dropout or not. The blue line around the stages mark the boundaries of a LIONESS experiment.
+
+When participants arrived from the external site, they are registered and get a player number. Then they go to the first stage of the experiment. After that a quiz may follow where, participants have to answer control questions in order to participate. The quiz is optional. After passing the quiz, participants wait in the lobby to be matched to a group. This is optional for single player games. Then participants make their decisions (maybe over several rounds) before they are informed about their payoff (end). From their they 
+
+
 LIONESS experiments direct participants their way through the experiment and provide several measures which have been evidenced as being useful for online experimentation. These  measures are discussed in detail below.
 
 a) Internet Explorer
@@ -36,7 +41,31 @@ b) Task not active
 c) Double login
 ----------------
 
+d) Session full
+----------------
 
+e) Not registered
+-------------------
+
+
+f) Time out
+-------------
+
+g) Kicked out by experimenter
+-------------------------------
+
+h) No re-entering possible
+---------------------------
+
+
+i) Too many quiz errors
+-------------------------
+
+j) No group match
+------------------
+
+k) Group aborted
+------------------
 
 
 
