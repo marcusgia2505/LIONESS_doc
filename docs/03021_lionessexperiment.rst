@@ -84,7 +84,7 @@ If you increase the total number of players during the experiment, more particip
 e) Not registered
 -------------------
 
-If a participants tries to participate in a LIONESS experiment by navigating to a stage in the experiment without being registered he or she is informed about that. 
+If a participant tries to participate in a LIONESS experiment by navigating to a stage in the experiment without being registered he or she is informed about that. 
 
 .. warning:: You are currently not logged in. You cannot participate in the HIT.
 
@@ -93,17 +93,21 @@ Entrance to an experiment is only possible via the first stage where participant
 f) Time out
 -------------
 
-In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment.
+In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment. If a participant does not finish in time, he or she can be directed towards a different stage in the game or to the standard time out page which shows the following message:
 
-.. warning:: You did not make a decision before the time was up. <br><br> You have been removed from the HIT.                         You can close down this window.
+.. warning:: You did not make a decision before the time was up. You have been removed from the HIT.                         You can close down this window.
 
 g) Kicked out by experimenter
 -------------------------------
+
+In the control panel, experimenters can kickout participants by entering their player number. They receive the following message and get their show-up fee. The values between $ signs are filled by the values set in the parameters.
 
 .. warning:: Unfortunately, this HIT was terminated for a technical reason! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: 
                 **$randomid$** Once you have filled out this code, you can close this window.
                 Thank you for your participation.
 
+
+.. note:: This features should be used with care. It is mainly intened when technical problems appear.
 
 h) No re-entering possible
 ---------------------------
