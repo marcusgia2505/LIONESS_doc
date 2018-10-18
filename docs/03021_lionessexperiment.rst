@@ -36,6 +36,8 @@ On the way through the experiment, LIONESS experiment handle all kind of possibl
 
 .. note:: On dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <040_reference_manual.html#parameters-messages>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
 
+.. note:: LIONESS experiments do their best to prevent double participation by IP address check and cookies in the browser. Some of these measures can still be circumvented with some effort. If you want to be 100% sure that participants only participate once they should be provided with a ticket or unique ID which they have to enter during the experiment.
+
 a) Internet Explorer
 ---------------------
 
@@ -82,8 +84,11 @@ If you increase the total number of players during the experiment, more particip
 e) Not registered
 -------------------
 
+If a participants tries to participate in a LIONESS experiment by navigating to a stage in the experiment without being registered he or she is informed about that. 
 
 .. warning:: You are currently not logged in. You cannot participate in the HIT.
+
+Entrance to an experiment is only possible via the first stage where participants are registered.
 
 f) Time out
 -------------
@@ -101,8 +106,11 @@ g) Kicked out by experimenter
 h) No re-entering possible
 ---------------------------
 
+If participants try to re-enter after being kicked out, they are also informed that they cannot participate in the experiment anymore.
+
 .. warning:: You are currently not logged in. You cannot participate in the HIT.
 
+.. note:: This information that a participant has been kicked out is based on the IP address (if the test mode is switched off) and a cookie in the browser. If the participant uses a different browser from a different IP address he or she can still enter as a new participant. 
 
 i) Too many quiz errors
 -------------------------
