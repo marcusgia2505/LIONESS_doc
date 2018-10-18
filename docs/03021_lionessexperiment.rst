@@ -48,21 +48,36 @@ Participants can return with a different browser as they were not registered wit
 b) Task not active
 -------------------
 
+As an experimenter you can set the task inactive or active at any time in the control panel. If the task is inactive, new participants cannot enter and receive the following message:
 
 .. warning:: This HIT is currently offline. You cannot participate at this time.
+
+Participants who are already in the game can complete the game.
 
 
 c) Double login
 ----------------
 
+LIONESS experiments record the IP addresses in an anyonimized way to protect personal data. With the anyonimized IP addresses it can be checked if two participants log in from the same IP address. The actual IP address cannot be retrieved.
+
+If a second participant tries to log in from the same IP address, he or she receives the following message and cannot enter.
+
 .. warning:: According to our records, your device has already been connected to the server during this session.                Participants are only allowed to enter a session once. Thank you for your understanding.
 
+The IP address is **deactivated** whent the test mode is on.
+
+.. note:: If you think that your participants may use the same IP address you may switch to test mode. Otherwise they cannot enter. This may happen if e.g. all participants play in the same network.
 
 d) Session full
 ----------------
 
+In the paramters the total number of players can be specified. If enough players entered the game, further participants cannot enter anymore and receive the message: 
+
 .. warning:: We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time.                Thank you for your understanding.
 
+If you increase the total number of players during the experiment, more participants are allowed to enter.
+
+.. note:: The number of participants are counted at the beginning of the experiment. It also includes participants who started the game but dropped out according to reasons f), g), i), j) and k). This means you should choose a number that is larger than the acutal number of participants that you need.
 
 e) Not registered
 -------------------
