@@ -636,7 +636,7 @@ This defines how the participants in the lobby are matched in groups. There are 
 Messages
 ---------
 
-Each experiment contains a page with messages tell participants that their session has terminated prematurely. These messages are necessary for clear communication with participants upon dropouts, and to provide information as to why they cannot proceed with the session. Each of the messages has a default text, which can be edited in the messages tab. Messages are displayed conditional upon the event that triggered the termination (see below).
+Each experiment contains a page with messages tell participants that their session has terminated prematurely. These messages are necessary for clear communication with participants upon dropouts, and to provide information as to why they cannot proceed with the session. Each of the messages has a default text, which can be edited in the messages tab. Messages are displayed conditional upon the event that triggered the termination (see below). You can find more information when a certain event is triggered in the :ref:`experimental flow <experimental_flow>` section.
 
 .. image:: _static/Parameter_table_messages.png
    :alt:  300px
