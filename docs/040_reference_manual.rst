@@ -418,6 +418,8 @@ JavaScript code can be added to any stage of your LIONESS experiment through a :
 
 .. _javascript__access_the_variables:
 
+.. warning:: If you use comments in your code, you should always use /* comment */ instead of // comment. Some browsers (Safari) may misinterpreted commenting out single lines with //. 
+
 Access JS variables
 ------------------------------------
 
