@@ -119,6 +119,8 @@ Bots
 In experiments with many stages (or large groups), it can be useful to automate some players, while operating some others as test players. The 'bot' functionality will help you do that. Clicking the button *start bot* will open a new tab with a robot player. With automated JavaScript functions, this *bot* will give random responses to input elements and will try to proceed through your experiment. We write *try* here, because the *bot* is still in beta version and is not yet able to deal with more sophisticated ways to record data with JavaScript functions.
 
 
+.. note:: Bots can also be used for going through the experiment until a certain stage. This may be useful if you work on a later stage of the experiment and you want to avoid clicking through all stages. If you add bot=false; to a certain stage in the javascript program, the bot will stop at this stage.
+
 
 .. _control_panel__monitor:
 
