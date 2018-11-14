@@ -2,7 +2,9 @@
 Welcome to the LIONESS Lab documentation!
 ==================================================
 
-.. note:: You can also download this documentation as a `PDF<https://readthedocs.org/projects/lioness-doc/downloads/pdf/latest/>`_. Please note that we update the documentation from time to time so that you may check for a new version of the documentation in a while.
+.. note:: You can also download this documentation as a PDF_. Please note that we update the documentation from time to time so that you may check for a new version of the documentation in a while.
+
+.. _PDF: https://readthedocs.org/projects/lioness-doc/downloads/pdf/latest/
 
 LIONESS Lab is a free web-based platform for online interactive experiments. LIONESS experiments include standardized methods to deal with group formation, handling participant dropout and other challenges of online interactive experiments.
 
