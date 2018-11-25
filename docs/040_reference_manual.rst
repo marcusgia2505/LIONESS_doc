@@ -135,6 +135,8 @@ The Button element mainly functions as a trigger to move on to the next desired 
 
 :Proceed:
     In the *proceed* element, you can define whether pressing the button automatically leads to the next desired page or wait until all other participants press the button so that all participants can continue simultaneously. For the former case you can select *if possible,* and for the latter case you can select *Wait for others.*
+    
+.. note:: All buttons on one stage should all have the same setting: all *Wait for others.* or all *if possible*. If you mix the two options, some players A wait for players B of their group which already have proceded (due to players B having *if possible*). Players A will then never be pushed forward.  
 
 :Appears after:
     If you would like to set a restriction that participants can proceed only after some amount of time, then you can define after how many seconds will the participants be able to proceed to the next stage. If you wish not to use this function, then you can just leave it as it is.
