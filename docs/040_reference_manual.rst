@@ -524,11 +524,13 @@ There are special functions for retrieving the values from others in your group,
 
 :Function: getValuesOthers()
 
-   :Arguments: *table name, condition,* variable name
+   :Arguments: variable name
 
-   :Return value: array
+   :Return value: array starting from 0 ordered by subjectNr
 
    :Simple example: getValuesOthers('someVariable');
+
+
 
 .. _javascript_code_snippets:
 
