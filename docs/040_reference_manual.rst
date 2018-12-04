@@ -64,6 +64,8 @@ In interactive tasks, it is often useful to set timers on decisions to keep up t
 
 To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the *standard* timeout page. This page will show the participants the :ref:`message <parameters__messages>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
 
+.. note:: If you automatically direct all participants to a stage on timeout, they may arrive at different times at the next page (due to different internet speed). They are not directed to a waiting screen in this case. Therefore, you should add another stage where buttons click a continue button and then "wait for others" on the waiting page. This guarantees that synchronisation is done correctly.
+
 Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable *TimeOut*. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
 
 .. code-block:: javascript
@@ -71,6 +73,8 @@ Note that in :ref:`JavaScript <elements__javascript_program>` , the number of se
    if (period < 3){
      TimeOut=120;
 	}
+
+
 
 
 .. _main_menu:
