@@ -35,8 +35,8 @@ In lobby stages, participants are matched in groups. The matching procedure is d
    :alt:  500px
 
 
-**Important**: for the time being, matching procedures in the lobby depend on global parameters, **LIONESS experiments currently only
-support one lobby**.
+.. important:: LIONESS experiments currently only support one lobby.
+
 
 .. _matching_procedures:
 
