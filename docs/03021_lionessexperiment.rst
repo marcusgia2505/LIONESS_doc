@@ -20,21 +20,21 @@ Should dropouts occur, standard procedures are in place to adequately deal with 
 Experimental Flow
 ==================
 
-The following figure shows the standard flow of an online experiment and describes all the mechanisms along this flow. 
+The following figure shows the flow of a typical LIONESS experiment. 
 
 1. Participants enter the experiment via a web link from an external website (e.g. Amazon MTurk), and are registered on the server (that is, they receive a 'player number', a unique number to identify them during the experiment). 
-2. They complete the experiment. 
-3. At the end they return to the external site to collect their earnings. 
+2. They complete the experiment by navigating the pages (---LINK--->see XXX for a typical experimental design, including tips and tricks <--- LINK---). 
+3. At the end they return to the external site to collect their earnings (euro sign). 
 
 .. image:: _static/control_flow2.png
 
-The blue arrows show the normal ('happy') flow of the experiment. The red arrows show possible dropouts. The euro symbol shows if a showup fee is paid on dropout or not. The blue line around the stages mark the boundaries of a LIONESS experiment.
+The blue arrows show the typical experimental flow. The red arrows show exceptions to the typical flow (most notably, dropouts) and the mechanisms in place that deal with those exceptions. The blue line around the experimental stages mark the boundaries of a LIONESS experiment.
 
-When participants arrive from the external site, they are registered and get a player number. Then they go to the first stage of the experiment. After that a quiz may follow where, participants have to answer control questions in order to participate. The quiz is optional. After passing the quiz, participants wait in the lobby to be matched to a group. This is optional for single player games. Then participants make their decisions (maybe over several rounds) before they are informed about their payoff (end). From there they are directed back to the external site they came from. 
+When participants enther the experiment, they are registered and get a unique player number. Then they go to the first stage of the experiment (typically instructions). This is a '[---LINK ---> standard page'] <---LINK- ---] that provides information to participants. After that, an optional [LINK ---> 'quiz' <--- LINK] may follow in which participants have to answer control questions to ensure understanding. After passing the quiz, participants wait in the [LINK--->lobby<---LINK] to be matched to a group. The lobby is a key stage of an interactive experiment. It is not needed for solo tasks. Once they are matched in a group, participants make their decisions and receive feedback (possibly over several rounds). Once they completed the interactions rounds, they are informed about their payoffs.  From there they are directed back to the external site (e.g. MTurk) to collect their payment. 
 
 On the way through the experiment, LIONESS experiment handle all kind of possible dropout issues, which are described in the following.
 
-.. note:: On dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <040_reference_manual.html#parameters-messages>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
+.. note:: Upon dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <040_reference_manual.html#parameters-messages>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
 
 .. note:: LIONESS experiments do their best to prevent double participation by IP address check and cookies in the browser. Some of these measures can still be circumvented with some effort. If you want to be 100% sure that participants only participate once they should be provided with a ticket or unique ID which they have to enter during the experiment.
 
