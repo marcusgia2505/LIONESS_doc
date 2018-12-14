@@ -2,20 +2,20 @@
 LIONESS experiment
 ====================
 
-A standard LIONESS experiment can be created in LIONESS Lab and brings along a set of standard features to enable online interactive experiments. The build-in features are described here. They can be configured when developing an experiment. 
+In LIONESS Lab you can create LIONESS experiments. These experiments include a set of standard features enabling online interactive experiments. Here we describe these features. 
 
-.. note:: This section provides an overview over the general functioning of a LIONESS experiment. It does not discuss the details of how to implement these things. The details can be found in :ref:`the develop section <develop>`.
+.. note:: This section provides an overview of the structure and functioning of LIONESS experiments. Implementation issues are discussed in :ref:`the develop section <develop>`.
 
-Principles
+Online experiments: challenges and solutions
 ===========
 
-For online experimentation (in contrast to normal lab experiments) some principles should be considered which are all implemented in LIONESS expeirments.
+Conducting experiments online presents a set of methodological and logistical challenges not present in the traditional decision making laboratory. LIONESS experiments have built-in features that deal with these challenges. The most important one is <b>driving down dropouts</b>. 
 
-1. Minimize dropouts if possible! 
-2. The basic principle for all this is that participants should be kept active and waiting times should not be too long.
-3. Dropout of participants are unavoidable. Measures should be in place to deal with this.
-4. Matching and assignment of roles and treatments can only be done on-the-fly and not predetermined as the total number of participants varies.
-5. Participants should be able to complete the experiment even if their couterparts dropped out in order to prevent negative feedback by participants which damage the experimenter's reputation.
+In online experiments, participants may drop out. Typically they complete their experiment from home, and can get distracted (especially when waiting on others), have a bad internet connection or may just leaving a session by closing the experimental pages. This will lead to missing data. Moreover, in interactive experiments, dropouts can also affect other participants (e.g. group mates). LIONESS experiments help avoid dropouts with measures reducing waiting times. 
+
+<b>Timers</b> can be added to decision pages, keeping up the pace of decision making in a group. Experimenters can choose to remove unresponsive participants from the experiment and let the others proceed. Furthermore, <b>groups can be formed on-the-fly</b>. Participants often do not enter experimental sessions exactly at the same time, and they will vary in the time they take to read instructions (and complete control questions). Groups can be started as soon as sufficient participants are ready to start making decisions.
+
+Should dropouts occur, standard procedures are in place to adequately deal with that. Experimenters can choose to allow participants to complete the experiment if one (or more) of their group mates have dropped out. This prevents disappointment for participants (in case they wouldn't be able to complete the eexperiment and might earn less than they expected), and, relatedly, negative online reviews potentially damaging the experimenter's reputation.
 
 Experimental Flow
 ==================
