@@ -22,13 +22,13 @@ Experimental Flow
 
 The following figure shows the standard flow of an online experiment and describes all the mechanisms along this flow. 
 
-1. Participants log in via a link from an external website (e.g. Amazon MTurk). 
-2. Then they go through the experiment. 
-3. At the end they return to the external site to get their payoff. 
+1. Participants enter the experiment via a web link from an external website (e.g. Amazon MTurk), and are registered on the server (that is, they receive a 'player number', a unique number to identify them during the experiment). 
+2. They complete the experiment. 
+3. At the end they return to the external site to collect their earnings. 
 
 .. image:: _static/control_flow2.png
 
-The blue arrows show the normal flow of the experiment. The red arrows show possible dropouts. The euro symbol shows if a showup fee is paid on dropout or not. The blue line around the stages mark the boundaries of a LIONESS experiment.
+The blue arrows show the normal ('happy') flow of the experiment. The red arrows show possible dropouts. The euro symbol shows if a showup fee is paid on dropout or not. The blue line around the stages mark the boundaries of a LIONESS experiment.
 
 When participants arrive from the external site, they are registered and get a player number. Then they go to the first stage of the experiment. After that a quiz may follow where, participants have to answer control questions in order to participate. The quiz is optional. After passing the quiz, participants wait in the lobby to be matched to a group. This is optional for single player games. Then participants make their decisions (maybe over several rounds) before they are informed about their payoff (end). From there they are directed back to the external site they came from. 
 
