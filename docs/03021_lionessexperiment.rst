@@ -32,7 +32,7 @@ The blue arrows show the typical experimental flow. The red arrows show exceptio
 
 When participants enther the experiment, they are registered and get a unique player number. Then they go to the first stage of the experiment (typically instructions). This is a '[---LINK ---> standard page'] <---LINK- ---] that provides information to participants. After that, an optional [LINK ---> 'quiz' <--- LINK] may follow in which participants have to answer control questions to ensure understanding. After passing the quiz, participants wait in the [LINK--->lobby<---LINK] to be matched to a group. The lobby is a key stage of an interactive experiment. It is not needed for solo tasks. Once they are matched in a group, participants make their decisions and receive feedback (possibly over several rounds). Once they completed the interactions rounds, they are informed about their payoffs.  From there they are directed back to the external site (e.g. MTurk) to collect their payment. 
 
-While participants complete the experiment, various exceptions might happen. Below we list how LIONESS experiments handle these issues.
+While participants complete the experiment, various exceptions might happen. Below we list how LIONESS experiments handle these issues. 
 
 .. note:: Upon dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <040_reference_manual.html#parameters-messages>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
 
@@ -41,45 +41,47 @@ While participants complete the experiment, various exceptions might happen. Bel
 a) Internet Explorer
 ---------------------
 
-LIONESS experiment (and many other modern web applications) do not support the Internet Explorer as it is outdated. Experimenters should inform their participants that they cannot participate if the use the Internet Explorer. If participants use the Internet Explorer, they are informed that they cannot participate in the experiment with the following message:
+LIONESS experiments (like many other modern web applications) do not support Internet Explorer (IE). Experimenters can announce this upon recruitment (e.g. in their MTurk HIT). In case an IE user attempts to enter the experiment, they are directed to a page explaining that they cannot participate. By default, this message reads:
 
 .. warning:: As indicated in our HIT text on MTurk, our HIT does **not** support Microsoft Internet Explorer.                         Please return this HIT. We apologise for any inconvenience caused.
 
-Participants can return with a different browser as they were not registered with their IP address in the LIONESS experiment yet.
+Participants can return using a different browser.
+
+.. note:: All the default messages can be edited in the [LINK--->parameter table<---LINK].
 
 b) Task not active
 -------------------
 
-As an experimenter you can set the task inactive or active at any time in the control panel. If the task is inactive, new participants cannot enter and receive the following message:
+Experimenters can set the experiment 'inactive' or 'active' in the control panel. If the task is inactive, new participants cannot enter and receive the following default message:
 
 .. warning:: This HIT is currently offline. You cannot participate at this time.
 
-Participants who are already in the game can complete the game.
+When an experiment is switched to 'inactive' in the middle of a session (for example, when an experimenter realizes that something is wrong), participants who are already in the experiment can continue and complete the experiment.
 
 
 c) Double login
 ----------------
 
-LIONESS experiments record the IP addresses in an anyonimized way to protect personal data. With the anyonimized IP addresses it can be checked if two participants log in from the same IP address. The actual IP address cannot be retrieved.
+LIONESS experiments record the IP addresses of participant in an <b>anyonimized</b> way to protect personal data. With the anyonimized IP addresses it can be checked if two participants log in from the same IP address. The actual IP address cannot be retrieved.
 
-If a second participant tries to log in from the same IP address, he or she receives the following message and cannot enter.
+If a login attempt is made from the same IP address, the participant is blocked and receives the following message:
 
 .. warning:: According to our records, your device has already been connected to the server during this session.                Participants are only allowed to enter a session once. Thank you for your understanding.
 
-The IP address check is **deactivated** whent the test mode is on.
+This IP address check is **deactivated** whent the [LINK-->test mode<---LINK] is on.
 
-.. note:: If you think that your participants may use the same IP address you may switch to test mode. Otherwise they cannot enter. This may happen if e.g. all participants play in the same network.
+.. note:: If you think that your participants may use the same IP address (which may be common in a laboratory setup) you may switch to test mode. Otherwise participants cannot enter the experiment. 
 
 d) Session full
 ----------------
 
-In the paramters the total number of players can be specified. If enough players entered the game, further participants cannot enter anymore and receive the message: 
+In the [LINK-->experiment parameters<---], you can set the total number of players. When this number has been reached, further participants cannot enter anymore. They receive the message: 
 
-.. warning:: We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time.                Thank you for your understanding.
+.. warning:: We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time. Thank you for your understanding.
 
-If you increase the total number of players during the experiment, more participants are allowed to enter.
+This functionality is **deactivated** whent the [LINK-->test mode<---LINK] is on. 
 
-.. note:: The number of participants are counted at the beginning of the experiment. It also includes participants who started the game but dropped out according to reasons f), g), i), j) and k). This means you should choose a number that is larger than the acutal number of participants that you need.
+.. note:: When a participant tries to enter an experiment, the current number of participants is compared to the total number of players allowed. The current participants also include those who started the experiment but dropped out (see f), g), i), j) and k)). It is therefore often useful to set the parameter [LINK--->'totalPlayers' <---LINK] higher than the number of participants you actually need.
 
 e) Not registered
 -------------------
