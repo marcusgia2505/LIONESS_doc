@@ -32,7 +32,7 @@ The blue arrows show the typical experimental flow. The red arrows show exceptio
 
 When participants enther the experiment, they are registered and get a unique player number. Then they go to the first stage of the experiment (typically instructions). This is a '[---LINK ---> standard page'] <---LINK- ---] that provides information to participants. After that, an optional [LINK ---> 'quiz' <--- LINK] may follow in which participants have to answer control questions to ensure understanding. After passing the quiz, participants wait in the [LINK--->lobby<---LINK] to be matched to a group. The lobby is a key stage of an interactive experiment. It is not needed for solo tasks. Once they are matched in a group, participants make their decisions and receive feedback (possibly over several rounds). Once they completed the interactions rounds, they are informed about their payoffs.  From there they are directed back to the external site (e.g. MTurk) to collect their payment. 
 
-On the way through the experiment, LIONESS experiment handle all kind of possible dropout issues, which are described in the following.
+While participants complete the experiment, various exceptions might happen. Below we list how LIONESS experiments handle these issues.
 
 .. note:: Upon dropout participants receive different standard messages, which can be customized in the paramters. For all list of all messages see also :ref:`here <040_reference_manual.html#parameters-messages>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
 
