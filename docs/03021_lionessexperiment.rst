@@ -17,6 +17,7 @@ In online experiments, participants may drop out. Typically they complete their 
 
 Should dropouts occur, standard procedures are in place to adequately deal with that. Experimenters can choose to allow participants to complete the experiment if one (or more) of their group mates have dropped out. This prevents disappointment for participants (in case they wouldn't be able to complete the eexperiment and might earn less than they expected), and, relatedly, negative online reviews potentially damaging the experimenter's reputation.
 
+
 Experimental Flow
 ==================
 
@@ -94,26 +95,26 @@ Participants can only enter a LIONESS experiment through the registration page. 
 f) Time out
 -------------
 
-In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment. If a participant does not finish in time, he or she can be directed towards a different stage in the game or to the standard time out page which shows the following message:
+In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment (avoiding long waiting times, which risk droupouts). If a participant does not respond in time, they can be directed towards a different stage in the experiment, or to the standard time out page which shows the following message:
 
-.. warning:: You did not make a decision before the time was up. You have been removed from the HIT.                         You can close down this window.
+.. warning:: You did not make a decision before the time was up. You have been removed from the HIT. You can close down this window.
 
 g) Kicked out by experimenter
 -------------------------------
 
-In the control panel, experimenters can kickout participants by entering their player number. They receive the following message and get their show-up fee. The values between $ signs are filled by the values set in the parameters.
+In the control panel (top-right menu), experimenters can remove participants by entering their player number and click 'terminate player'. They receive the following message and get their show-up fee: 
 
 .. warning:: Unfortunately, this HIT was terminated for a technical reason! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: 
                 **$randomid$** Once you have filled out this code, you can close this window.
                 Thank you for your participation.
 
 
-.. note:: This features should be used with care. It is mainly intened when technical problems appear.
+.. note:: the values between $ signs are filled by the values set in the [LINK--->parameters <---LINK]. Terminating participants should, of course, be done with care. This feature is intended for cases in which technical problems occur.
 
 h) No re-entering possible
 ---------------------------
 
-If participants try to re-enter after being kicked out, they are also informed that they cannot participate in the experiment anymore.
+If participants try to re-enter after being removed from the experiment, they are informed that they cannot participate in the experiment anymore.
 
 .. warning:: You are currently not logged in. You cannot participate in the HIT.
 
@@ -129,13 +130,13 @@ In the quiz stage, the experimenter can specify a maximum number of quiz failure
 j) No group match
 ------------------
 
-In the lobby, participants wait until they are matched for a cetrain time span. If there is no other participant within this time span, the participant is directed to a page where he or she can choose to wait additional two minutes or to leave the experiment. In the latter case the participant should receive the showup-fee. The experimenter can set to which stage the participant is directed when he or she leaves.
+In the lobby, participants wait until they are matched. You can set the maximum waiting time. If there is no other participant within that time, the participant is directed to a page where they can choose to wait an additional two minutes or to leave the experiment. In the latter case the participant is directed to a page (set by the experimenter) where they would typically be informed that they receive the guaranteed participation fee.
 
 k) Group aborted
 ------------------
 
-In the parameter setting the experimenter can choose what happens if during the decision phase a participant drops out. If the experimeter opts for *terminate group*, all players of the group are kicked out of the experiment and receive the following message:
+The experimenter can choose how their LIONESS experiment [LINK --> handles dropouts <---]. In particular, it is important to define what happens to the other participants if one drops out. The default option in LIONESS experiment is *continue with reduced group*, so that the other group members can finish the experiment, avoiding participant disappointment and potential reputation damage on the part of the experimenter. The settings for dropout handling can be found in the [LINK-->parameters<--LINK]. 
+
+If  *terminate group* is selected as the dropout handling option, all players of the group are removed from the experiment and receive the following message:
 
 .. warning:: Unfortunately, one of the players in your group dropped out of the HIT! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: **$randomid$** Once you have filled out this code, you can close this window. Thank you for your participation.
-
-For the different options on drop outs in a group see Reference manual > Paramters > Predefined parameters > dropout handling.
