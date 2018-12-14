@@ -47,7 +47,7 @@ LIONESS experiments (like many other modern web applications) do not support Int
 
 Participants can return using a different browser.
 
-.. note:: All the default messages can be edited in the [LINK--->parameter table<---LINK].
+.. note:: All default messages assume participants are recruited from Amazon MTurk. You can edit these message in the [LINK--->parameter table<---LINK], for example when you recruit your participants from elsewhere (e.g. Prolific),
 
 b) Task not active
 -------------------
@@ -75,7 +75,7 @@ This IP address check is **deactivated** whent the [LINK-->test mode<---LINK] is
 d) Session full
 ----------------
 
-In the [LINK-->experiment parameters<---], you can set the total number of players. When this number has been reached, further participants cannot enter anymore. They receive the message: 
+In the [LINK-->experiment parameters<---], you can set the total number of players allowed into your session. When this number has been reached, further participants cannot enter anymore. They receive the message: 
 
 .. warning:: We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time. Thank you for your understanding.
 
@@ -86,11 +86,10 @@ This functionality is **deactivated** whent the [LINK-->test mode<---LINK] is on
 e) Not registered
 -------------------
 
-If a participant tries to participate in a LIONESS experiment by navigating to a stage in the experiment without being registered he or she is informed about that. 
+Participants can only enter a LIONESS experiment through the registration page. Navigating to a stage somewhere in the middle of an experiment without being registered leads to a page reading: 
 
 .. warning:: You are currently not logged in. You cannot participate in the HIT.
 
-Entrance to an experiment is only possible via the first stage where participants are registered.
 
 f) Time out
 -------------
