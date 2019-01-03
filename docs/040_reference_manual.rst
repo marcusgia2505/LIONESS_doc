@@ -35,8 +35,8 @@ In lobby stages, participants are matched in groups. The matching procedure is d
    :alt:  500px
 
 
-**Important**: for the time being, matching procedures in the lobby depend on global parameters, **LIONESS experiments currently only
-support one lobby**.
+.. important:: LIONESS experiments currently only support one lobby.
+
 
 .. _matching_procedures:
 
@@ -64,6 +64,8 @@ In interactive tasks, it is often useful to set timers on decisions to keep up t
 
 To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the *standard* timeout page. This page will show the participants the :ref:`message <parameters__messages>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
 
+.. note:: If you automatically direct all participants to a stage on timeout, they may arrive at different times at the next page (due to different internet speed). They are not directed to a waiting screen in this case. Therefore, you should add another stage where buttons click a continue button and then "wait for others" on the waiting page. This guarantees that synchronisation is done correctly.
+
 Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable *TimeOut*. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
 
 .. code-block:: javascript
@@ -71,6 +73,8 @@ Note that in :ref:`JavaScript <elements__javascript_program>` , the number of se
    if (period < 3){
      TimeOut=120;
 	}
+
+
 
 
 .. _main_menu:
@@ -135,6 +139,8 @@ The Button element mainly functions as a trigger to move on to the next desired 
 
 :Proceed:
     In the *proceed* element, you can define whether pressing the button automatically leads to the next desired page or wait until all other participants press the button so that all participants can continue simultaneously. For the former case you can select *if possible,* and for the latter case you can select *Wait for others.*
+    
+.. note:: All buttons on one stage should all have the same setting: all *Wait for others.* or all *if possible*. If you mix the two options, some players A wait for players B of their group which already have proceded (due to players B having *if possible*). Players A will then never be pushed forward.  
 
 :Appears after:
     If you would like to set a restriction that participants can proceed only after some amount of time, then you can define after how many seconds will the participants be able to proceed to the next stage. If you wish not to use this function, then you can just leave it as it is.
@@ -418,6 +424,8 @@ JavaScript code can be added to any stage of your LIONESS experiment through a :
 
 .. _javascript__access_the_variables:
 
+.. warning:: If you use comments in your code, you should always use /* comment */ instead of // comment. Some browsers (Safari) may misinterpreted commenting out single lines with //. 
+
 Access JS variables
 ------------------------------------
 
@@ -522,11 +530,13 @@ There are special functions for retrieving the values from others in your group,
 
 :Function: getValuesOthers()
 
-   :Arguments: *table name, condition,* variable name
+   :Arguments: variable name
 
-   :Return value: array
+   :Return value: array starting from 0 ordered by subjectNr
 
    :Simple example: getValuesOthers('someVariable');
+
+
 
 .. _javascript_code_snippets:
 
