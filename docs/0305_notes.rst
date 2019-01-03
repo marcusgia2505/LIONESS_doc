@@ -1,3 +1,4 @@
+.. _notes_experimental_design:
 
 ============================
 Notes on experimental design

@@ -3,6 +3,129 @@ Reference manual
 =========================
 
 
+Experimental Flow
+==================
+
+The following figure shows the flow of a typical LIONESS experiment.
+
+1. Participants enter the experiment via a web link from an external website (e.g. Amazon MTurk), and are registered on the server (that is, they receive a 'player number', a unique number to identify them during the experiment).
+2. They complete the experiment by navigating the pages :ref:`click here for a typical experimental design, including tips and tricks <notes_experimental_design>`.
+3. At the end they return to the external site to collect their earnings (euro sign).
+
+.. image:: _static/control_flow2.png
+
+The blue arrows show the typical experimental flow. The red arrows show exceptions to the typical flow (most notably, dropouts) and the mechanisms in place that deal with those exceptions. The blue line around the experimental stages mark the boundaries of a LIONESS experiment.
+
+When participants enter the experiment, they are registered and get a unique player number. Then they go to the first stage of the experiment (typically instructions). This is a :ref:`standard stage <stage_type__standard>` that provides information to participants. After that, an optional :ref:`quiz <quiz>` may follow in which participants have to answer control questions to ensure understanding. After passing the quiz, participants wait in the :ref:`lobby <lobby>` to be matched to a group. The lobby is a key stage of an interactive experiment. It is not needed for solo tasks. Once they are matched in a group, participants make their decisions and receive feedback (possibly over several rounds). Once they completed the interactions rounds, they are informed about their payoffs.  From there they are directed back to the external site (e.g. MTurk) to collect their payment.
+
+While participants complete the experiment, various exceptions might happen. Below we list how LIONESS experiments handle these issues.
+
+.. note:: Upon dropout participants receive different standard messages, which can be customized in the parameters. For all list of all messages see also :ref:`here <parameters__predefined_parameters>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
+
+.. note:: LIONESS experiments do their best to prevent double participation by IP address check and cookies in the browser. Some of these measures can still be circumvented with some effort. If you want to be 100% sure that participants only participate once they should be provided with a ticket or unique ID which they have to enter during the experiment.
+
+a) Internet Explorer
+---------------------
+
+LIONESS experiments (like many other modern web applications) do not support Internet Explorer (IE). Experimenters can announce this upon recruitment (e.g. in their MTurk HIT). In case an IE user attempts to enter the experiment, they are directed to a page explaining that they cannot participate. By default, this message reads:
+
+.. warning:: As indicated in our HIT text on MTurk, our HIT does **not** support Microsoft Internet Explorer.                         Please return this HIT. We apologise for any inconvenience caused.
+
+Participants can return using a different browser.
+
+.. note:: All default messages assume participants are recruited from Amazon MTurk. You can edit these message in the parameter table, for example when you recruit your participants from elsewhere (e.g. Prolific),
+
+b) Task not active
+-------------------
+
+Experimenters can set the experiment 'inactive' or 'active' in the control panel. If the task is inactive, new participants cannot enter and receive the following default message:
+
+.. warning:: This HIT is currently offline. You cannot participate at this time.
+
+When an experiment is switched to 'inactive' in the middle of a session (for example, when an experimenter realizes that something is wrong), participants who are already in the experiment can continue and complete the experiment.
+
+
+c) Double login
+----------------
+
+LIONESS experiments record the IP addresses of participant in an *anonymized* way to protect personal data. With the anyonimized IP addresses it can be checked if two participants log in from the same IP address. The actual IP address cannot be retrieved.
+
+If a login attempt is made from the same IP address, the participant is blocked and receives the following message:
+
+.. warning:: According to our records, your device has already been connected to the server during this session.                Participants are only allowed to enter a session once. Thank you for your understanding.
+
+This IP address check is **deactivated** whent the [LINK-->test mode<---LINK] is on.
+
+.. note:: If you think that your participants may use the same IP address (which may be common in a laboratory setup) you may switch to test mode. Otherwise participants cannot enter the experiment.
+
+d) Session full
+----------------
+
+In the :ref:`experiment parameters <parameters__totalPlayers>`, you can set the total number of players allowed into your session. When this number has been reached, further participants cannot enter anymore. They receive the message:
+
+.. warning:: We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time. Thank you for your understanding.
+
+This functionality is **deactivated** when the :ref:`test mode <control_panel__test_mode>` is on.
+
+.. note:: When a participant tries to enter an experiment, the current number of participants is compared to the total number of players allowed. The current participants also include those who started the experiment but dropped out (see f), g), i), j) and k)). It is therefore often useful to set the :ref:`total players <parameters__totalPlayers>` higher than the number of participants you actually need.
+
+e) Not registered
+-------------------
+
+Participants can only enter a LIONESS experiment through the registration page. Navigating to a stage somewhere in the middle of an experiment without being registered leads to a page reading:
+
+.. warning:: You are currently not logged in. You cannot participate in the HIT.
+
+
+f) Time out
+-------------
+
+In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment (avoiding long waiting times, which risk droupouts). If a participant does not respond in time, they can be directed towards a different stage in the experiment, or to the standard time out page which shows the following message:
+
+.. warning:: You did not make a decision before the time was up. You have been removed from the HIT. You can close down this window.
+
+g) Kicked out by experimenter
+-------------------------------
+
+In the control panel (top-right menu), experimenters can remove participants by entering their player number and click 'terminate player'. They receive the following message and get their show-up fee:
+
+.. warning:: Unfortunately, this HIT was terminated for a technical reason! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk:
+                **$randomid$** Once you have filled out this code, you can close this window.
+                Thank you for your participation.
+
+
+.. note:: the values between $ signs are filled by the values set in the :ref:`test mode <parameters>`. Terminating participants should, of course, be done with care. This feature is intended for cases in which technical problems occur.
+
+h) No re-entering possible
+---------------------------
+
+If participants try to re-enter after being removed from the experiment, they are informed that they cannot participate in the experiment anymore.
+
+.. warning:: You are currently not logged in. You cannot participate in the HIT.
+
+.. note:: This information that a participant has been kicked out is based on the IP address (if the test mode is switched off) and a cookie in the browser. If the participant uses a different browser from a different IP address he or she can still enter as a new participant.
+
+i) Too many quiz errors
+-------------------------
+
+In the quiz stage, the experimenter can specify a maximum number of quiz failures. It the participant fails more than that, he is excluded from the experiment and receives the following message:
+
+.. warning:: You did not answer the quiz correctly and were excluded from further participation.
+
+j) No group match
+------------------
+
+In the lobby, participants wait until they are matched. You can set the maximum waiting time. If there is no other participant within that time, the participant is directed to a page where they can choose to wait an additional two minutes or to leave the experiment. In the latter case the participant is directed to a page (set by the experimenter) where they would typically be informed that they receive the guaranteed participation fee.
+
+k) Group aborted
+------------------
+
+The experimenter can choose how their LIONESS experiment :ref:`handle dropouts <parameters__dropouthandling>`. In particular, it is important to define what happens to the other participants if one drops out. The default option in LIONESS experiment is *continue with reduced group*, so that the other group members can finish the experiment, avoiding participant disappointment and potential reputation damage on the part of the experimenter. The settings for dropout handling can be found in the :ref:`handle dropouts <parameters__dropouthandling>`.
+
+If  *terminate group* is selected as the dropout handling option, all players of the group are removed from the experiment and receive the following message:
+
+.. warning:: Unfortunately, one of the players in your group dropped out of the HIT! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: **$randomid$** Once you have filled out this code, you can close this window. Thank you for your participation.
+
 .. _stage_type:
 
 Stage type
@@ -424,7 +547,7 @@ JavaScript code can be added to any stage of your LIONESS experiment through a :
 
 .. _javascript__access_the_variables:
 
-.. warning:: If you use comments in your code, you should always use /* comment */ instead of // comment. Some browsers (Safari) may misinterpreted commenting out single lines with //. 
+.. warning:: If you use comments in your code, you should always use `/*` comment `*/` instead of `//` comment. Some browsers (Safari) may misinterpreted commenting out single lines with `//`.
 
 Access JS variables
 ------------------------------------
@@ -570,6 +693,8 @@ testMode
 ~~~~~~~~~~~~~~
 
 This parameter regulates the :ref:`test mode <control_panel__test_mode>`, and is set in the :ref:`control panel <control_panel>`. In the test mode, multiple participants can be operated from the same browser, using different tabs. This is useful when developing your LIONESS experiment. TestMode can be set in the :ref:`Control panel <control_panel>` and should not been changed here.
+
+.. _parameters__totalPlayers:
 
 totalPlayers
 ~~~~~~~~~~~~~~
