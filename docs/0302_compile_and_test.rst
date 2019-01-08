@@ -1,7 +1,7 @@
 .. _compile_and_test:
 
 ====================
-Compile and test
+Compile and test your experiment
 ====================
 Once you are ready specifying your experimental screens, you can test your LIONESS experiment. Here we describe the basic procedures of how test your experiment and make adjustments on the fly. Once you are done testing, you can download your experiment, put it on your own server, and :ref:`run <run>` your experiment online.
 
