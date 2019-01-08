@@ -1,7 +1,7 @@
 .. _develop:
 
 =========================
-Develop
+Develop your experiment
 =========================
 
 There are two basic ways to develop your LIONESS experiment. You can either start from scratch, or :ref:`build on an existing experiment <build_on_an_existing_experiment>`. The :ref:`repository` contains a range of different LIONESS experiments for you to use and adjust to accommodate your requirements.
