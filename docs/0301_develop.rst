@@ -1,12 +1,12 @@
 .. _develop:
 
 =========================
-Develop
+Develop your experiment
 =========================
 
 There are two basic ways to develop your LIONESS experiment. You can either start from scratch, or :ref:`build on an existing experiment <build_on_an_existing_experiment>`. The :ref:`repository` contains a range of different LIONESS experiments for you to use and adjust to accommodate your requirements.
 
-Here we describe how to develop your LIONESS experiment from scratch. We describe how to create a new game and define your screens. If you have already completed the tutorial, many of the steps described here will look familiar to you. This chapter gives a fuller description of the features that LIONESS Lab has to offer.
+Here we describe how to develop your LIONESS experiment from scratch. We describe how to create a new experiment and define your screens. If you have already completed the tutorial, many of the steps described here will look familiar to you. This chapter gives a fuller description of the features that LIONESS Lab has to offer.
 
 Create experiment
 =========================
