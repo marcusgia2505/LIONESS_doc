@@ -30,7 +30,7 @@ Timers can be added to decision pages, keeping up the pace of decision making in
 
 Should dropouts occur, standard procedures are in place to adequately deal with that. Experimenters can choose to allow participants to complete the experiment if one (or more) of their group mates have dropped out. This prevents disappointment for participants (in case they wouldn't be able to complete the experiment and might earn less than they expected), and, related, negative online reviews potentially damaging the experimenter's reputation.
 
-.. note:: You can also download this documentation as a PDF_. Please note that we update the documentation from time to time so that you may check for a new version of the documentation in a while.
+.. note:: You can also download this documentation as a PDF_. Please note that we update the documentation from time to time so please check for new version of the documentation from time to time.
 
 .. _PDF: https://readthedocs.org/projects/lioness-doc/downloads/pdf/latest/
 
