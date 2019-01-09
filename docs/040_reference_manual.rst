@@ -206,8 +206,6 @@ Note that in :ref:`JavaScript <elements__javascript_program>` , the number of se
 
 .. _main_menu:
 
-TBA
-
 
 .. _elements:
 
