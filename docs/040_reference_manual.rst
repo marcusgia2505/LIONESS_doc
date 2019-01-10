@@ -2,7 +2,7 @@
 Reference manual
 =========================
 
-This reference manual covers details of LIONESS Lab. It outlines the experimental flow, and gives further details on the definition of experimental screens and the functioning of JavaScript elements. If you encounter any issues or notice that some information is missing, please do not hesitate to get in touch via info@lioness-lab.org. 
+This reference manual covers details of LIONESS Lab. It details the experimental flow, the definition of experimental screens, their elements and the functioning of JavaScript elements. If you encounter any issues or notice that some information is missing, please do not hesitate to get in touch via info@lioness-lab.org. 
 
 Experimental Flow
 ==================
