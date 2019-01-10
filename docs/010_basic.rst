@@ -64,6 +64,8 @@ Below the name of your experiment you can now start defining your stages as they
 
 Screens consist of :ref:`elements <elements>`. These can be text boxes, input fields to record numerical responses, or pieces of :ref:`javascript` to interact with the server or to do calculations. You can add elements to your screen by clicking *add new element* and select the type of element you want to add. As you will have noticed, the first stage already includes three pre-loaded (empty) elements: a :ref:`JavaScript <javascript>` field, a :ref:`text box <elements__text_box>`, and a :ref:`button <elements__button>`.
 
+In the next steps you will define your own Public Goods Game. While you will can to see how they look from the participants' perspective by compiling your experiment and starting a 'test player' from the Control panel. For the sake of exposition, we will do this only at the end of this tutorial.
+
 Stage 1: instructions
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -219,4 +221,4 @@ Your experiment is now ready for testing. In the horizontal bar on the top of yo
 Control panel
 --------------
 
-In the control panel, you can start testing your experiment by switching on the :ref:`test mode <control_panel__test_mode>` and start a :ref:`test player <control_panel__test_mode>`. A new tab will open with the experimental pages you defined. If needed, you can start a second test player (e.g. to play in a group after being matched in the :ref:`lobby <lobby>`).
+In the control panel, you can start testing your experiment by switching on the :ref:`test mode <control_panel__test_mode>` and start a :ref:`test player <control_panel__test_mode>`. A new tab will open with the experimental pages you defined - this allows you to see how the pages you defined will be displayed to participants. If needed, you can start a second test player (e.g. to play in a group after being matched in the :ref:`lobby <lobby>`).
