@@ -152,6 +152,8 @@ Quiz
 
 Quiz stages have the same functionality available as Standard stages, but there is one feature on top of that. For Quiz stages, LIONESS documents the number of attempts a participant needs to proceed. Typically, input :ref:`elements` in quiz stages will have the field *correct value* defined. The variable *quizFail* in the :ref:`session table <experiment_tables__session>` tracks the total number of attempts a participant has made.  For each player, it both stores the total and by-item number of mistakes.
 
+For a quiz stage you can set the maximum number of attempts that participants have, using the 'Attempts' field. If this field is defined, participants will see how many attempts they have left. If a participant fails to solve all questions correctly within the specified number of attempts, they are sent to a page (defined in the parameters table; see 'too many quiz errors') telling them that they cannot participate.
+
 .. _lobby:
 
 Lobby
