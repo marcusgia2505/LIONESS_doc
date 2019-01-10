@@ -64,7 +64,7 @@ Below the name of your experiment you can now start defining your stages as they
 
 Screens consist of :ref:`elements <elements>`. These can be text boxes, input fields to record numerical responses, or pieces of :ref:`javascript` to interact with the server or to do calculations. You can add elements to your screen by clicking *add new element* and select the type of element you want to add. As you will have noticed, the first stage already includes three pre-loaded (empty) elements: a :ref:`JavaScript <javascript>` field, a :ref:`text box <elements__text_box>`, and a :ref:`button <elements__button>`.
 
-In the next steps you will define your own Public Goods Game. While you will can to see how they look from the participants' perspective by compiling your experiment and starting a 'test player' from the Control panel. For the sake of exposition, we will do this only at the end of this tutorial.
+In the next steps you will define your own Public Goods Game. While defining your experimental screens, you can see how they look from the participants' perspective by compiling your experiment and starting a 'test player' from the Control panel. For the sake of exposition, we will do this only at the end of this tutorial.
 
 Stage 1: instructions
 ~~~~~~~~~~~~~~~~~~~~~
