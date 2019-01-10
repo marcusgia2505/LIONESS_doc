@@ -10,7 +10,7 @@ Get access to LIONESS Lab
 `Register for a LIONESS Lab account <https://lioness-lab.org/get-login-credentials/>`__ to receive an email with your credentials. On the `login page <http://lioness.uni-passau.de/classEx34/lioness.php>`__ you find your institution and your account.
 
 .. image:: _static/Login_page.png
-   :alt:  300px
+   :alt:  150px
 
 Once you have logged in, the landing page allows for basic actions such as creating new LIONESS experiments, edit your existing experiments or change your user settings.
 
