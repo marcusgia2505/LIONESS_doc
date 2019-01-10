@@ -16,7 +16,7 @@ On the LIONESS Lab landing page, you can create a new LIONESS experiment by clic
 In the next screen you can define basic settings of your experiment by filling out the appropriate screens.
 
 .. image:: _static/New_game.png
-   :alt:  300px
+   :alt:  200px
 
 
 With the drop-down menu under *availability* you can choose to keep  experiment private, or to share it with other LIONESS Lab users by making it *public*. Other users will be able to copy public experiments from the :ref:`repository <repository>`  to their LIONESS Lab accounts and edit these for their own purposes. Experiments' settings can be adjusted at any time.
