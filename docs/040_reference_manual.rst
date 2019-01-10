@@ -98,7 +98,7 @@ In the control panel (top-right menu), experimenters can remove participants by 
                 Thank you for your participation.
 
 
-.. note:: the values between $ signs are filled by the values set in the :ref:`test mode <parameters>`. Terminating participants should, of course, be done with care. This feature is intended for cases in which technical problems occur.
+.. note:: the values between $ signs are filled by the values set in the :ref:`parameter table <parameters>`. Terminating participants should, of course, be done with care. This feature is intended for cases in which technical problems occur.
 
 h) No re-entering possible
 ---------------------------
