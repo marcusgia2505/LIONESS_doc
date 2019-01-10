@@ -6,9 +6,7 @@ Run your experiment
 
 Once you have completed testing and setting up your experiment, you can run your LIONESS experiment online. Here we describe the steps to collect data with participants recruited from `Amazon Mechanical Turk <http://www.mturk.com>`__. Before you run your experiment online, it is useful to take a look at `this <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__ paper discussing best practices and methodological details of conducting interactive experiments online.
 
-Note
-
-LIONESS experiments can of course also be used in the physical decision making laboratory. As dropouts are very unlikely to occur, please make sure that you set the parameter dropoutHandling to 'disable exclusion'. 
+.. note:: LIONESS experiments can of course also be used in the physical decision making laboratory. As dropouts are very unlikely to occur, please make sure that you set the parameter dropoutHandling to 'disable exclusion'. 
 
 Recruit participants
 ======================
@@ -53,4 +51,4 @@ One can assign bonuses manually in the AMT user interface. However, especially w
  - Add a description explaining participants why they earned this bonus and copy that into all rows of that column
  - The column *MTurkPaymentToolsCode* will contain a list of codes that can you can paste into CLT
 
-In case you run your experiment in the decision making laboratory, you can refer to the session table to 
+.. note:: In case you run your experiment in the decision making laboratory, you can refer to the session table to calculate the payments for each participant. If your lab uses a system with numbered cubicles, you might consider recording the cubicle number in a screen of your experiment (right in the first screen typically makes sense). Then, at the end of your experiment (e.g. in the final screen) you can calculate the participants' total earnings and write that to the database, for example, by using the JS command 'setBonus'.
