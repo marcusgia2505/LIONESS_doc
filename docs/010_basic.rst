@@ -50,7 +50,7 @@ Create a new experiment
 -----------------------
 
 .. image:: _static/New_game.png
-   :alt:  300px
+   :alt:  200px
 
 On the landing page, choose *New experiment* to define a LIONESS experiment starting from scratch. In the Experiment Settings, you can give the experiment a name, say *Public goods game*. For now, you can set the *availability* of your experiment to *private* but you can choose to share it with others by setting the availability to *public* later. For now we can ignore the fields on the right hand side. Click *Save* to start defining your screens.
 
