@@ -4,7 +4,11 @@
 Run your experiment
 ===================
 
-Once you have completed testing and setting up your experiment, you can run your LIONESS experiment online. Here we describe the steps to collect data with participants recruited from `Amazon Mechanical Turk <http://www.mturk.com>`__. Before you run your experiment, it is useful to take a look at `this <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__ paper discussing best practices and methodological details of conducting interactive experiments online.
+Once you have completed testing and setting up your experiment, you can run your LIONESS experiment online. Here we describe the steps to collect data with participants recruited from `Amazon Mechanical Turk <http://www.mturk.com>`__. Before you run your experiment online, it is useful to take a look at `this <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__ paper discussing best practices and methodological details of conducting interactive experiments online.
+
+Note
+
+LIONESS experiments can of course also be used in the physical decision making laboratory. As dropouts are very unlikely to occur, please make sure that you set the parameter dropoutHandling to 'disable exclusion'. 
 
 Recruit participants
 ======================
@@ -22,7 +26,7 @@ Once you are done with the edition, press Source and search for the two instance
 
 General pointers for writing a HIT description and setting up a can be found in a `paper by Arechar et al. <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__.
 
-**Make sure you have the control panel of your experiment open when you publish your HIT.**
+**Make sure you have the Control panel of your interactive experiment open when you publish your HIT.**
 
 Monitor your experiment
 ========================
@@ -49,3 +53,4 @@ One can assign bonuses manually in the AMT user interface. However, especially w
  - Add a description explaining participants why they earned this bonus and copy that into all rows of that column
  - The column *MTurkPaymentToolsCode* will contain a list of codes that can you can paste into CLT
 
+In case you run your experiment in the decision making laboratory, you can refer to the session table to 
