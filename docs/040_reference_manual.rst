@@ -805,9 +805,9 @@ The exchange rate can be used to convert experimental points into real money.
 dropoutHandling
 ~~~~~~~~~~~~~~~~
 
-This parameter defines how dropouts should be handled. There is not much a software can do for participants who lose their connection to the experimental server (e.g. due to unstable internet), or close down their browser in the middle of an experimental session. Participants who dropped out by failing to respond within the set time will be directed to a screen displaying a :ref:`message <parameters__messages>` indicating that their task is over. 
+This parameter defines how dropouts should be handled. There is not much a software can do for participants who lose their connection to the experimental server (e.g. due to unstable internet), or close down their browser in the middle of an experimental session.  Participants who dropped out by failing to respond within the set time will be directed to a screen displaying a :ref:`message <parameters__messages>` indicating that their task is over. 
 
-LIONESS experiments automatically notice dropouts like these, and will de-register disconnected participants from the experiment. This allows the group mates of the participant dropping out to proceed with the experiment. From the parameter menu, you can choose from three options defining how to deal with the other group members. 
+LIONESS experiments automatically notice dropouts like these, and will de-register disconnected participants from the experiment. Technically, upon dropout, the controller algorithm (activated with the script behind the heartbeat in the Control panel) reduces the variable 'currentGroupSize' with 1, for all the participants in the group of the participant who dropped out. From the parameter menu, you can choose from three options defining how to deal with the other group members. 
 
 :terminate group: If one participant drops out, the other participants in their group will be led to a screen displaying a :ref:`message <parameters__messages>` indicating that one of the group mates has dropped out and that the session is over. When you choose this option, consider taking measures to compensate these group mates as they might expect to earn some more in the periods they will not be able to complete due to this dropout. 
 
@@ -816,6 +816,8 @@ LIONESS experiments automatically notice dropouts like these, and will de-regist
 
 
 :disable exclusion: This option is best used for individual (non-interactive) tasks, or when you deploy LIONESS in the laboratory (that is, not with participants recruited online), where dropouts are atypical. When a participant loses connection to the server (e.g. due to network problems), you can try to solve this without the participant dropping out. The other members of the group typically wait and continue once the problem is solved.
+
+Note that currently, LIONESS Lab does not have any standard measures in place to have dropouts replaced by other players, or by bots. In case you are considering an experimental design with features like these, you can program this manually using JavaScript elements in the appropriate (decision) screens. Note that, however, the data stemming from groups that include computer-generated responses may be compromised, and  may require careful consideration in any analyses. We are aware of at least some experimenters having used techniques like this in LIONESS Lab. Do not hesitate to :ref:`get in touch https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!forum/lioness-lab>`if you require further information on this.
 
 sortableMatching
 ~~~~~~~~~~~~~~~~~~
