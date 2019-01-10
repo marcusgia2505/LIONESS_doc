@@ -645,7 +645,9 @@ randomid
 Interacting with the database
 ------------------------------------
 
-Variables specified in input elements' (numeric input, choice buttons, etc) will be automatically stored in the table *decisions*.
+LIONESS experiment reply on a combination of JavaScript (code that is executed in the participants' browsers), and PHP (to generate the web pages on the experimental server) and MySQL (for managing the database). 
+
+Variables specified in input elements' (numeric input, choice buttons, etc) will be automatically stored in the table *decisions*. These variables have to have *unique names*. Using duplicate names can lead to unexpected behaviour of the experiment.
 
 JavaScript elements allow you to read from and write to the database, using the below functions. Note that each function has a *simple* and a *full* version. The simple versions always assume that the function pertains to the current player, the current group, and the current period. In the below examples, the simple and full versions are equivalent.
 
@@ -653,7 +655,7 @@ JavaScript elements allow you to read from and write to the database, using the 
 Writing to the database
 -----------------------
 
-You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. Note that, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. Italic function parameters are optional.
+You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. 
 
 :Function: setValue()
 
@@ -679,6 +681,8 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
 
 
 The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'.
+
+.. note:: Make sure that the variables you write to the database have *unique names*. In addition, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. Italic function parameters are optional.
 
 The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
 
