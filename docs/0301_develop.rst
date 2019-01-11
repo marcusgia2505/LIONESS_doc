@@ -46,7 +46,12 @@ Active screen (left panel)
 The active screen is the main screen of a stage. Typically, this section will be used for displaying information (e.g. instructions, results from previous periods) and recording participants' responses.
 
 You can build up these screens step-by-step using :ref:`elements <elements>`. You can add these elements by clicking the button *add new element* and paste it in the place you want. On the participant screens, elements will in principle be placed below each other, in the order you define them in your LIONESS Lab screen.
-Typically, the final element of an active screen is a :ref:`button <elements__button>`, that submits any responses of the participant in that screen, and directs them to the next screen. In this button, you can also define whether the participants can move on to the next screen as soon as they have finished, or whether they have to wait for their groups mates to also finish this screen. In the latter case, participants will be directed to the Waiting screen of this stage (see
+
+In many cases, one will mainly use text boxes to display information to participants (for example, in instruction screens). In other cases, a program needs to be executed to do some calculations. This is done with :ref:`JavaScript <reference_manual__javascript>` (JS), a common web language. If you already know how to program your experiments in z-Tree, using JS in LIONESS Lab will be relatively easy, as programming on both platforms works in a very similar way. A useful hands-on guide for learning the basics of JavaScript can be found :ref:`here <https://www.w3schools.com/js/default.asp>`. 
+
+You can display JS variables in other elements (e.g. text boxes or buttons) by putting dollar signs on both sides of the variable name. For example: $myVariable$. Note that JS will be evaluated in the order they appear in your screen. So, in the case of this example, when you want to display the value of $myVariable$ in, say, a text element, this text element needs to be below the JS element where that variable is defined. 
+
+Typically, the final element of an active screen is a :ref:`button <elements__button>`, that submits any responses of the participant in that screen, and directs them to the next screen. In this button, you can also define whether the participants can move on to the next screen as soon as they have finished, or whether they have to wait for their group mates to also finish this screen. In the latter case, participants will be directed to the Waiting screen of this stage (see
 below).
 
 
