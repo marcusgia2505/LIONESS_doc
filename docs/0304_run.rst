@@ -24,7 +24,7 @@ Once you are done with the edition, press Source and search for the two instance
 
 General pointers for writing a HIT description and setting up a can be found in a `paper by Arechar et al. <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__.
 
-**Make sure you have the Control panel of your interactive experiment open when you publish your HIT.**
+.. warning:: Make sure you have the :ref:`Control panel <control_panel>` of your interactive experiment open and the :ref:`number of allowed players <parameters__totalPlayers>` is high enough when you publish your HIT.
 
 Monitor your experiment
 ========================

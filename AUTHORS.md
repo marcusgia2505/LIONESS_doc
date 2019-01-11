@@ -1,5 +1,5 @@
 Authors
--------
+=============
 
 * Lucas Molleman
 * Marcus Giamattei

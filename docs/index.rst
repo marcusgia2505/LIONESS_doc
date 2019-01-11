@@ -32,7 +32,7 @@ Should dropouts occur, standard procedures are in place to adequately deal with 
 
 .. note:: While LIONESS Lab has been specifically designed to accommodate *interactive* experiments, it can also be used for solo-tasks and non-interactive questionnaire studies.
 
-.. note:: You can also download this documentation as a PDF_. Please note that we update the documentation from time to time so please check for new version of the documentation from time to time.
+.. note:: You can also download this documentation as a PDF_. Please note that we update the documentation so please check for new version of the documentation from time to time.
 
 .. _PDF: https://readthedocs.org/projects/lioness-doc/downloads/pdf/latest/
 
@@ -42,6 +42,7 @@ Should dropouts occur, standard procedures are in place to adequately deal with 
    :maxdepth: 2
    :caption: User Documentation
 
+   self
    010_basic
    0301_develop
    0302_compile_and_test

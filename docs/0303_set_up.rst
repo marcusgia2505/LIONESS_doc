@@ -20,7 +20,7 @@ Set up your server in a few simple steps
 
 For running an interactive experiment it is a good idea to use a server with enough computational power to handle many connections and data traffic simultaneously. Such servers are widely available at low cost from different providers (for example `Google cloud <https://cloud.google.com/products/>`__ Google Cloud and `Amazon Web Services <https://aws.amazon.com/>`__ ). Here we describe how to set up your own *virtual server* in Google Cloud using the Bitnami service. Bitnami helps you to set up a virtual server and install all necessary programs with only a few clicks. You can use this service to rent a powerful server for the duration of your session. In our experience with previous LIONESS experiments, Bitnami's *small* server suffices for smoothly running experimental sessions with up to 500 participants. A *small* server by default consists of 1 CPU and 1.7 GB RAM. That said, server requirements can vary with experimental design (e.g. amount of code or media files added by the user), so as a general rule, it is better to stay on the safe side and rent a relatively powerful server. After a session is over you take the server offline. The costs of renting a virtual server for a typical session of around 2 hours will cost you only a tiny fraction (typically less than $1.00) of the amounts that participants will usually earn.
 
-**If you already have a server running and you know how to operate it, you can skip the next section.**
+.. note:: If you already have a server running and you know how to operate it, you can skip the next section.
 
 .. _bitnami:
 

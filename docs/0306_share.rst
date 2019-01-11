@@ -1,3 +1,4 @@
+.. _share:
 
 =========================
 Share with others

@@ -50,6 +50,8 @@ Questionnaire
 
 Once the periods of interaction are over, you may want to record some information about the participants. Common items include age, gender and questions on social and economic status. It can also be useful to ask participants about their prior experience with tasks similar to yours; especially on MTurk, non-naïveté to common paradigms may impact your results (see, for example `Peer et al. 2017 <https://www.sciencedirect.com/science/article/pii/S0022103116303201>`__ and `Chander et all 2014 <https://link.springer.com/article/10.3758/s13428-013-0365-7>`__).
 
+.. _final_earnings:
+
 Final earnings
 ========================
 
@@ -66,5 +68,5 @@ Once participants have finalized the experiment, you can show them their final e
 
 Note that JavaScript is evaluated in the participants’ browsers. This means that you have to make sure that payoffs are calculated in a way that is *refresh-safe* (that is, if participants refresh their page, payoffs should not change). It is therefore advisable to calculate payoffs anew from a *final earnings* page (i.e. sum up over all rounds starting from 0). With the function ``setBonus()``, the bonus earnings of the participant is written to the :ref:`session table <experiment_tables__session>`. It is then used for :ref:`automatic payment <pay_your_participants>` later.
 
-For linking participants' earnings to their IDs in crowdsourcing platforms (where participants are typically recruited from), the final stage of your experiment should display random ID. LIONESS experiments have a unique code available, which can be displayed as ``$randomid$``. You can prompt the participants to fill out this code on the crowdsourcing website to :ref:`arrange their payment <pay_your_participants>`.
+For linking participants' earnings to their IDs in crowdsourcing platforms (where participants are typically recruited from), the final stage of your experiment should display :ref:`random ID <standard_variables>`. LIONESS experiments have a unique code for every participant available, which can be displayed as ``$randomid$``. You can prompt the participants to fill out this code on the crowdsourcing website to :ref:`arrange their payment <pay_your_participants>`.
 

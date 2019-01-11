@@ -17,7 +17,7 @@ We are constantly improving our platform. Experimenters using our platform, as w
 
 Contact
 =========================
-If you have any questions, support issues or would like to report a bug, please contact us at https://groups.google.com/forum/#!forum/lioness-lab .
+If you have any questions, support issues or would like to report a bug, please contact us at https://groups.google.com/forum/#!forum/lioness-lab or info@lioness-lab.org.
 
 Acknowledgements
 =========================

@@ -4,17 +4,17 @@ Reference manual
 
 This reference manual covers details of LIONESS Lab. It details the experimental flow, the definition of experimental screens, their elements and the functioning of JavaScript elements. If you encounter any issues or notice that some information is missing, please do not hesitate to get in touch via info@lioness-lab.org. 
 
+.. _experimental_flow:
+
 Experimental Flow
 ==================
 
-In LIONESS Lab you can create LIONESS experiments. These experiments include a set of standard features enabling online interactive experiments. Here we describe these features.
-
-.. note:: This section provides an overview of the structure and functioning of LIONESS experiments. Implementation issues are discussed in :ref:`the develop section <develop>`.
+In LIONESS Lab you can create LIONESS experiments. These experiments include a set of standard features enabling online interactive experiments. Here we describe these features. This section provides an overview of the structure and functioning of LIONESS experiments. Implementation issues are discussed in :ref:`the develop section <develop>`.
 
 The following figure shows the flow of a typical LIONESS experiment.
 
 1. Participants enter the experiment via a web link from an external website (e.g. Amazon MTurk), and are registered on the server (that is, they receive a 'player number', a unique number to identify them during the experiment).
-2. They complete the experiment by navigating the pages :ref:`click here for a typical experimental design, including tips and tricks <notes_experimental_design>`.
+2. They complete the experiment by navigating the pages. (:ref:`Click here for a typical experimental design, including tips and tricks <notes_experimental_design>`.)
 3. At the end they return to the external site to collect their earnings (euro sign).
 
 .. image:: _static/control_flow2.png
@@ -25,29 +25,27 @@ When participants enter the experiment, they are registered and get a unique pla
 
 While participants complete the experiment, various exceptions might happen. Below we list how LIONESS experiments handle these issues.
 
-.. note:: Upon dropout participants receive different standard messages, which can be customized in the parameters. For all list of all messages see also :ref:`here <parameters__predefined_parameters>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
+.. note:: Upon dropout participants receive different standard messages, which can be customized in the parameters. For all list of all messages see also :ref:`here<parameters__messages>`. All messages refer to the terminology HIT which is a task on Amazon MTurk.
 
-.. note:: LIONESS experiments do their best to prevent double participation by IP address check and cookies in the browser. Some of these measures can still be circumvented with some effort. If you want to be 100% sure that participants only participate once they should be provided with a ticket or unique ID which they have to enter during the experiment.
+.. warning:: LIONESS experiments do their best to prevent double participation by IP address check and cookies in the browser. These measures can still be circumvented with some effort.
 
 a) Internet Explorer
 ---------------------
 
 LIONESS experiments (like many other modern web applications) do not support Internet Explorer (IE). Experimenters can announce this upon recruitment (e.g. in their MTurk HIT). In case an IE user attempts to enter the experiment, they are directed to a page explaining that they cannot participate. By default, this message reads:
 
-.. warning:: As indicated in our HIT text on MTurk, our HIT does **not** support Microsoft Internet Explorer.                         Please return this HIT. We apologise for any inconvenience caused.
+:message:  As indicated in our HIT text on MTurk, our HIT does **not** support Microsoft Internet Explorer.                         Please return this HIT. We apologise for any inconvenience caused.
 
 Participants can return using a different browser.
-
-.. note:: All default messages assume participants are recruited from Amazon MTurk. You can edit these message in the parameter table, for example when you recruit your participants from elsewhere (e.g. Prolific),
 
 b) Task not active
 -------------------
 
-Experimenters can set the experiment 'inactive' or 'active' in the control panel. If the task is inactive, new participants cannot enter and receive the following default message:
+Experimenters can set the experiment *inactive* or *active* in the control panel. If the task is inactive, new participants cannot enter and receive the following default message:
 
-.. warning:: This HIT is currently offline. You cannot participate at this time.
+:message:  This HIT is currently offline. You cannot participate at this time.
 
-When an experiment is switched to 'inactive' in the middle of a session (for example, when an experimenter realizes that something is wrong), participants who are already in the experiment can continue and complete the experiment.
+When an experiment is switched to *inactive* in the middle of a session (for example, when an experimenter realizes that something is wrong), participants who are already in the experiment can continue and complete the experiment.
 
 
 c) Double login
@@ -57,9 +55,9 @@ LIONESS experiments record the IP addresses of participant in an *anonymized* wa
 
 If a login attempt is made from the same IP address, the participant is blocked and receives the following message:
 
-.. warning:: According to our records, your device has already been connected to the server during this session.                Participants are only allowed to enter a session once. Thank you for your understanding.
+:message:  According to our records, your device has already been connected to the server during this session.                Participants are only allowed to enter a session once. Thank you for your understanding.
 
-This IP address check is **deactivated** whent the [LINK-->test mode<---LINK] is on.
+This IP address check is **deactivated** when the :ref:`test mode <control_panel__test_mode>` is on.
 
 .. note:: If you think that your participants may use the same IP address (which may be common in a laboratory setup) you may switch to test mode. Otherwise participants cannot enter the experiment.
 
@@ -68,7 +66,7 @@ d) Session full
 
 In the :ref:`experiment parameters <parameters__totalPlayers>`, you can set the total number of players allowed into your session. When this number has been reached, further participants cannot enter anymore. They receive the message:
 
-.. warning:: We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time. Thank you for your understanding.
+:message:  We have sufficient participants for this HIT. Unfortunately, you cannot participate at this time. Thank you for your understanding.
 
 This functionality is **deactivated** when the :ref:`test mode <control_panel__test_mode>` is on.
 
@@ -79,24 +77,22 @@ e) Not registered
 
 Participants can only enter a LIONESS experiment through the registration page. Navigating to a stage somewhere in the middle of an experiment without being registered leads to a page reading:
 
-.. warning:: You are currently not logged in. You cannot participate in the HIT.
+:message:  You are currently not logged in. You cannot participate in the HIT.
 
 
 f) Time out
 -------------
 
-In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment (avoiding long waiting times, which risk droupouts). If a participant does not respond in time, they can be directed towards a different stage in the experiment, or to the standard time out page which shows the following message:
+In each stage, you can define a maximum time participants have to complete the stage. This is useful to keep up the pace of the experiment (avoiding long waiting times, which risk dropouts). If a participant does not respond in time, they can be directed towards a different stage in the experiment, or to the standard time out page which shows the following message:
 
-.. warning:: You did not make a decision before the time was up. You have been removed from the HIT. You can close down this window.
+:message:  You did not make a decision before the time was up. You have been removed from the HIT. You can close down this window.
 
 g) Kicked out by experimenter
 -------------------------------
 
-In the control panel (top-right menu), experimenters can remove participants by entering their player number and click 'terminate player'. They receive the following message and get their show-up fee:
+In the control panel (top-right menu), experimenters can remove participants by entering their player number and click *terminate player*. They receive the following message and get their show-up fee:
 
-.. warning:: Unfortunately, this HIT was terminated for a technical reason! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk:
-                **$randomid$** Once you have filled out this code, you can close this window.
-                Thank you for your participation.
+:message:  Unfortunately, this HIT was terminated for a technical reason! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: $randomid$ Once you have filled out this code, you can close this window. Thank you for your participation.
 
 
 .. note:: the values between $ signs are filled by the values set in the :ref:`parameter table <parameters>`. Terminating participants should, of course, be done with care. This feature is intended for cases in which technical problems occur.
@@ -106,7 +102,7 @@ h) No re-entering possible
 
 If participants try to re-enter after being removed from the experiment, they are informed that they cannot participate in the experiment anymore.
 
-.. warning:: You are currently not logged in. You cannot participate in the HIT.
+:message: You are currently not logged in. You cannot participate in the HIT.
 
 .. note:: This information that a participant has been kicked out is based on the IP address (if the test mode is switched off) and a cookie in the browser. If the participant uses a different browser from a different IP address he or she can still enter as a new participant.
 
@@ -115,7 +111,7 @@ i) Too many quiz errors
 
 In the quiz stage, the experimenter can specify a maximum number of quiz failures. It the participant fails more than that, he is excluded from the experiment and receives the following message:
 
-.. warning:: You did not answer the quiz correctly and were excluded from further participation.
+:message:  You did not answer the quiz correctly and were excluded from further participation.
 
 j) No group match
 ------------------
@@ -129,7 +125,7 @@ The experimenter can choose how their LIONESS experiment :ref:`handle dropouts <
 
 If  *terminate group* is selected as the dropout handling option, all players of the group are removed from the experiment and receive the following message:
 
-.. warning:: Unfortunately, one of the players in your group dropped out of the HIT! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: **$randomid$** Once you have filled out this code, you can close this window. Thank you for your participation.
+:message: Unfortunately, one of the players in your group dropped out of the HIT! You cannot continue. You will receive your guaranteed participation fee of $ $participationFee$. To collect your earnings, please fill out this random code on MTurk: **$randomid$** Once you have filled out this code, you can close this window. Thank you for your participation.
 
 .. _stage_type:
 
@@ -165,7 +161,7 @@ In lobby stages, participants are matched in groups. The matching procedure is d
    :alt:  500px
 
 
-.. important:: LIONESS experiments currently only support one lobby.
+.. note:: LIONESS experiments currently only support one lobby.
 
 
 .. _matching_procedures:
@@ -175,11 +171,11 @@ Matching procedures
 
 Once sufficiently many participants are in the lobby a group can be formed. Experimenters can choose 3 types of matching:
 
-:First come, first serve: As soon as sufficiently many participants are in the lobby, a group will be formed.
+:First come, first serve: This is the default option. As soon as the number of participants in the lobby equals :ref:`groupSize <parameters__groupsize>` they are matched and can start interacting. This setting aims to minimize waiting time.
 
-Before the lobby, experimenters can assign different *roles* to players (using the variable *role* in the :ref:`core table <experiment_tables__core>`). The other two available types of matching make use of this variable 'role' to form groups.
+Before the lobby, experimenters can assign different *roles* to players (using the variable *role* in the :ref:`core table <experiment_tables__core>`). The other two available types of matching make use of this variable *role* to form groups.
 
-:Groups with unique roles: As soon as at least 1 participant with each role 1...n is present (where n is the group size), a group will be formed.
+:match groups with unique roles: In some cases you might want to allocate roles before you assign participants to groups. Before participants enter the lobby, they can be assigned a role (by setting their variable *role* in the :ref:`core table <experiment_tables__core>`. Roles need to start with 1, and run up to value value of the groupSize. For example, if you have groups of 3, a group will be formed as soon as a set of players with roles 1, 2 and 3 can be formed.
 
 :Group with the same role: Groups are formed of participants with the *same* role. This is useful when you have different treatments in the same session, and participants from the same treatment need to be grouped together.
 
@@ -194,7 +190,7 @@ In interactive tasks, it is often useful to set timers on decisions to keep up t
 
 To add a timer to a participant screen, click the *timer* switch on the top of the stage. Set the time (in seconds) that participants can take to submit their response. If the option *leave stage after timeout* is switched off, nothing will happen once the timer reaches 0. If this option is switched on, you are prompted to define the stage to which non-responsive participants are directed to. You can choose a stage that you defined yourself, or choose the *standard* timeout page. This page will show the participants the :ref:`message <parameters__messages>` that is specified in the :ref:`parameters table <parameters>`. You can also choose to direct non-responsive participants to the waiting screen of the current stage. In that case, make sure that the experiment can continue, e.g. by filling out a default response by the participant so that results can be calculated.
 
-.. note:: If you automatically direct all participants to a stage on timeout, they may arrive at different times at the next page (due to different internet speed). They are not directed to a waiting screen in this case. Therefore, you should add another stage where buttons click a continue button and then "wait for others" on the waiting page. This guarantees that synchronisation is done correctly.
+.. note:: If you automatically direct all participants to a stage on timeout, they may arrive at different times at the next page (due to different internet speed). They are not directed to a waiting screen in this case. To avoid this behavior, you should add another stage with a continue button and then "wait for others" on the waiting page. This guarantees that synchronisation is done correctly.
 
 Note that in :ref:`JavaScript <elements__javascript_program>` , the number of seconds in the countdown timer can be manipulated with the variable *TimeOut*. This is useful if you want to give participants more time in early rounds. The below example illustrates this.
 
@@ -620,7 +616,7 @@ Values of JS variables can be accessed in other elements (e.g. a text box) by ad
 Default variables
 ------------------
 
-When a participant's page loads, all variables defined in the :ref:`parameters table <parameters>` are loaded. This is also true for the
+When a participant's page loads, all variables defined in the :ref:`globals table <parameters>` are loaded. This is also true for the
 following default variables from the :ref:`core table <experiment_tables__core>`. This means that these variables are defined (i.e. have a value) in every screen and their values are accessible in JS.
 
 ================= ================================
@@ -631,14 +627,13 @@ groupNr           Group number of the focal player
 subjectNr         Player number of the focal player within group
 period            Period number of the focal player within session
 tStart            System time in seconds upon page load
-currentGroupSize
-role
-bot
-randomid
+currentGroupSize  Total number of players in the current group
+role              The role of the current player, used for :ref:`matching <matching_procedures>`
+bot               Is the current player a bot
+randomid          The randomid to handle :ref:`payment <final_earnings>`
 ================= ================================
 
-
-
+.. note::  It is advisable to not change the variables loaded from the :ref:`globals table <parameters>`.
 
 .. _javascript__interacting_with_the_database:
 
@@ -680,13 +675,22 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
    :Simple example: setBonus(payoff);
 
 
+:Function: setRole()
+
+   :Arguments: role
+
+   :Simple example: setRole(role);
+
+
 The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'.
 
-.. note:: Make sure that the variables you write to the database have *unique names*. In addition, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. Italic function parameters are optional.
+.. warning:: Make sure that the variables you write to the database have *unique names*. SQL is not case sensitive, that is ``variable`` and ``Variable` are considered non unique! In addition, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. Italic function parameters are optional.
 
 The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
 
-**The value argument cannot contain any operators, such as the + or the - sign.**
+ .. warning:: The value argument cannot contain any operators, such as the + or the - sign.
+
+The function `setRole()` will write the value in its argument to the variable `role` in the *core* table. The variable *role* is used for the :ref:`matching procedure <matching_procedures>`
 
 Reading from the database
 -------------------------
@@ -829,11 +833,8 @@ Note that currently, LIONESS Lab does not have any standard measures in place to
 sortableMatching
 ~~~~~~~~~~~~~~~~~~
 
-This defines how the participants in the lobby are matched in groups. There are two options to choose from.
+This defines how the participants in the lobby are matched in groups. There are :ref:`three options <matching_procedures>` to choose from.
 
-:first come, first serve: This is the default option. As soon as the number of participants in the lobby equals :ref:`groupSize <parameters__groupsize>` they are matched and can start interacting. This setting aims to minimize waiting time.
-
-:match groups with unique roles: In some cases you might want to allocate roles before you assign participants to groups. Before participants enter the lobby, they can be assigned a role (by setting their variable *role* in the :ref:`core table <experiment_tables__core>`. Roles need to start with 1, and run up to value value of the groupSize. For example, if you have groups of 3, a group will be formed as soon as a set of players with roles 1, 2 and 3 can be formed.
 
 .. _parameters__messages:
 
