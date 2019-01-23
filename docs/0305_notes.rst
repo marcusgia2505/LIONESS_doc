@@ -6,6 +6,8 @@ Notes on experimental design
 
 Based on running numerous experiments online, we suggest that LIONESS experiments follow a basic structure with the components in the order listed below. Each component may be one stage (as is the case in the :ref:`quick start <basic>`), but can of course be expanded to include multiple stages. Here we briefly discuss these components, and as we go along we describe some aspects you might want to consider when designing your online experiment. A methodological discussion of running interactive experiments online can be found in `this paper <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__.  This section can be seen as a practical guide that mostly includes notes on the joint use of MTurk and LIONESS Lab.
 
+The most important methodological issue with running interactive experiments online is the possiblity of dropouts. As mentioned elsewhere, LIONESS experiments have a number of built-in measures to drive down dropouts. A smart design for your online experiment can help drive down dropouts even further. As a general rule, experimental designs likely to produce a smooth data collection online are simple, short, and done in small groups. 
+
 Instructions
 ============
 
@@ -33,7 +35,7 @@ Furthermore, smaller groups can obviously form more rapidly simply because they 
 
 From experiments we conducted on MTurk, we noticed that participants often just leave the task when they have to wait long, or when they have no information as to how long they have to wait. This is why the *lobby* has a timer. When this timer reaches 0, participants can choose to leave the HIT and get their participation fees. Alternatively, they can choose to return to the lobby and wait two more minutes (after which they again can choose to either leave or wait for another two minutes).
 
-Experimenters can choose 3 types of :ref:`matching procedures <matching_procedures>`.
+Experimenters can choose 3 types of :ref:`matching procedures <matching_procedures>`. Using multiple treatments within one experimental session is possible, but will lead to longer waiting times in the lobby (as more participants need to be ready to form a group). A similar logic applies to group size: the smaller the groups, the faster matching will be, and the smaller the chances are of dropouts. 
 
 Decision
 ============
