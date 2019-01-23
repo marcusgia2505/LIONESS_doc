@@ -4,9 +4,11 @@
 Notes on experimental design
 ============================
 
-Based on running numerous experiments online, we suggest that LIONESS experiments follow a basic structure with the components in the order listed below. Each component may be one stage (as is the case in the :ref:`quick start <basic>`), but can of course be expanded to include multiple stages. Here we briefly discuss these components, and as we go along we describe some aspects you might want to consider when designing your online experiment. A methodological discussion of running interactive experiments online can be found in `this paper <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__.  This section can be seen as a practical guide that mostly includes notes on the joint use of MTurk and LIONESS Lab.
+Based on running numerous experiments online, we suggest that LIONESS experiments follow a basic structure with the components in the order listed below. Each component may be one stage (as is the case in the :ref:`quick start <basic>`), but can of course be expanded to include multiple stages. Here we briefly discuss these components, and as we go along we describe some aspects you might want to consider when designing your online experiment. A methodological discussion of running interactive experiments online can be found in `this paper <https://link.springer.com/article/10.1007/s10683-017-9527-2>`__.  
 
 The most important methodological issue with running interactive experiments online is the possiblity of dropouts. As mentioned elsewhere, LIONESS experiments have a number of built-in measures to drive down dropouts. A smart design for your online experiment can help drive down dropouts even further. As a general rule, experimental designs likely to produce a smooth data collection online are simple, short, and done in small groups. 
+
+This section can be seen as a practical guide that helps developing such a smart design. It mostly includes notes on the use of LIONESS experiments with participants recruited from MTurk.
 
 Instructions
 ============
