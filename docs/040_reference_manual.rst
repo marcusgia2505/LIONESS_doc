@@ -275,6 +275,8 @@ Delete element
 .. image:: _static/Delete.png
    :alt:  30px
 
+.. note:: Input elements will be automatically recorded in the decisions table. Make sure that each input element has a unique 'variable name'.
+
 Element types
 -------------
 
