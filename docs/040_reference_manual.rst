@@ -211,6 +211,9 @@ Note that in :ref:`JavaScript <elements__javascript_program>` , the number of se
 Elements
 =========================
 
+.. note:: Input elements will be automatically recorded in the decisions table. Make sure that each input element has a unique 'variable name'.
+
+
 .. _adding_an_element:
 
 Adding an element
@@ -275,7 +278,6 @@ Delete element
 .. image:: _static/Delete.png
    :alt:  30px
 
-.. note:: Input elements will be automatically recorded in the decisions table. Make sure that each input element has a unique 'variable name'.
 
 Element types
 -------------
