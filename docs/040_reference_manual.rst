@@ -710,6 +710,7 @@ Italic function parameters are optional.
 
    :Full example: getValue('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
 
+This function retrieves a single value from the database.
 
 :Function: getValues()
 
@@ -721,6 +722,7 @@ Italic function parameters are optional.
 
    :Full example: getValues('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
 
+This function retrives the values from different players and gives back an array which is sorted by playerNr. It starts with index 0.
 
 There are special functions for retrieving the values from others in your group, in the current period.
 
