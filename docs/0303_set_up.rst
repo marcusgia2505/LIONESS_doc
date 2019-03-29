@@ -82,4 +82,4 @@ Now you can access the control panel in your browser by using your server’s IP
 
 Upon first entrance, you will be prompted to enter the server credentials, so that your LIONESS experiment can interact with the server. By default, LIONESS experiments enter the most common values, but you will have to add the server password. This, again, can be found in the :ref:`Bitnami Launchpad <bitnami_launchpad>`.
 
-Your experiment is now ready to run. You can go to the :ref:`control panel <control_panel>` through the address ``http://[your server name]/[your experiment name]`` (so, for example ``http://101.248.10.293/PGG``).
+Your experiment is now ready to run. You can go to the :ref:`control panel <control_panel>` through the address ``http://[your server name]/[your experiment name]/controlpanel.php`` (so, for example ``http://101.248.10.293/PGG/controlpanel.php`).
