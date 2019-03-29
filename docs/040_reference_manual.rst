@@ -714,13 +714,13 @@ This function retrieves a single value from the database.
 
 :Function: getValues()
 
-   :Arguments: *table name, condition,* variable name
+   :Arguments: *table name, condition,* variable name, *sort by*
 
    :Return value: array
 
    :Simple example: getValues('someVariable');
 
-   :Full example: getValues('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
+   :Full example: getValues('decisions', 'groupNr='+groupNr+' and period='+period, 'someVariable','playerNr');
 
 This function retrives the values from different players and gives back an array which is sorted by playerNr. It starts with index 0.
 
