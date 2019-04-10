@@ -628,7 +628,7 @@ Variable name     Details
 ================= ================================
 playerNr          Number of the focal player within the session
 groupNr           Group number of the focal player
-subjectNr         Player number of the focal player within group
+subjectNr         Number of the focal player within group
 period            Period number of the focal player within session
 tStart            System time in seconds upon page load
 currentGroupSize  Total number of players in the current group
@@ -638,6 +638,8 @@ randomid          The randomid to handle :ref:`payment <final_earnings>`
 ================= ================================
 
 .. note::  It is advisable to not change the variables loaded from the :ref:`globals table <parameters>`.
+
+.. note:: The difference between playerNr and subjectNr is that subjectNr are unique within a group and only assigned when the group is formed in the lobby. E.g. if the playerNr 3, 5, 7 and grouped together in the lobby, the get the subjectNr 1, 2, 3. SubjectNr are always sorted according to the playerNr.
 
 .. _javascript__interacting_with_the_database:
 
