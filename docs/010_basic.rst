@@ -143,7 +143,7 @@ For now you can leave the *next stage* field of the button empty.
    :linenos:
 
    // specify the initial endowment
-   endowment = 10; <br>
+   endowment = 10;
    // retrieve data
    myContribution = getValue('contribution');
    keptForSelf = endowment - myContribution;
