@@ -78,8 +78,8 @@ Enter the folder ``htdocs`` and create a subfolder with the name of your experim
 
 For an easy setup LIONESS needs to be able to write the server credentials to a file. To allow that, find the file ``credentials.php`` in the folder of your experiment. In FileZilla Right-click on this file, and select *File permissions...*. A dialog box will open. Make sure that the *Read* and *Write* boxes are checked for *Public permissions*. If not check them and save the changes.
 
-Now you can access the control panel in your browser by using your server’s IP address (see :ref:`Bitnami Launchpad <bitnami_launchpad>`) followed by a ``/`` and the name of the folder you just created. For example, ``http://101.248.10.293/PGG``.
+You can go to the :ref:`control panel <control_panel>` through the address ``http://[your server name]/[your experiment name]/controlpanel.php`` (so, for example ``http://101.248.10.293/PGG/controlpanel.php``). To find your server's IP address, see :ref:`Bitnami Launchpad <bitnami_launchpad>`).
 
 Upon first entrance, you will be prompted to enter the server credentials, so that your LIONESS experiment can interact with the server. By default, LIONESS experiments enter the most common values, but you will have to add the server password. This, again, can be found in the :ref:`Bitnami Launchpad <bitnami_launchpad>`.
 
-Your experiment is now ready to run. You can go to the :ref:`control panel <control_panel>` through the address ``http://[your server name]/[your experiment name]/controlpanel.php`` (so, for example ``http://101.248.10.293/PGG/controlpanel.php`).
+Your experiment is now ready to run. 
