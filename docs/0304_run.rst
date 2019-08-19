@@ -41,6 +41,9 @@ At the end of a session, you can download all data as an Excel file by clicking 
 Pay your participants
 =======================
 
+.. warning:: As if mid-August 2019, Amazon stopped supporting Command Line Tools. As a result, scripted bonus payments are temporarily  impossible using the method described below - we will update LIONESS as soon as possible to adjust to this situation so that bonus payments can be paid with the same ease you are used to. 
+
+
 One can assign bonuses manually in the AMT user interface. However, especially when sessions are large, it is often handy to pay participants with the help of a script. One useful software for this is Amazon's Command Line Tools. Click `here <https://requester.mturk.com/developer/tools/clt>`__ to get the CLT running on your system. To do this, follow these steps:
 
  - On MTurk, download and open *Batch results file*
