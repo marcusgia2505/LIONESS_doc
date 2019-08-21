@@ -12,10 +12,9 @@ Compile your LIONESS experiment
 
 In LIONESS Lab, click *compile and test*, and compile your experiment by selecting *compile* from the drop-down menu. During the compilation process, LIONESS Lab activates a script that will build the database underlying your experiment and creates the experimental pages from the stages that you defined in each of the tabs. Once the compilation process has completed, a new tab will open with the :ref:`control panel <control_panel>` of your LIONESS experiment. All further testing can be done from the control panel.
 
-.. image:: _static/Compile.png
-   :align: center
 
 In case you want to make any changes to your screens, you can go back to LIONESS Lab. You can use the *Update screens* option from the same drop-down menu. This will create the experimental pages, without re-building the tables. In most cases this means that you can directly view your changes by refreshing the page in the participant's screen, and continue testing. In cases where you added new variables (e.g. by adding a new input element or by using the `` record()`` function in a JavaScript element), you have to re-build the tables and start a new test session.
+
 .. note:: You can call *Update screen* by the keystroke combination ``Alt+U``.
 
 .. _control_panel:
