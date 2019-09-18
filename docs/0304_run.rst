@@ -47,7 +47,7 @@ The participation fees of your experiment can be paid painlessly via the MTurk w
 
 Once the CLI has been installed, open your command line shell (in Windows type *cmd* in the search bar of your Start menu, in Mac OS and Linux it is called *Terminal*) and locate CLI on your hard drive (the default is ``C:/Program Files/Amazon/AWSCLI/bin`` so your command line needs to point to that location). Connect CLI to your Amazon account by typing the command *aws configure* and hit enter. This opens an interface for entering the credentials of your MTurk account (the *access key* and the *secret key*, which can be found in your `AWS account <https://help.bittitan.com/hc/en-us/articles/115008255268-How-do-I-find-my-AWS-Access-Key-and-Secret-Access-Key->`_). The *region code* needs to match the one you set when you created your AWS account (the default is *us-east-1*). Set the output format to *text*.
 
-You can check whether the connection to your MTurk account has been successful by typing ``get-account-balance``. This should return the current balance in your account.
+You can check whether the connection to your MTurk account has been successful by typing ``aws mturk get-account-balance``. This should return the current balance in your account.
 
 Once your CLI has been successfully set up, you can pay participants of your session by following these steps:
 
