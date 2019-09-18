@@ -662,11 +662,11 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
 
 :Function: setValue()
 
-   :Arguments: *table name, condition,* variable name
+   :Arguments: *table name, condition,* variable name, value
 
-   :Simple example: setValue('payoffThisPeriod');
+   :Simple example: setValue('payoffThisPeriod', payoff);
 
-   :Full example: setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod');
+   :Full example: setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod', payoff);
 
 
 :Function: record()
@@ -692,7 +692,7 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
 
 The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'.
 
-.. warning:: Make sure that the variables you write to the database have *unique names*. SQL is not case sensitive, that is ``variable`` and ``Variable` are considered non unique! In addition, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. In addition, avoid using the `record()` function inside if (or else) statements. Create the variable before the if statement and use setValue() inside the if statement. 
+.. warning:: Make sure that the variables you write to the database have *unique names*. SQL is not case sensitive, that is ``variable`` and `Variable` are considered non unique! In addition, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. In addition, avoid using the `record()` function inside if (or else) statements. Create the variable before the if statement and use setValue() inside the if statement. 
 
 The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
 
