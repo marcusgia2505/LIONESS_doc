@@ -39,6 +39,8 @@ From experiments we conducted on MTurk, we noticed that participants often just 
 
 Experimenters can choose 3 types of :ref:`matching procedures <matching_procedures>`. Using multiple treatments within one experimental session is possible, but will lead to longer waiting times in the lobby (as more participants need to be ready to form a group). A similar logic applies to group size: the smaller the groups, the faster matching will be, and the smaller the chances are of dropouts. 
 
+.. note:: The lobby automatically shows the number of participants missing to proceed. To deactive this, add a JS element to the lobby stating: getNumberReadyLobby = 0;
+
 Decision
 ============
 
