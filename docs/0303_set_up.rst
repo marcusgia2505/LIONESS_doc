@@ -5,7 +5,7 @@ Set up your own experimental server
 
 While :ref:`testing <develop>` your experiment, the web pages you navigated were on the LIONESS Lab server. This server is for development purposes only. For conducting your online experiment, you need to put your LIONESS experiment on your own server.
 
-.. important: The requirement for your own server is a standard web server with PHP running. PHP version must be at least 
+.. important:: The requirement for your own server is a standard web server with PHP running. PHP version must be at least 
 7.1.
 
 
