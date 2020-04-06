@@ -85,6 +85,6 @@ You can go to the :ref:`control panel <control_panel>` through the address ``htt
 
 Upon first entrance, you will be prompted to enter the server credentials, so that your LIONESS experiment can interact with the server. By default, LIONESS experiments enter the most common values, but you will have to add the server password. This, again, can be found in the :ref:`Bitnami Launchpad <bitnami_launchpad>`.
 
-Your experiment is now ready to run. 
+Your experiment is now ready to run. You can access the controlpanel by going to controlpanel.php or to _beginControl.php
 
-.. important:: For security reasons, delete setupTable.sql and controlpanel.php after setting up your server as these files are only for the setup of the server and can be an entry gate for an attack. After deleting controlpanel.php, you can start your experiments by going to _beginControl.php instead.
+.. important:: For security reasons, delete ENABLESETUP.php from your server after setting up your server so that no one else can set up (or destroy) the database.
