@@ -43,7 +43,7 @@ Pay your participants
 
 .. warning:: As of June 2019, Amazon stopped supporting Command Line Tools. The description below is based on the new (and more user friendly) Command Line Interface. 
 
-The participation fees of your experiment can be paid painlessly via the MTurk website. Bonuses (which are often performance-specific) can be assigned manually in the AMT user interface. However, especially when sessions are large, it is often handy to pay participants with the help of a script. One useful software for this is Amazon's Command Line Interface (CLI). Click `here <https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html>`__ to install CLI on your system. You can stick to all default settings. Here we assume that you use Windows. For other platforms, the procedures are very similar.
+The participation fees of your experiment can be paid painlessly via the MTurk website. Bonuses (which are often performance-specific) can be assigned manually in the AMT user interface. However, especially when sessions are large, it is often handy to pay participants with the help of a script. One useful software for this is Amazon's Command Line Interface (CLI). Click `here <https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html>`__ to go to the installation webpage for CLI. When you install, you can stick to all default settings. Here we assume that you use Windows. For other platforms, the procedures are very similar.
 
 Once the CLI has been installed, open your command line shell (in Windows type *cmd* in the search bar of your Start menu, in Mac OS and Linux it is called *Terminal*) and locate CLI on your hard drive (the default is ``C:/Program Files/Amazon/AWSCLI/bin`` so your command line needs to point to that location). Connect CLI to your Amazon account by typing the command *aws configure* and hit enter. This opens an interface for entering the credentials of your MTurk account (the *access key* and the *secret key*, which can be found in your `AWS account <https://help.bittitan.com/hc/en-us/articles/115008255268-How-do-I-find-my-AWS-Access-Key-and-Secret-Access-Key->`_). The *region code* needs to match the one you set when you created your AWS account (the default is *us-east-1*). Set the output format to *text*.
 
@@ -53,7 +53,7 @@ Once your CLI has been successfully set up, you can pay participants of your ses
 
  - On MTurk, download and open *Batch results file*
  - Copy all its contents to the clipboard
- - Open the LIONESS results file in Excel and paste the copied cells to cell A1 of the tab ‘batchResults’. The Excel file will automatically link the LIONESS code and its earnings to the MTurk worker ID of the participant.
+ - Open the LIONESS results file in Excel and paste the copied cells to cell A1 of the tab ‘batchResults’. The Excel file will automatically link the LIONESS code and its earnings to the MTurk worker ID of the participant. NB: make sure that when pasting the copied cells, Excel parses the csv into separate columns (this is the default for the English version of Excel, but might be different for other language versions, e.g. German; please also make sure you use periods ('.') rather than commas to separate digits).
  - The tab *paymentsMTurk* then contains the ready-made codes you can use in MTurk Command Line Tools.
  - Double-check if the bonus amounts in the column *bonus* are correct
  - Add a description explaining participants why they earned this bonus and copy that into all rows of that column
