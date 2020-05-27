@@ -53,7 +53,7 @@ Once your CLI has been successfully set up, you can pay participants of your ses
 
  - On MTurk, download and open *Batch results file*
  - Copy all its contents to the clipboard
- - Open the LIONESS results file in Excel and paste the copied cells to cell A1 of the tab ‘batchResults’. The Excel file will automatically link the LIONESS code and its earnings to the MTurk worker ID of the participant. NB: make sure that when pasting the copied cells, Excel parses the csv into separate columns (this is the default for the English version of Excel, but might be different for other language versions, e.g. German; please also make sure you use periods ('.') rather than commas to separate digits).
+ - Open the LIONESS results file in Excel and paste the copied cells to cell A1 of the tab ‘batchResults’. The Excel file will automatically link the LIONESS code and its earnings to the MTurk worker ID of the participant. NB: make sure that when pasting the copied cells, Excel parses the csv into about 30 separate columns (this parsing is the default for the English version of Excel, but might be different for other language versions, e.g. German; please also make sure you use periods ('.') rather than commas to separate digits). In case you used multiple smaller batches on MTurk to recruit your participants, you can paste the data from the csv files right below each other.
  - The tab *paymentsMTurk* then contains the ready-made codes you can use in MTurk Command Line Tools.
  - Double-check if the bonus amounts in the column *bonus* are correct
  - Add a description explaining participants why they earned this bonus and copy that into all rows of that column
