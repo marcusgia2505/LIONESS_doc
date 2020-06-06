@@ -57,6 +57,6 @@ Once your CLI has been successfully set up, you can pay participants of your ses
  - The tab *paymentsMTurk* then contains the ready-made codes you can use in MTurk Command Line Tools.
  - Double-check if the bonus amounts in the column *bonus* are correct
  - Add a description explaining participants why they earned this bonus and copy that into all rows of that column
- - The column *MTurkPaymentToolsCode* will contain a list of codes that can you can paste into CLT
+ - The column *MTurkPaymentToolsCode* will contain a list of codes that can you can paste into CLT (without the column header)
 
 .. note:: In case you run your experiment in the decision making laboratory, you can refer to the session table to calculate the payments for each participant. If your laboratory uses a system with numbered cubicles, you might consider recording the cubicle number in a screen of your experiment; right in the first screen typically makes sense. Then, at the end of your experiment (e.g. in the final screen) you can calculate the participants' total earnings and write that to the database, for example, by using the JS command ``setBonus``. This procedure will allow you to match the LIONESS-internal playerNr to the cubicle number in your laboratory.
