@@ -688,6 +688,17 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
    :Arguments: role
 
    :Simple example: setRole(role);
+   
+   
+   
+:Function: setValueAtTimeout()
+
+   :Arguments: *table name, condition,* variable name, value
+
+   :Simple example: setValue('payoffThisPeriod', payoff);
+
+   :Full example: setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod', payoff);
+
 
 
 The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'. By contrast, the function `setValue()` will update the value of an existing variable in the database, which may be created with a standard input element, or with the `record()` function.
@@ -699,6 +710,8 @@ The function `setBonus()` will write the value in its argument to the variable `
  .. warning:: The value argument cannot contain any operators, such as the + or the - sign.
 
 The function `setRole()` will write the value in its argument to the variable `role` in the *core* table. The variable *role* is used for the :ref:`matching procedure <matching_procedures>`
+
+The function `setValueAtTimeout()`works the same as `setValue()` but can be called to store values when the page is left at timeout (when the timer is running out). 
 
 Reading from the database
 -------------------------
