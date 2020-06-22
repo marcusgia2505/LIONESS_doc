@@ -72,6 +72,11 @@ For testing (and running) your experiment, you need to set the experiment :ref:`
 
 .. _build_on_an_existing_experiment:
 
+Additional CSS for participants
+===============================
+
+If you want to add additional CSS for participants, you can do so by clicking on additional CSS for participants in the top right corner. By clicking on the program box, a CSS editor opens and you can add custom CSS. The CSS is loaded for every page of the participant.
+
 Build on an existing experiment
 ===================================
 
