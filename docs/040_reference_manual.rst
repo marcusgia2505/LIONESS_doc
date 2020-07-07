@@ -727,7 +727,7 @@ Italic function parameters are optional.
 
    :Full example: getValue('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
 
-This function retrieves a single value from the database.
+This function retrieves a single value from the database. NB: the 'simple' example will return the value from the current player in the current period.
 
 :Function: getValues()
 
@@ -741,7 +741,7 @@ This function retrieves a single value from the database.
 
 This function retrives the values from different players and gives back an array which is sorted by playerNr. It starts with index 0.
 
-There are special functions for retrieving the values from others in your group, in the current period.
+There are special functions for retrieving the values from others in the group, in the current period.
 
 :Function: getValuesOthers()
 
@@ -750,7 +750,17 @@ There are special functions for retrieving the values from others in your group,
    :Return value: array starting from 0 ordered by subjectNr
 
    :Simple example: getValuesOthers('someVariable');
+   
+   
+In addition, there are functions for retrieving the values from the PREVIOUS period.
 
+:Function: getOldValue()
+
+This function is similar to getValue() but retrieves the value from the *previous* period.
+
+:Function: getOldValues()
+
+This function is similar to getValues() but retrieves values from the *previous* period.
 
 
 .. _javascript_code_snippets:
