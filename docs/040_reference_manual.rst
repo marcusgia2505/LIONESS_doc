@@ -835,7 +835,7 @@ This parameter defines which stage is the last stage of a period. When a group r
 .. _parameters__participationfee:
 
 participationFee
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 This parameter sets the guaranteed participation fee, which participants will receive independently of their performance in the experiment.
 
@@ -867,6 +867,15 @@ sortableMatching
 ~~~~~~~~~~~~~~~~~~
 
 This defines how the participants in the lobby are matched in groups. There are :ref:`three options <matching_procedures>` to choose from.
+
+
+.. _parameters__participationfee:
+
+reEnter
+~~~~~~~
+
+This parameter is default set to 0, which means that participants cannot re-enter once they have been excluded from an experiment (due to timeouts). With being turned on, a participant can re-enter and is directed back to the stage where he or she left (if the participants uses the initial link from the experiment).
+
 
 
 .. _parameters__messages:
