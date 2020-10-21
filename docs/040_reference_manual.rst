@@ -762,6 +762,8 @@ This function is similar to getValue() but retrieves the value from the *previou
 
 This function is similar to getValues() but retrieves values from the *previous* period.
 
+.. note:: These functions write to and read from the database on the server in an asynchronous way (that is, the functions are executed one by one). Having many instances of getValue() on a single stage may lead to heavy load on the server. Please make sure to use these functions sparingly, but, more importantly, to use a server with sufficiently high computational power when collecting your data.  
+
 
 .. _javascript_code_snippets:
 
