@@ -345,6 +345,8 @@ The Button element mainly functions as a trigger to move on to the next desired 
          return false;
          }
 
+.. note:: Buttons have an outer div with the id "buttonXX" where XX is the ID of the element. They have an inner div with the id "buttonclickXX", which binds the onclick event. The innerdiv is also member of the class "lionessbutton".
+
 
 .. _elements__javascript_program:
 
@@ -594,6 +596,8 @@ Back button
 
 :Back to:
    In this menu, you can define onto which stage the experiment will go back. The default setting is it will go back to the stage right before so you can just leave it as it is if this is the case. You can also define it to jump to another page.
+
+.. note:: Buttons have an outer div with the id "buttonXX" where XX is the ID of the element. They have an inner div with the id "buttonclickXX", which binds the onclick event. The innerdiv is also member of the class "lionessbutton".
 
 
 .. _javascript:
