@@ -201,6 +201,7 @@ Note that in :ref:`JavaScript <elements__javascript_program>` , the number of se
 	}
 
 
+.. note:: On the participant screen, countdown timers are coded as an outer div called 'countdown', with two inner divs with HTML id's 'countdown_text' (which you might want to replace with JS if your experiment is in another language) and 'countdown_timer' (showing the number of minutes/seconds left).
 
 
 .. _main_menu:
