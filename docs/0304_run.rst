@@ -11,7 +11,11 @@ Once you have completed testing and setting up your experiment, you can run your
 Recruit participants
 ======================
 
-If you have access to an established laboratory participant pool (e.g. through your research institute), you may be able to recruit your participants for your LIONESS experiment from there. Alternatively, there are several crowd-sourcing platforms available to recruit participants for online experiments. Here we describe how to recruit participants from Amazon Mechanical Turk (AMT). A description for Prolific Academic will be added soon.
+If you have access to an established laboratory participant pool (e.g. through your research institute), you may be able to recruit your participants for your LIONESS experiment from there. Alternatively, there are several crowd-sourcing platforms available to recruit participants for online experiments. Here we describe how to recruit participants from Amazon Mechanical Turk (AMT). Prolific has very similar procedures.
+
+Participants will enter your experiment through a URL link, which you can find in the Control Panel, under 'link for participants'.
+
+.. note:: You can send parameters from MTurk (or Prolific) to your LIONESS experiment using the URL parameter 'tic'. For example, the 'link for participants' you post on MTurk or Prolific could read [your_ip]/[your_experiment]/_beginParticipant.php?ext={{%PROLIFIC_PID%}}. 
 
 Setting up a HIT on Amazon Mechanical Turk
 -------------------------------------------
