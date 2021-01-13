@@ -26,6 +26,8 @@ General pointers for writing a HIT description and setting up a can be found in 
 
 .. warning:: Make sure you have the :ref:`Control panel <control_panel>` of your interactive experiment open. The Control panel regulates the synchronisation of participants throughout the experiment and regulates their progress through any loops. When running your experiment, <b>make sure that only a single LIONESS experiment is active in your browser</b>. Having open multiple experiments simultaneously in the same browser leads to conflicts which may stop synchronisation.  Also, before you launch your experiment, make sure that the :ref:`number of allowed players <parameters__totalPlayers>` is high enough when you publish your HIT.
 
+.. note:: You can send parameters from MTurk (or Prolific) to your LIONESS experiment using the URL parameter 'tic'. For example, the 'link for participants' you post on MTurk or Prolific could read [your_ip]/[your_experiment]/_beginParticipant.php?ext={{%PROLIFIC_PID%}}. 
+
 Monitor your experiment
 ========================
 
