@@ -758,7 +758,8 @@ There are special functions for retrieving the values from others in the group, 
 
    :Simple example: getValuesOthers('someVariable');
    
-   
+.. note:: To access individual values in the array returned by this function, you need to use indicators for its elements (e.g., someVariable[0]).
+
 In addition, there are functions for retrieving the values from the PREVIOUS period.
 
 :Function: getOldValue()
