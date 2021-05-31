@@ -287,7 +287,7 @@ Element types
 
 .. _elements__text_box:
 
-Textbox
+Text box
 ~~~~~~~
 
 Here is an example of how textbox element looks like:
@@ -310,6 +310,8 @@ In this interface you can adjust text fonts and colour, but you can also use sta
 
 .. image:: _static/Textbox_gui.png
    :alt: textbox_gui.png
+   
+.. note:: A text box allows for basically all standard HTML content. If you want to show images, you can load these in the standard HTML way, using the <img> tag, referring to the location (e.g. the url) of its source file. If this location is not secure (http), you might need to allow insecure content on the lioness.uni-passau.de site (which is https). Otherwise, your browser might block the images from being shown in the developer environment. 
 
 .. _elements__button:
 
