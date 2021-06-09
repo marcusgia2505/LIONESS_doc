@@ -659,15 +659,17 @@ LIONESS experiment reply on a combination of JavaScript (code that is executed i
 
 Variables specified in input elements' (numeric input, choice buttons, etc) will be automatically stored in the table *decisions*. These variables have to have *unique names*. Using duplicate names can lead to unexpected behaviour of the experiment.
 
-JavaScript elements allow you to read from and write to the database, using the below functions. Note that each function has a *simple* and a *full* version. The simple versions always assume that the function pertains to the current player, the current group, and the current period. In the below examples, the simple and full versions are equivalent.
+JavaScript elements allow you to read from and write to the database, using the below functions. Note that each function has a *simple* and a *full* version. The simple versions always assume that the function pertains to the current player, the current group, and the current period (and uses the *decisions* table). In the below examples, the simple and full versions are equivalent.
 
+.. warning:: Italic function parameters are optional.
 
-Writing to the database
+Writing to the database 
 -----------------------
 
 You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. 
 
-.. warning:: Italic function parameters are optional.
+.. note:: You can use the functions to write to the tables *decisions*, *session* and *core*. If you want to write to the *globals* table, please use setGlobal(varriable name, value). 
+
 
 :Function: setValue()
 
@@ -724,7 +726,8 @@ The function `setValueAtTimeout()`works the same as `setValue()` but can be call
 
 Reading from the database
 -------------------------
-Italic function parameters are optional.
+
+.. note:: You can use the functions to read from the tables *decisions*, *session* and *core*. If you want to read from the *globals* table, please use getGlobal(varriable name)
 
 :Function: getValue()
 
