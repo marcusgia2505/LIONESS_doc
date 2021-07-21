@@ -214,7 +214,7 @@ Note that in :ref:`JavaScript <elements__javascript_program>` , the number of se
 Elements
 =========================
 
-.. note:: Input elements will be automatically recorded in the decisions table. Make sure that each input element has a unique 'variable name'.
+.. note:: Input elements will be automatically recorded in the decisions table. Make sure that each input element has a unique 'variable name'. Please avoid using variable names that may interfere with PHP, such as 'order', 'sort', 'where', 'connect', and 'create'. This will lead to errors on the participant's page.
 
 
 .. _adding_an_element:
@@ -399,6 +399,9 @@ In this element, you can collect participant's responses in numbers.
 
 :Variable name:
    You can set the name of the variable of the numeric input. This will be handy later on when you have to use the participant's answers in Javascript or for analysis.
+
+.. note:: Avoid using variable names that may interfere with PHP, such as 'order', 'sort', 'where', 'connect', and 'create'. This will lead to errors on the participant's page.
+
 
 :Minimum:
    You can define the minimum value which participants can enter. If this condition is not met, a warning message will appear to the participants.
