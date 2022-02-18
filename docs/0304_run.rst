@@ -15,7 +15,7 @@ If you have access to an established laboratory participant pool (e.g. through y
 
 Participants will enter your experiment through a URL link, which you can find in the Control Panel, under 'link for participants'.
 
-.. note:: You can send parameters from MTurk (or Prolific) to your LIONESS experiment using the URL parameter 'tic'. For example, the 'link for participants' you post on MTurk or Prolific could read [your_ip]/[your_experiment]/_beginParticipant.php?ext={{%PROLIFIC_PID%}}. 
+.. note:: You can send parameters from MTurk (or Prolific) to your LIONESS experiment using the URL parameter 'tic'. For example, the 'link for participants' you post on MTurk or Prolific could read [your_ip]/[your_experiment]/_beginParticipant.php?tic={{%PROLIFIC_PID%}}. 
 
 Setting up a HIT on Amazon Mechanical Turk
 -------------------------------------------
