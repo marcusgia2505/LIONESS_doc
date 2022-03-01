@@ -742,7 +742,7 @@ Reading from the database
 
    :Full example: getValue('decisions', 'playerNr='+playerNr+' and period='+period, 'someVariable');
 
-This function retrieves a single value from the database. NB: the 'simple' example will return the value from the current player in the current period.
+This function retrieves a single value from the database. NB: the 'simple' example will return the value from the current player in the current period. If no value is found, the function returns null.
 
 :Function: getValues()
 
