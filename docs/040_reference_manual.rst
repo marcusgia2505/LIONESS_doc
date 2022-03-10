@@ -313,6 +313,8 @@ In this interface you can adjust text fonts and colour, but you can also use sta
    
 .. note:: A text box allows for basically all standard HTML content. If you want to show images, you can load these in the standard HTML way, using the <img> tag, referring to the location (e.g. the url) of its source file. If this location is not secure (http), you might need to allow insecure content on the lioness.uni-passau.de site (which is https). Otherwise, your browser might block the images from being shown in the developer environment. 
 
+.. note:: Do not use $$ in the textbox as this will be not interpreted correctly.
+
 .. _elements__button:
 
 Button
