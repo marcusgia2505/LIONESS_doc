@@ -29,7 +29,7 @@ While participants complete the experiment, various exceptions might happen. Bel
 
 .. warning:: LIONESS experiments do their best to prevent double participation by IP address check and cookies in the browser. These measures can still be circumvented with some effort.
 
-.. note:: You can send parameters from MTurk (or Prolific) to your LIONESS experiment using the URL parameter 'tic'. For example, the 'link for participants' you post on MTurk or Prolific could read [your_ip]/[your_experiment]/_beginParticipant.php?ext={{%PROLIFIC_PID%}}. 
+.. note:: You can send parameters from MTurk (or Prolific) to your LIONESS experiment using the URL parameter 'tic'. For example, the 'link for participants' you post on MTurk or Prolific could read [your_ip]/[your_experiment]/_beginParticipant.php?tic={{%PROLIFIC_PID%}}. 
 
 a) Internet Explorer
 ---------------------
