@@ -4,9 +4,17 @@
 Share with others
 =========================
 
-LIONESS Lab encourages its users to share their experiments once they are ready. Experiments are shared through the :ref:`repository<repository>`. By sharing your experiments, you can contribute to the number of experimental designs that are available for others to build on.
+LIONESS Lab encourages its users to share their experiments once they are ready. Experiments can be shared through the :ref:`repository<repository>` or via a link. By sharing your experiments, you can contribute to the number of experimental designs that are available for others to build on.
 
 Sharing your experiments is important for a number of reasons. A large set of usable and customisable designs facilitates the easy development of experiments, and helps avoiding that experimenters are re-inventing the wheel by programming from scratch their own solutions to common issues. Moreover it promotes reproducibility of experimental methods and results.
+
+.. note:: You can only share your own games via link or repository.
+
+Sharing with a link
+====================
+
+If you want to share your experiment with one specific user, you can click on the sharing symbol in the overview of games. Then a link is created that can be shared with another user. The other has to be logged in before pasting the sharing link. 
+
 
 .. _repository:
 
