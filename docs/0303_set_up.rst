@@ -32,6 +32,9 @@ Virtual server
 
 You do not need advanced technical skills to set up a virtual server. Bitnami has a user-friendly point-and-click interface to do this. Here we briefly run you through how to set up your server with Bitnami in the Google Cloud.
 
+.. note:: Bitnami has stopped providing Virtual servers. There are many online providers of LAMP stacks on virtual machines. Amazon's AWS is a user-friendly option: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html. Documentation for setting up a server on that platform will follow here soon, to replace the steps (1) - (9) below.
+
+
 (1) Go to the `bitnami <https://google.bitnami.com>`__ website and create a free account.
 
 (2) You receive an email from bitnami to confirm and activate your account.
