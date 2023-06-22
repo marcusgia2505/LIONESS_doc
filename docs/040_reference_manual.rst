@@ -668,12 +668,16 @@ JavaScript elements allow you to read from and write to the database, using the 
 
 .. warning:: Italic function parameters are optional.
 
-Writing to the database 
------------------------
+Writing to the database (tables  *decisions*, *session* and *core*)
+--------------------------------------------------------------------
 
 You can directly write to the :ref:`decisions table <experiment_tables__decisions>`  of the experiment's database, using the following functions. 
 
-.. note:: You can use the functions to write to the tables *decisions*, *session* and *core*. If you want to write to the *globals* table, please use setGlobal(varriable name, value). 
+.. note:: You can use the functions to write to the tables *decisions*, *session* and *core*. If you want to write to the *globals* table, please use setGlobal(variable name, value) described below. There is only one globals table for all participants, while each participant has its own entry in all the other tables. If you write to 
+
+.. warning:: Make sure that the variables you write to the database have *unique names*. SQL is not case sensitive, that is ``variable`` and `Variable` are considered non unique! In addition, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. In addition, avoid using the `record()` function inside if (or else) statements. Create the variable before the if statement and use setValue() inside the if statement. 
+
+
 
 
 :Function: setValue()
@@ -684,12 +688,16 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
 
    :Full example: setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod', payoff);
 
+The function `setValue()` will update the value of an existing variable in the database, which may be created with a standard input element or with the `record()` function (see below).
+
 
 :Function: record()
 
    :Arguments: variable name, value
 
    :Simple example: record('PGGshare', publicGoodShare);
+
+The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', which would equal the value of the JavaScript variable 'publicGoodShare'. 
 
 
 :Function: setBonus()
@@ -698,6 +706,9 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
 
    :Simple example: setBonus(payoff);
 
+The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
+
+ .. warning:: The value argument cannot contain any operators, such as the + or the - sign.
 
 :Function: setRole()
 
@@ -705,7 +716,7 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
 
    :Simple example: setRole(role);
    
-   
+The function `setRole()` will write the value in its argument to the variable `role` in the *core* table. The variable *role* is used for the :ref:`matching procedure <matching_procedures>`
    
 :Function: setValueAtTimeout()
 
@@ -715,19 +726,34 @@ You can directly write to the :ref:`decisions table <experiment_tables__decision
 
    :Full example: setValue('decisions', 'playerNr='+playerNr+' and period='+period, 'payoffThisPeriod', payoff);
 
-
-
-The function `record()` will create a variable in the decisions table with the name of the first argument and the value of the second argument. In the example above, the decisions table would have one column with the name 'PGGshare', the value of which would equal the value of the JavaScript variable 'publicGoodShare'. By contrast, the function `setValue()` will update the value of an existing variable in the database, which may be created with a standard input element, or with the `record()` function.
-
-.. warning:: Make sure that the variables you write to the database have *unique names*. SQL is not case sensitive, that is ``variable`` and `Variable` are considered non unique! In addition, for database management reasons, it is currently not possible to create new variables in the database using *for loops* or *while loops*. In addition, avoid using the `record()` function inside if (or else) statements. Create the variable before the if statement and use setValue() inside the if statement. 
-
-The function `setBonus()` will write the value in its argument to the variable `bonusAmount` in the 'sessions' table. It will also update the variable `totalEarnings` in that table to the sum of `bonusAmount` and `participationFee`.
-
- .. warning:: The value argument cannot contain any operators, such as the + or the - sign.
-
-The function `setRole()` will write the value in its argument to the variable `role` in the *core* table. The variable *role* is used for the :ref:`matching procedure <matching_procedures>`
-
 The function `setValueAtTimeout()`works the same as `setValue()` but can be called to store values when the page is left at timeout (when the timer is running out). 
+
+Writing to the database (table *globals*)
+-------------------------------------------
+
+For writing to the globals table, some special functions exist. Keep in mind, that all subjects have a joint globals table (while each subject has its own entry in the other tables). If you write to the globals table, subjects may overwrite each other's changes. 
+
+:Function: setGlobal(variable name, value)
+
+   :Arguments: variable name, value
+
+   :Full example: setGlobal('totalPlayers', 20);
+
+The function `setGlobal()` will update the value of an existing variable in the globals table. Custom global values can be created in the :ref:`parameter section <parameters__own_parameters>`.
+
+:Function: incrementGlobal(name)
+
+   :Arguments: variable name
+
+   :Returns: the incremented value of the variable
+
+   :Full example: incrementGlobal('totalPlayers');
+
+The function `incrementGlobal()` will increment the value of a global variable by 1. It only works for integers. This function is useful for counting e.g. numbers of players, etc.
+
+.. note:: If you use a global counter, you should use incrementGlobal() instead of getGlobal() and setGlobal(). The problem with the latter is that in between the two function calls another subject may also call the function and it may not return the correct values. IncrementGlobal() is safe to this problem. 
+
+
 
 Reading from the database
 -------------------------
