@@ -263,7 +263,7 @@ For example, if you want to display a text box in period 1 only, you can define 
 .. image:: _static/ConditionalDisplayExample.png
    :alt:  100px
 
-.. note:: do NOT use calls to the server in this condition (like getValue()) because this will slow down the page (as the display conditions are checked very frequently; the numbrer of requests will overload the server.
+.. note:: do NOT use calls to the server in this condition (like getValue()) because this will slow down the page (as the display conditions are checked very frequently; the number of requests will overload the server.
 
 Copy element
 ~~~~~~~~~~~~~
